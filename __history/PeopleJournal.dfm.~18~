@@ -1,0 +1,361 @@
+object Form4: TForm4
+  AlignWithMargins = True
+  Left = 0
+  Top = 0
+  Caption = #1046#1091#1088#1085#1072#1083
+  ClientHeight = 684
+  ClientWidth = 1169
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = True
+  Position = poDesigned
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object dxRibbon1: TdxRibbon
+    Left = 0
+    Top = 0
+    Width = 1169
+    Height = 155
+    BarManager = dxBarManager1
+    CapitalizeTabCaptions = bDefault
+    Style = rs2016
+    ColorSchemeName = 'Colorful'
+    QuickAccessToolbar.Toolbar = dxBarManager1Bar1
+    TabAreaToolbar.Toolbar = dxBarManager1Bar2
+    SupportNonClientDrawing = True
+    Contexts = <>
+    TabOrder = 0
+    TabStop = False
+    object dxRibbon1Tab1: TdxRibbonTab
+      Active = True
+      Caption = #1052#1077#1085#1102
+      Groups = <
+        item
+        end
+        item
+        end
+        item
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar3'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar4'
+        end>
+      Index = 0
+    end
+  end
+  object dxRibbonStatusBar1: TdxRibbonStatusBar
+    Left = 0
+    Top = 661
+    Width = 1169
+    Height = 23
+    Panels = <>
+    Ribbon = dxRibbon1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clDefault
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+  end
+  object gPeopleJournal: TcxGrid
+    Left = 0
+    Top = 155
+    Width = 1169
+    Height = 506
+    Align = alClient
+    TabOrder = 2
+    object gPeopleJournalDBTableView1: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      DataController.DataSource = dsPeopleJournal
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      object gPeopleJournalDBTableView1name: TcxGridDBColumn
+        Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1050#1085#1080#1075#1080
+        DataBinding.FieldName = 'name'
+        MinWidth = 205
+        Width = 205
+      end
+      object gPeopleJournalDBTableView1author_fio: TcxGridDBColumn
+        Caption = #1060#1048#1054' '#1072#1074#1090#1086#1088#1072
+        DataBinding.FieldName = 'author_fio'
+        MinWidth = 205
+      end
+      object gPeopleJournalDBTableView1Column1: TcxGridDBColumn
+        Caption = #1060#1048#1054' '#1095#1080#1090#1072#1090#1077#1083#1103
+        DataBinding.FieldName = 'people_fio'
+        MinWidth = 100
+        VisibleForEditForm = bTrue
+        Width = 220
+      end
+      object gPeopleJournalDBTableView1emp_fio_rec: TcxGridDBColumn
+        Caption = #1060#1048#1054' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1072' '#1074#1099#1076#1072#1074#1096#1077#1075#1086
+        DataBinding.FieldName = 'emp_fio_rec'
+        MinWidth = 205
+        Width = 205
+      end
+      object gPeopleJournalDBTableView1emp_fio_ret: TcxGridDBColumn
+        Caption = #1060#1048#1054' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1072' '#1074#1086#1079#1074#1088#1072#1090
+        DataBinding.FieldName = 'emp_fio_ret'
+        MinWidth = 205
+        Width = 205
+      end
+      object gPeopleJournalDBTableView1edition_name: TcxGridDBColumn
+        Caption = #1048#1079#1076#1072#1085#1080#1077
+        DataBinding.FieldName = 'edition_name'
+        MinWidth = 100
+        Width = 100
+      end
+      object gPeopleJournalDBTableView1date_of_issue: TcxGridDBColumn
+        Caption = #1044#1072#1090#1072' '#1074#1099#1076#1072#1095#1080
+        DataBinding.FieldName = 'date_of_issue'
+        MinWidth = 100
+        Width = 100
+      end
+      object gPeopleJournalDBTableView1date_of_return: TcxGridDBColumn
+        Caption = #1044#1072#1090#1072' '#1074#1086#1079#1074#1088#1072#1090#1072
+        DataBinding.FieldName = 'date_of_return'
+        MinWidth = 100
+      end
+      object gPeopleJournalDBTableView1exp: TcxGridDBColumn
+        Caption = #1057#1086#1089#1090#1086#1103#1085#1080#1077' '#1074#1086#1079#1074#1088#1072#1090#1072
+        DataBinding.FieldName = 'exp'
+        Width = 130
+      end
+      object gPeopleJournalDBTableView1fine_expiration: TcxGridDBColumn
+        Caption = #1064#1090#1088#1072#1092' '#1074#1086#1079#1074#1088#1072#1090#1072
+        DataBinding.FieldName = 'fine_expiration'
+        MinWidth = 100
+      end
+      object gPeopleJournalDBTableView1st: TcxGridDBColumn
+        Caption = #1057#1086#1089#1090#1086#1103#1085#1080#1077' '#1082#1085#1080#1075#1080
+        DataBinding.FieldName = 'st'
+        MinWidth = 100
+        Width = 100
+      end
+      object gPeopleJournalDBTableView1state_fine: TcxGridDBColumn
+        Caption = #1064#1090#1088#1072#1092' '#1079#1072' '#1089#1086#1089#1090#1086#1103#1085#1080#1077
+        DataBinding.FieldName = 'state_fine'
+        MinWidth = 115
+      end
+    end
+    object gPeopleJournalLevel1: TcxGridLevel
+      GridView = gPeopleJournalDBTableView1
+    end
+  end
+  object dxBarManager1: TdxBarManager
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    Categories.Strings = (
+      'Default')
+    Categories.ItemsVisibles = (
+      2)
+    Categories.Visibles = (
+      True)
+    PopupMenuLinks = <>
+    UseSystemFont = True
+    Left = 568
+    Top = 8
+    PixelsPerInch = 96
+    object dxBarManager1Bar1: TdxBar
+      Caption = 'Quick Access Toolbar'
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 0
+      FloatTop = 0
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar2: TdxBar
+      Caption = 'Tab Area Toolbar'
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 0
+      FloatTop = 0
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'cxBarEditItem1'
+        end>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar3: TdxBar
+      Caption = 'Custom 1'
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 1203
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarButton4'
+        end>
+      OneOnRow = False
+      Row = 0
+      UseOwnFont = True
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar4: TdxBar
+      Caption = 'Custom 2'
+      CaptionButtons = <>
+      DockedLeft = 140
+      DockedTop = 0
+      FloatLeft = 1203
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarButton6'
+        end>
+      OneOnRow = False
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object cxBarEditItem1: TcxBarEditItem
+      Caption = 'Text Edit Item'
+      Category = 0
+      Visible = ivAlways
+      PropertiesClassName = 'TcxTextEditProperties'
+    end
+    object dxBarButton1: TdxBarButton
+      Caption = 'New Button'
+      Category = 0
+      Hint = 'New Button'
+      Visible = ivAlways
+    end
+    object dxBarLargeButton1: TdxBarLargeButton
+      Caption = #1042#1099#1076#1072#1090#1100' '#1082#1085#1080#1075#1091
+      Category = 0
+      Hint = #1042#1099#1076#1072#1090#1100' '#1082#1085#1080#1075#1091
+      Visible = ivAlways
+    end
+    object dxBarButton2: TdxBarButton
+      Caption = #1042#1099#1076#1072#1090#1100' '#1082#1085#1080#1075#1091
+      Category = 0
+      Hint = #1042#1099#1076#1072#1090#1100' '#1082#1085#1080#1075#1091
+      Visible = ivAlways
+      OnClick = dxBarButton2Click
+    end
+    object dxBarButton3: TdxBarButton
+      Caption = 'New Button'
+      Category = 0
+      Hint = 'New Button'
+      Visible = ivAlways
+    end
+    object dxBarButton4: TdxBarButton
+      Caption = #1042#1099#1076#1072#1095#1072'/'#1074#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
+      Category = 0
+      Hint = #1042#1099#1076#1072#1095#1072'/'#1074#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
+      Visible = ivAlways
+      OnClick = dxBarButton4Click
+    end
+    object dxBarButton5: TdxBarButton
+      Caption = 'New Button'
+      Category = 0
+      Hint = 'New Button'
+      Visible = ivAlways
+    end
+    object dxBarButton6: TdxBarButton
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1085#1086#1074#1091#1102' '#1082#1085#1080#1075#1091
+      Category = 0
+      Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1085#1086#1074#1091#1102' '#1082#1085#1080#1075#1091
+      Visible = ivAlways
+      OnClick = dxBarButton6Click
+    end
+  end
+  object dxSkinController1: TdxSkinController
+    NativeStyle = False
+    SkinName = 'Office2013LightGray'
+    Left = 536
+    Top = 8
+  end
+  object uqPeopleJournal: TUniQuery
+    Connection = Form1.connect
+    SQL.Strings = (
+      'select b.name'
+      
+        '     , a.surname || '#39' '#39' || a.name || '#39' '#39' || coalesce(a.parton, '#39 +
+        #39') as author_fio'
+      
+        '     , e1.surname || '#39' '#39' || e1.name || '#39' '#39' || coalesce(e1.parton' +
+        ', '#39#39') as emp_fio_rec'
+      
+        '     , e2.surname || '#39' '#39' || e2.name || '#39' '#39' || coalesce(e2.parton' +
+        ', '#39#39') as emp_fio_ret'
+      
+        '     , p.surname || '#39' '#39' || p.name || '#39' '#39' || coalesce(p.parton, '#39 +
+        #39') as people_fio'
+      '     , e.name as edition_name'
+      '     , j.date_of_issue'
+      '     , j.date_of_return'
+      '     , case '
+      '         when j.expiration = 1 then '#39#1087#1088#1086#1089#1088#1086#1095#1077#1085#1072#39
+      '         when j.expiration = 2 then '#39#1085#1077' '#1087#1088#1086#1089#1088#1086#1095#1077#1085#1072#39
+      '       end as exp'
+      '     , j.fine_expiration'
+      '     , case '
+      '         when j.state = 1 then '#39#1041#1077#1079' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1081#39
+      '         when j.state = 2 then '#39#1045#1089#1090#1100' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1103#39
+      '       end as st'
+      '     , j.state_fine    '
+      '  from mm.journal j'
+      '  join mm.people p'
+      '    on p.id = j.people_id'
+      '  join mm.library l'
+      '    on l.id = j.library_id'
+      '  join mm.edition e'
+      '    on e.id = l.edition_id   '
+      '  join mm.book b'
+      '    on b.id = l.book_id'
+      '  join mm.book_author ba'
+      '    on ba.book_id = b.id'
+      '  join mm.author a'
+      '    on a.id = ba.author_id'
+      '  left join mm.emp e1 '
+      '    on e1.id = j.emp_recive_id'
+      '  left join mm.emp e2 '
+      '    on e2.id = j.emp_return_id')
+    Left = 344
+    Top = 8
+  end
+  object dsPeopleJournal: TUniDataSource
+    Left = 440
+    Top = 8
+  end
+end

@@ -1,0 +1,27 @@
+program Lib;
+
+uses
+  Vcl.Forms,
+  main in 'main.pas' {Form1},
+  login in 'login.pas' {Form2},
+  newPeople in 'newPeople.pas' {Form3},
+  PeopleJournal in 'PeopleJournal.pas' {Form4},
+  Journal in 'Journal.pas' {Form5},
+  addBook in 'addBook.pas' {Form6};
+
+{$R *.res}
+
+begin
+  if TForm2.Execute then
+  begin
+    Application.Initialize;
+    Application.MainFormOnTaskbar := True;
+    Application.CreateForm(Fmain, Fmain);
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TForm4, Form4);
+  Application.CreateForm(TForm5, Form5);
+  Application.CreateForm(TForm6, Form6);
+  Application.Run;
+  end;
+
+end.
