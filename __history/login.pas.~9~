@@ -78,7 +78,7 @@ begin
     end
   end
   else
-//    ModalResult:= mrAbort; kkl
+//    ModalResult:= mrAbort;
     begin
     lLogin.Style.TextColor:= clRed;
     lPassword.Style.TextColor:= clRed;
