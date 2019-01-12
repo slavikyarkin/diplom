@@ -17,23 +17,24 @@ uses
   dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
   dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
   dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
-  dxSkinTheAsphaltWorld, dxSkinTheBezier, dxSkinsDefaultPainters,
+  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters,
   dxSkinValentine, dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
   dxSkinXmas2008Blue, cxControls, cxContainer, cxEdit, Data.DB, DBAccess,
-  PgAccess, cxLabel, Vcl.StdCtrls, cxButtons, MemDS, cxTextEdit, cxImage,
-  dxGDIPlusClasses;
+  cxLabel, Vcl.StdCtrls, cxButtons, MemDS, cxTextEdit, cxImage,
+  dxGDIPlusClasses, Uni, UniProvider, PostgreSQLUniProvider;
 
 type
   TForm2 = class(TForm)
-    connect: TPgConnection;
     lLogin: TcxLabel;
     lPassword: TcxLabel;
     teLogin: TcxTextEdit;
     tePassword: TcxTextEdit;
     bOk: TcxButton;
-    uqIdent: TPgQuery;
     iLogo: TcxImage;
+    connect: TUniConnection;
+    PostgreSQLUniProvider1: TPostgreSQLUniProvider;
+    uqIdent: TUniQuery;
     procedure bOkClick(Sender: TObject);
 
 
@@ -43,11 +44,14 @@ type
     { Public declarations }
     class function Execute: boolean;
   end;
-
+  var
+//  Form1: TForm1;
+  role : integer;
+  user_id : integer;
 
 
 implementation
-
+                    uses main, user;
 {$R *.dfm}
 
 procedure TForm2.bOkClick(Sender: TObject);
@@ -58,12 +62,32 @@ begin
   uqIdent.Open;
   if uqIdent.RecordCount > 0 then
   begin
-    ModalResult:= mrOk;
+//    ModalResult:= mrOk;
+//    Form2.Visible:= false;
+    role:= uqIdent.FieldByName('role').AsInteger;
+    user_id:= uqIdent.FieldByName('id').AsInteger;
+    if role = 2  then
+     begin
+    Application.CreateForm(TForm1, Form1) ;
+    Form1.Show;
+    end
+    else
+      begin
+    Application.CreateForm(TForm9, Form9) ;
+    Form9.Show;
+    end
   end
   else
-    ModalResult:= mrAbort;
-
+//    ModalResult:= mrAbort; kkl
+// check work control version
+    begin
+    lLogin.Style.TextColor:= clRed;
+    lPassword.Style.TextColor:= clRed;
+    ShowMessage('Неправильно введен логин или пароль!');
+  end;
 end;
+
+
 
 class function TForm2.Execute: boolean;
 begin
@@ -73,13 +97,5 @@ begin
     Free;
   end;
 end;
-
-
-
-
-
-
-
-
 
 end.

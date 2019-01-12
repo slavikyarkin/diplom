@@ -80,6 +80,7 @@ begin
   else
 //    ModalResult:= mrAbort; kkl
 // check work control version
+//maybe something wrong
     begin
     lLogin.Style.TextColor:= clRed;
     lPassword.Style.TextColor:= clRed;
