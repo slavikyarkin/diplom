@@ -1,7 +1,7 @@
 
 unit main;
 
-interface       // слава проверка
+interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, 
