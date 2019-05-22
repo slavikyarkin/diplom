@@ -1,9 +1,9 @@
 object Form2: TForm2
   Left = 0
   Top = 0
-  Caption = 'Form2'
-  ClientHeight = 480
-  ClientWidth = 640
+  Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1100
+  ClientHeight = 549
+  ClientWidth = 858
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,90 +17,40 @@ object Form2: TForm2
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 640
+    Width = 858
     Height = 155
-    ApplicationButton.Menu = dxRibbonBackstageView1
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016
+    ColorSchemeAccent = rcsaOrange
     ColorSchemeName = 'Colorful'
+    Fonts.AssignedFonts = [afGroupHeader]
+    Fonts.GroupHeader.Charset = DEFAULT_CHARSET
+    Fonts.GroupHeader.Color = clWhite
+    Fonts.GroupHeader.Height = -12
+    Fonts.GroupHeader.Name = 'Segoe UI'
+    Fonts.GroupHeader.Style = []
     QuickAccessToolbar.Toolbar = dxBarManager1Bar1
     TabAreaToolbar.Toolbar = dxBarManager1Bar2
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 640
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
-      Caption = 'dxRibbon1Tab1'
-      Groups = <>
+      Caption = #1044#1077#1081#1089#1090#1074#1080#1103
+      Groups = <
+        item
+          ToolbarName = 'dxBarManager1Bar3'
+        end>
       Index = 0
-    end
-  end
-  object dxRibbonBackstageView1: TdxRibbonBackstageView
-    Left = 8
-    Top = 166
-    Width = 577
-    Height = 266
-    Buttons = <>
-    Ribbon = dxRibbon1
-    object dxRibbonBackstageViewTabSheet1: TdxRibbonBackstageViewTabSheet
-      Left = 132
-      Top = 0
-      Active = True
-      Caption = 'Recent'
-      DesignSize = (
-        445
-        266)
-      object dxRibbonBackstageViewGalleryControl1: TdxRibbonBackstageViewGalleryControl
-        Left = 12
-        Top = 44
-        Width = 300
-        Height = 208
-        Anchors = [akLeft, akTop, akBottom]
-        BorderStyle = cxcbsNone
-        OptionsView.ColumnAutoWidth = True
-        OptionsView.ColumnCount = 1
-        OptionsView.ContentOffset.All = 0
-        OptionsView.Item.Text.AlignHorz = taLeftJustify
-        OptionsView.Item.Text.AlignVert = vaCenter
-        OptionsView.Item.Text.Position = posRight
-        OptionsView.Item.PinMode = bgipmTag
-        Ribbon = dxRibbon1
-        TabOrder = 0
-        object dxRibbonBackstageViewGalleryControl1Group1: TdxRibbonBackstageViewGalleryGroup
-          ShowCaption = False
-          object dxRibbonBackstageViewGalleryControl1Group1Item1: TdxRibbonBackstageViewGalleryItem
-            Caption = 'New Item'
-            Description = 'New Item Description'
-          end
-        end
-      end
-      object cxLabel1: TcxLabel
-        Left = 12
-        Top = 12
-        AutoSize = False
-        Caption = 'Recent Documents'
-        ParentFont = False
-        Style.Font.Charset = DEFAULT_CHARSET
-        Style.Font.Color = clWindowText
-        Style.Font.Height = -16
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = []
-        Style.TransparentBorder = False
-        Style.IsFontAssigned = True
-        Properties.LineOptions.Alignment = cxllaBottom
-        Properties.LineOptions.Visible = True
-        Transparent = True
-        Height = 26
-        Width = 300
-      end
     end
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 457
-    Width = 640
+    Top = 526
+    Width = 858
     Height = 23
     Panels = <>
     Ribbon = dxRibbon1
@@ -109,6 +59,29 @@ object Form2: TForm2
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ExplicitTop = 457
+    ExplicitWidth = 640
+  end
+  object cxGrid1: TcxGrid
+    Left = 0
+    Top = 155
+    Width = 858
+    Height = 371
+    Align = alClient
+    TabOrder = 2
+    ExplicitLeft = 352
+    ExplicitTop = 280
+    ExplicitWidth = 250
+    ExplicitHeight = 200
+    object cxGrid1DBTableView1: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+    end
+    object cxGrid1Level1: TcxGridLevel
+      GridView = cxGrid1DBTableView1
+    end
   end
   object dxBarManager1: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
@@ -122,6 +95,7 @@ object Form2: TForm2
       2)
     Categories.Visibles = (
       True)
+    LookAndFeel.SkinName = 'Office2016Dark'
     PopupMenuLinks = <>
     UseSystemFont = True
     Left = 568
@@ -163,11 +137,36 @@ object Form2: TForm2
       Visible = True
       WholeRow = False
     end
+    object dxBarManager1Bar3: TdxBar
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 674
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton1'
+        end>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
     object cxBarEditItem1: TcxBarEditItem
       Caption = 'Text Edit Item'
       Category = 0
       Visible = ivAlways
       PropertiesClassName = 'TcxTextEditProperties'
+    end
+    object dxBarLargeButton1: TdxBarLargeButton
+      Caption = #1052#1086#1080' '#1076#1072#1085#1085#1099#1077
+      Category = 0
+      Hint = #1052#1086#1080' '#1076#1072#1085#1085#1099#1077
+      Visible = ivAlways
     end
   end
   object dxSkinController1: TdxSkinController
