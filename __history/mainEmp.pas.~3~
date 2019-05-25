@@ -54,6 +54,7 @@ type
     cBirth: TcxGridDBColumn;
     cDate_of_issue: TcxGridDBColumn;
     cExpirate_date: TcxGridDBColumn;
+    PostgreSQLUniProvider1: TPostgreSQLUniProvider;
     uqPeople: TUniQuery;
     dsPeople: TUniDataSource;
     dxBarButton1: TdxBarButton;
