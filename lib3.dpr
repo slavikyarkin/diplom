@@ -6,7 +6,8 @@ uses
   mainEmp in 'mainEmp.pas' {Form1},
   mainPeople in 'mainPeople.pas' {Form2},
   createNewUser in 'createNewUser.pas' {Form4},
-  peopleJournal in 'peopleJournal.pas' {Form5};
+  peopleJournal in 'peopleJournal.pas' {Form5},
+  addBook in 'addBook.pas' {Form6};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   Application.CreateForm(TForm2, Form2);
   Application.CreateForm(TForm4, Form4);
   Application.CreateForm(TForm5, Form5);
+  Application.CreateForm(TForm6, Form6);
   Application.Run;
 end.

@@ -57,6 +57,7 @@ type
     dxbbAddNewBook: TdxBarButton;
     dsPeopleJournal: TDataSource;
     procedure FormCreate(Sender: TObject);
+    procedure dxBB4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -69,7 +70,7 @@ var
 implementation
 
 {$R *.dfm}
-    uses mainEmp;
+    uses mainEmp, addBook;
 { TForm4 }
 
 //procedure TForm4.dxBarButton2Click(Sender: TObject);
@@ -78,11 +79,18 @@ implementation
 //Form6.ShowModal;
 //end;
 
+procedure TForm5.dxBB4Click(Sender: TObject);
+begin
+  Form6.Show;
+end;
+
 procedure TForm5.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
   inherited;
-end;
+  uqPeopleJournal.Close;
+  uqPeopleJournal.Open;
+  end;
 
 end.
 

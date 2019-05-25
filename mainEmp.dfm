@@ -303,7 +303,7 @@ object Form1: TForm1
       ', lc.number'
       ', p.name'
       ', p.surname'
-      ', p.parton'
+      ', p.patron'
       ', p.birth'
       ', lc.date_of_issue'
       ', lc.expirate_date'

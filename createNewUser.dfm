@@ -77,8 +77,8 @@ object Form4: TForm4
     Color = clWhite
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 155
-    ExplicitHeight = 406
+    ExplicitTop = 36
+    ExplicitHeight = 525
     object gbGeneralInform: TGroupBox
       Left = 25
       Top = 16
@@ -207,7 +207,6 @@ object Form4: TForm4
           Width = 284
           Height = 27
           TabOrder = 3
-          OnChange = bSaveAllClick
           Items.Strings = (
             #1052#1091#1078#1089#1082#1086#1081
             #1046#1077#1085#1089#1082#1080#1081)

@@ -68,7 +68,6 @@ type
     eSurname: TEdit;
     eParton: TEdit;
     eName: TEdit;
-    cbSex: TComboBox;
     dtpBirth: TDateTimePicker;
     gdSecondInforl: TGroupBox;
     gbDoc: TGroupBox;
@@ -111,6 +110,7 @@ type
     dsGetDistrict: TUniDataSource;
     uqGetDoc: TUniQuery;
     uqGetAddr: TUniQuery;
+    cbSex: TComboBox;
     procedure FormCreate(Sender: TObject);
     procedure lcbDistrictPropertiesChange(Sender: TObject);
     procedure lcbRegionPropertiesChange(Sender: TObject);
@@ -140,18 +140,15 @@ begin
   uqDoc.FieldValues['unit_code']:=eUnitCode.Text;
   uqDoc.FieldValues['series']:=eSerial.Text;
   uqDoc.FieldValues['number']:=eDocNumber.Text;
-  //Doc.FieldValues['people_id']:= uqGetPeople.FieldByName('id').AsInteger;
   uqDoc.Post;
-//------------------------------------------------------------------------------
+
   uqGetDoc.Close;
   uqGetDoc.ParamByName('issueed_by').AsString:= eEssue.Text;
-  //uqGetDoc.ParamByName('unit_code').AsString:= eUnitCode.Text;
   uqGetDoc.ParamByName('series').AsString:= eSerial.Text;
   uqGetDoc.ParamByName('number').AsString:= eDocNumber.Text;
   uqGetDoc.Open;
-//------------------------------------------------------------------------------
+
   uqAddr.Append;
-  //uqAddr.FieldValues ['people_id']:= uqGetPeople.FieldByName('id').AsInteger;
   uqAddr.FieldValues ['district_id'] := lcbDistrict.EditValue;
   uqAddr.FieldValues ['region_id'] := lcbregion.EditValue;
   uqAddr.FieldValues ['town_id'] :=  lcbTown.EditValue;
@@ -159,7 +156,7 @@ begin
   uqAddr.FieldValues ['house']:=eHouse.Text;
   uqAddr.FieldValues ['flat']:=eFlat.Text;
   uqAddr.Post;
-//------------------------------------------------------------------------------
+
   uqGetAddr.close;
   uqGetAddr.ParamByName('flat').AsString := eFlat.Text;
   uqGetAddr.ParamByName('street').AsString := eStreet.Text;
@@ -168,23 +165,22 @@ begin
   uqGetAddr.ParamByName('region_id').AsString := lcbregion.EditValue;
   uqGetAddr.ParamByName('town_id').AsString := lcbTown.EditValue;
   uqGetAddr.Open;
-//------------------------------------------------------------------------------
+
   uqPeople.Append;
   uqPeople.FieldValues['name']:=eName.Text;
   uqPeople.FieldValues['Surname']:=eSurname.Text;
-  uqPeople.FieldValues['Parton']:=eParton.Text;
-  //if cbSex.Text = 'Мужской' then
-   // uqPeople.FieldValues['Sex']:= 1;
-
-  //if cbSex.Text = 'Женский' then
-  //  uqPeople.FieldValues['Sex']:= 2;
+  uqPeople.FieldValues['Patron']:=eParton.Text;
+    if cbSex.Text = 'Мужской' then
+      uqPeople.FieldValues['Sex']:= 1;
+    if cbSex.Text = 'Женский' then
+      uqPeople.FieldValues['Sex']:= 2;
   uqPeople.FieldValues['email']:=eMail.Text;
   uqPeople.FieldValues['Number']:=eNumber.Text;
   uqPeople.FieldValues['birth']:=dtpBirth.Date;
   uqPeople.FieldValues['doc_id']:=uqGetDoc.FieldByName('id').AsInteger;
   uqPeople.FieldValues['addr_id']:=uqGetAddr.FieldByName('id').AsInteger;
   uqPeople.Post;
-//------------------------------------------------------------------------------
+
   //получаем id только что созданного people
   uqGetPeople.Close;
   uqGetPeople.ParamByName('p_name').AsString :=eName.Text;
@@ -192,7 +188,6 @@ begin
   uqGetPeople.ParamByName('p_birth').AsDate  :=dtpBirth.Date;
   uqGetPeople.Open;
 
-//------------------------------------------------------------------------------
   uqLibraryCard.Append;
   uqLibraryCard.FieldValues ['date_of_issue']:= Date;
   uqLibraryCard.FieldValues ['expirate_date']:= IncYear(Date,2);
@@ -200,9 +195,6 @@ begin
   uqLibraryCard.FieldValues['people_id']:= uqGetPeople.FieldByName('id').AsInteger;
   uqLibraryCard.Post;
 end;
-
-
-
 //------------------------------------------------------------------------------
 procedure TForm4.FormCreate(Sender: TObject);
 begin
@@ -213,7 +205,6 @@ begin
   uqDoc.Open;
   uqAddr.Open;
 end;
-
 //------------------------------------------------------------------------------
 procedure TForm4.lcbDistrictPropertiesChange(Sender: TObject);
 begin
