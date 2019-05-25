@@ -216,6 +216,7 @@ object Form1: TForm1
       Category = 0
       Hint = #1046#1091#1088#1085#1072#1083' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1103
       Visible = ivAlways
+      OnClick = bJornalPeopleClick
     end
     object bGeneralJournal: TdxBarLargeButton
       Caption = #1057#1087#1080#1089#1086#1082' '#1082#1085#1080#1075

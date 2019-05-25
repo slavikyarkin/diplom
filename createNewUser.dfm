@@ -27,6 +27,7 @@ object Form4: TForm4
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016
+    ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
     QuickAccessToolbar.Toolbar = dxBarManager1Bar1
     TabAreaToolbar.Toolbar = dxBarManager1Bar2

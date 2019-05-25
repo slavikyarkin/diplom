@@ -69,6 +69,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure dxBarEdit3Change(Sender: TObject);
     procedure bNewPeopleClick(Sender: TObject);
+    procedure bJornalPeopleClick(Sender: TObject);
 
 
   private
@@ -85,8 +86,13 @@ implementation
 {$R *.dfm}
 
 //uses newPeople, PeopleJournal, BookList, PeopleInform, login;
-uses login, createNewUser;
+uses login, createNewUser, peopleJournal;
 
+
+procedure TForm1.bJornalPeopleClick(Sender: TObject);
+begin
+Form5.Show;
+end;
 
 procedure TForm1.bNewPeopleClick(Sender: TObject);
 begin

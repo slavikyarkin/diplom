@@ -75,10 +75,6 @@ begin
           Form2.Show;
         end;
     end;
-
-//    Application.CreateForm(TForm1, Form1);
-//    Form1.Show;
   end
 end;
-
 end.
