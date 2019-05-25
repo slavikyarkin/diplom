@@ -20,10 +20,6 @@ object Form3: TForm3
     Height = 137
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 80
-    ExplicitTop = 40
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object cxLabel1: TcxLabel
       Left = 144
       Top = 17
@@ -53,9 +49,6 @@ object Form3: TForm3
       Height = 41
       Align = alBottom
       TabOrder = 4
-      ExplicitLeft = 312
-      ExplicitTop = 176
-      ExplicitWidth = 185
       object bOk: TcxButton
         Left = 130
         Top = 6

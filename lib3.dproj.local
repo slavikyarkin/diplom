@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2019.05.21 18:57:31.788,=C:\Users\oblteh\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
-    <Transaction>2019.05.21 19:29:55.156,C:\Users\oblteh\Desktop\Library\login.pas=C:\Users\oblteh\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
-    <Transaction>2019.05.21 19:29:55.156,C:\Users\oblteh\Desktop\Library\login.dfm=C:\Users\oblteh\Documents\Embarcadero\Studio\Projects\Unit3.dfm</Transaction>
-    <Transaction>2019.05.21 19:30:09.030,C:\Users\oblteh\Desktop\Library\lib3.dproj=C:\Users\oblteh\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
-    <Transaction>2019.05.21 19:51:42.517,=C:\Users\oblteh\Desktop\Library\Unit1.pas</Transaction>
-    <Transaction>2019.05.21 19:52:35.853,C:\Users\oblteh\Desktop\Library\mainEmp.dfm=C:\Users\oblteh\Desktop\Library\Unit1.dfm</Transaction>
-    <Transaction>2019.05.21 19:52:35.853,C:\Users\oblteh\Desktop\Library\mainEmp.pas=C:\Users\oblteh\Desktop\Library\Unit1.pas</Transaction>
-    <Transaction>2019.05.21 19:56:46.106,=C:\Users\oblteh\Desktop\Library\Unit2.pas</Transaction>
-    <Transaction>2019.05.21 19:57:32.853,=C:\Users\oblteh\Desktop\Library\Unit2.pas</Transaction>
-    <Transaction>2019.05.21 19:58:17.806,C:\Users\oblteh\Desktop\Library\mainPeople.dfm=C:\Users\oblteh\Desktop\Library\Unit2.dfm</Transaction>
-    <Transaction>2019.05.21 19:58:17.806,C:\Users\oblteh\Desktop\Library\mainPeople.pas=C:\Users\oblteh\Desktop\Library\Unit2.pas</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.853,=C:\Users\oblteh\Desktop\Library\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.106,=C:\Users\oblteh\Desktop\Library\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.806,C:\Users\oblteh\Desktop\Library\Unit2.pas=C:\Users\oblteh\Desktop\Library\mainPeople.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.030,C:\Users\oblteh\Documents\Embarcadero\Studio\Projects\Project3.dproj=C:\Users\oblteh\Desktop\Library\lib3.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.156,C:\Users\oblteh\Documents\Embarcadero\Studio\Projects\Unit3.dfm=C:\Users\oblteh\Desktop\Library\login.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.853,C:\Users\oblteh\Desktop\Library\Unit1.dfm=C:\Users\oblteh\Desktop\Library\mainEmp.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.788,=C:\Users\oblteh\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.806,C:\Users\oblteh\Desktop\Library\Unit2.dfm=C:\Users\oblteh\Desktop\Library\mainPeople.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.156,C:\Users\oblteh\Documents\Embarcadero\Studio\Projects\Unit3.pas=C:\Users\oblteh\Desktop\Library\login.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.853,C:\Users\oblteh\Desktop\Library\Unit1.pas=C:\Users\oblteh\Desktop\Library\mainEmp.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.517,=C:\Users\oblteh\Desktop\Library\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>
