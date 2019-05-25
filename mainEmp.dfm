@@ -202,35 +202,30 @@ object Form1: TForm1
       Category = 0
       Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1085#1086#1074#1086#1075#1086' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1103
       Visible = ivAlways
-      OnClick = bNewPeopleClick
     end
     object bInfPeople: TdxBarLargeButton
       Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1077
       Category = 0
       Hint = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1077
       Visible = ivAlways
-      OnClick = bInfPeopleClick
     end
     object bJornalPeople: TdxBarLargeButton
       Caption = #1046#1091#1088#1085#1072#1083' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1103
       Category = 0
       Hint = #1046#1091#1088#1085#1072#1083' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1103
       Visible = ivAlways
-      OnClick = bJornalPeopleClick
     end
     object bGeneralJournal: TdxBarLargeButton
       Caption = #1057#1087#1080#1089#1086#1082' '#1082#1085#1080#1075
       Category = 0
       Hint = #1057#1087#1080#1089#1086#1082' '#1082#1085#1080#1075
       Visible = ivNever
-      OnClick = bGeneralJournalClick
     end
     object dxBarButton1: TdxBarButton
       Caption = #1057#1087#1080#1089#1086#1082' '#1082#1085#1080#1075
       Category = 0
       Hint = #1057#1087#1080#1089#1086#1082' '#1082#1085#1080#1075
       Visible = ivAlways
-      OnClick = dxBarButton1Click
     end
     object dxBarEdit1: TdxBarEdit
       Caption = 'New Item'
