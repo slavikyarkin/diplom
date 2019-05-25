@@ -23,6 +23,7 @@ object Form1: TForm1
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
+    ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
     TabAreaToolbar.Toolbar = dxBarManager1Bar2
     SupportNonClientDrawing = True
