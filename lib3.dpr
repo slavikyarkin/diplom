@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   login in 'login.pas' {Form3},
   mainEmp in 'mainEmp.pas' {Form1},
-  mainPeople in 'mainPeople.pas' {Form2};
+  mainPeople in 'mainPeople.pas' {Form2},
+  createNewUser in 'createNewUser.pas' {Form4};
 
 {$R *.res}
 
@@ -14,5 +15,6 @@ begin
   Application.CreateForm(TForm3, Form3);
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TForm4, Form4);
   Application.Run;
 end.

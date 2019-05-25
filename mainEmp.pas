@@ -68,6 +68,7 @@ type
     dxBarEdit3: TdxBarEdit;
     procedure FormCreate(Sender: TObject);
     procedure dxBarEdit3Change(Sender: TObject);
+    procedure bNewPeopleClick(Sender: TObject);
 
 
   private
@@ -84,8 +85,13 @@ implementation
 {$R *.dfm}
 
 //uses newPeople, PeopleJournal, BookList, PeopleInform, login;
-uses login;
+uses login, createNewUser;
 
+
+procedure TForm1.bNewPeopleClick(Sender: TObject);
+begin
+Form4.Show;
+end;
 
 procedure TForm1.dxBarEdit3Change(Sender: TObject);
 var s: string;
