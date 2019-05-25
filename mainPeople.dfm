@@ -36,7 +36,6 @@ object Form2: TForm2
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 858
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
@@ -59,8 +58,6 @@ object Form2: TForm2
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 526
-    ExplicitWidth = 858
   end
   object cxGrid1: TcxGrid
     Left = 0
@@ -70,8 +67,7 @@ object Form2: TForm2
     Align = alClient
     TabOrder = 2
     ExplicitTop = 131
-    ExplicitWidth = 858
-    ExplicitHeight = 395
+    ExplicitHeight = 317
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.Summary.DefaultGroupSummaryItems = <>

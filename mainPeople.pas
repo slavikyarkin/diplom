@@ -1,5 +1,6 @@
 unit mainPeople;
 
+{ Форма пользователя!}
 interface
 
 uses
