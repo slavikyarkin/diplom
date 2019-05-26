@@ -20,55 +20,22 @@ object Form4: TForm4
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object dxRibbon1: TdxRibbon
-    Left = 0
-    Top = 0
-    Width = 994
-    Height = 60
-    BarManager = dxBarManager1
-    CapitalizeTabCaptions = bDefault
-    Style = rs2016
-    ColorSchemeAccent = rcsaGreen
-    ColorSchemeName = 'Colorful'
-    QuickAccessToolbar.Toolbar = dxBarManager1Bar1
-    TabAreaToolbar.Toolbar = dxBarManager1Bar2
-    ShowTabGroups = False
-    SupportNonClientDrawing = True
-    Contexts = <>
-    TabOrder = 0
-    TabStop = False
-    ExplicitWidth = 984
-    object dxRibbon1Tab1: TdxRibbonTab
-      Active = True
-      Caption = #1052#1077#1085#1102
-      Groups = <
-        item
-        end
-        item
-          ToolbarName = 'dxBarManager1Bar3'
-        end>
-      Index = 0
-    end
-  end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
     Top = 571
     Width = 994
     Height = 0
     Panels = <>
-    Ribbon = dxRibbon1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clDefault
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 561
-    ExplicitWidth = 984
   end
   object cxDBComboBox1: TcxDBComboBox
     Left = 656
     Top = 383
-    TabOrder = 2
+    TabOrder = 1
     Width = 121
   end
   object pNewPeople: TPanel
@@ -80,10 +47,9 @@ object Form4: TForm4
     AutoSize = True
     Color = clWhite
     ParentBackground = False
-    TabOrder = 3
+    TabOrder = 2
     ExplicitTop = 36
-    ExplicitWidth = 984
-    ExplicitHeight = 525
+    ExplicitHeight = 535
     object gbGeneralInform: TGroupBox
       Left = 25
       Top = 16
@@ -517,7 +483,7 @@ object Form4: TForm4
       end>
     Properties.ListSource = dsGetDistrict
     Properties.OnChange = lcbDistrictPropertiesChange
-    TabOrder = 4
+    TabOrder = 3
     Width = 281
   end
   object lcbRegion: TcxLookupComboBox
@@ -531,7 +497,7 @@ object Form4: TForm4
       end>
     Properties.ListSource = dsGetRegion
     Properties.OnChange = lcbRegionPropertiesChange
-    TabOrder = 5
+    TabOrder = 4
     Width = 281
   end
   object lcbTown: TcxLookupComboBox
@@ -544,8 +510,38 @@ object Form4: TForm4
         FieldName = 'name'
       end>
     Properties.ListSource = dsGetTown
-    TabOrder = 6
+    TabOrder = 5
     Width = 281
+  end
+  object dxRibbon1: TdxRibbon
+    Left = 0
+    Top = 0
+    Width = 994
+    Height = 60
+    BarManager = dxBarManager1
+    CapitalizeTabCaptions = bDefault
+    Style = rs2016Tablet
+    ColorSchemeAccent = rcsaGreen
+    ColorSchemeName = 'Colorful'
+    TabAreaToolbar.Toolbar = dxBarManager1Bar2
+    SupportNonClientDrawing = True
+    Contexts = <>
+    TabOrder = 10
+    TabStop = False
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 844
+    object dxRibbon1Tab1: TdxRibbonTab
+      Active = True
+      Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
+      Groups = <
+        item
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar1'
+        end>
+      Index = 0
+    end
   end
   object dxBarManager1: TdxBarManager
     AutoAlignBars = True
@@ -575,9 +571,13 @@ object Form4: TForm4
       DockedTop = 0
       FloatLeft = 0
       FloatTop = 0
-      FloatClientWidth = 0
-      FloatClientHeight = 0
-      ItemLinks = <>
+      FloatClientWidth = 51
+      FloatClientHeight = 22
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'bSaveAll1'
+        end>
       OneOnRow = True
       Row = 0
       UseOwnFont = False
@@ -591,36 +591,12 @@ object Form4: TForm4
       DockedTop = 0
       FloatLeft = 0
       FloatTop = 0
-      FloatClientWidth = 0
-      FloatClientHeight = 0
+      FloatClientWidth = 51
+      FloatClientHeight = 22
       ItemLinks = <>
       OneOnRow = True
       Row = 0
       UseOwnFont = False
-      Visible = True
-      WholeRow = False
-    end
-    object dxBarManager1Bar3: TdxBar
-      CaptionButtons = <>
-      DockedLeft = 0
-      DockedTop = 0
-      FloatLeft = 674
-      FloatTop = 8
-      FloatClientWidth = 0
-      FloatClientHeight = 0
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ItemLinks = <
-        item
-          Visible = True
-          ItemName = 'bSaveAll'
-        end>
-      OneOnRow = True
-      Row = 0
-      UseOwnFont = True
       Visible = True
       WholeRow = False
     end
@@ -647,7 +623,13 @@ object Form4: TForm4
       Category = 0
       Hint = #1057#1086#1093#1088#1072#1085#1080#1090#1100
       Visible = ivAlways
-      OnClick = bSaveAllClick
+    end
+    object bSaveAll1: TdxBarButton
+      Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
+      Category = 0
+      Hint = #1057#1086#1093#1088#1072#1085#1080#1090#1100
+      Visible = ivAlways
+      OnClick = bSaveAll1Click
     end
   end
   object dxSkinController1: TdxSkinController

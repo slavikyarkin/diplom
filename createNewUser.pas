@@ -33,12 +33,9 @@ type
   TForm4 = class(TdxRibbonForm)
     dxBarManager1: TdxBarManager;
     dxBarManager1Bar1: TdxBar;
-    dxRibbon1: TdxRibbon;
-    dxRibbon1Tab1: TdxRibbonTab;
     dxRibbonStatusBar1: TdxRibbonStatusBar;
     dxSkinController1: TdxSkinController;
     dxBarManager1Bar2: TdxBar;
-    dxBarManager1Bar3: TdxBar;
     bSave: TdxBarLargeButton;
     bSaveClose: TdxBarLargeButton;
     bClose: TdxBarLargeButton;
@@ -111,10 +108,13 @@ type
     uqGetDoc: TUniQuery;
     uqGetAddr: TUniQuery;
     cbSex: TComboBox;
+    dxRibbon1: TdxRibbon;
+    dxRibbon1Tab1: TdxRibbonTab;
+    bSaveAll1: TdxBarButton;
     procedure FormCreate(Sender: TObject);
     procedure lcbDistrictPropertiesChange(Sender: TObject);
     procedure lcbRegionPropertiesChange(Sender: TObject);
-    procedure bSaveAllClick(Sender: TObject);
+    procedure bSaveAll1Click(Sender: TObject);
 
 
   private
@@ -132,9 +132,9 @@ implementation
                   uses mainEmp;
 { TForm3 }
 //------------------------------------------------------------------------------
-procedure TForm4.bSaveAllClick(Sender: TObject);
+procedure TForm4.bSaveAll1Click(Sender: TObject);
 begin
-  uqDoc.Append;
+   uqDoc.Append;
   uqDoc.FieldValues['issueed_by']:=eEssue.Text;
   uqDoc.FieldValues['date_of_issue']:=dtpEssueDate.Date;
   uqDoc.FieldValues['unit_code']:=eUnitCode.Text;
@@ -195,6 +195,8 @@ begin
   uqLibraryCard.FieldValues['people_id']:= uqGetPeople.FieldByName('id').AsInteger;
   uqLibraryCard.Post;
 end;
+
+
 //------------------------------------------------------------------------------
 procedure TForm4.FormCreate(Sender: TObject);
 begin

@@ -32,9 +32,9 @@ type
     dxSkinController1: TdxSkinController;
     dxBarManager1Bar2: TdxBar;
     cxBarEditItem1: TcxBarEditItem;
-    dxRibbon1: TdxRibbon;
-    dxRibbon1Tab1: TdxRibbonTab;
     cxScrollBox1: TcxScrollBox;
+    bSave: TdxRibbon;
+    dxRibbon1Tab1: TdxRibbonTab;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
