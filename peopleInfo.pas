@@ -7,7 +7,8 @@ uses
   dxBar, dxRibbon, dxRibbonForm, dxRibbonSkins, cxGraphics, cxControls, cxLookAndFeels,
   cxLookAndFeelPainters, cxClasses, dxRibbonBackstageView, cxBarEditItem,
   dxRibbonCustomizationForm, cxTextEdit, dxSkinsForm, dxStatusBar,
-  dxRibbonStatusBar;
+  dxRibbonStatusBar, cxContainer, cxEdit, cxLabel, Vcl.StdCtrls, cxDBEdit,
+  Data.DB, MemDS, DBAccess, Uni;
 
 type
   TForm7 = class(TdxRibbonForm)
@@ -19,6 +20,17 @@ type
     dxSkinController1: TdxSkinController;
     dxBarManager1Bar2: TdxBar;
     cxBarEditItem1: TcxBarEditItem;
+    dxBarManager1Bar3: TdxBar;
+    dxBarLargeButton1: TdxBarLargeButton;
+    dxBarLargeButton2: TdxBarLargeButton;
+    teSurname: TcxDBTextEdit;
+    teName: TcxDBTextEdit;
+    tePatron: TcxDBTextEdit;
+    GroupBox1: TGroupBox;
+    lSurname: TcxLabel;
+    lName: TcxLabel;
+    lPatron: TcxLabel;
+    uqPeopleInfo: TUniQuery;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -33,11 +45,16 @@ implementation
 
 {$R *.dfm}
 
+uses login;
 { TForm7 }
+
 
 procedure TForm7.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
+  uqPeopleInfo.Close;
+  uqPeopleInfo.ParamByName('p_people_id').AsInteger:=  login.people_id;
+  uqPeopleInfo.Open;
 end;
 
 end.

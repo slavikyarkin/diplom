@@ -125,11 +125,7 @@ object Form2: TForm2
       FloatTop = 0
       FloatClientWidth = 0
       FloatClientHeight = 0
-      ItemLinks = <
-        item
-          Visible = True
-          ItemName = 'cxBarEditItem1'
-        end>
+      ItemLinks = <>
       OneOnRow = True
       Row = 0
       UseOwnFont = False

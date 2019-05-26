@@ -44,8 +44,10 @@ type
     cxGrid1: TcxGrid;
     dxBarManager1Bar3: TdxBar;
     dxBarLargeButton1: TdxBarLargeButton;
-    UniQuery1: TUniQuery;
+    uqMyJur: TUniQuery;
+    dsMyJur: TUniDataSource;
     procedure FormCreate(Sender: TObject);
+    procedure dxBarLargeButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,8 +61,13 @@ implementation
 
 {$R *.dfm}
 
-uses login;
+uses login, peopleInfo;
 { TForm2 }
+
+procedure TForm2.dxBarLargeButton1Click(Sender: TObject);
+begin
+  Form7.Show;
+end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
