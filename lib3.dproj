@@ -127,6 +127,10 @@
             <Form>Form7</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="issueBookpas.pas">
+            <Form>Form8</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -149,7 +153,7 @@
                 </Source>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="F:\Win32\Debug\lib3.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\lib3.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>lib3.exe</RemoteName>
                         <Overwrite>true</Overwrite>

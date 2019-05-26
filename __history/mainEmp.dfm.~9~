@@ -48,10 +48,7 @@ object Form1: TForm1
     Top = 457
     Width = 844
     Height = 23
-    Panels = <
-      item
-        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
-      end>
+    Panels = <>
     Ribbon = dxRibbon1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clDefault
@@ -95,7 +92,7 @@ object Form1: TForm1
       end
       object cPatron: TcxGridDBColumn
         Caption = #1054#1090#1095#1077#1089#1090#1074#1086
-        DataBinding.FieldName = 'patron'
+        DataBinding.FieldName = 'parton'
         MinWidth = 150
         Width = 150
       end
@@ -149,7 +146,11 @@ object Form1: TForm1
       FloatTop = 0
       FloatClientWidth = 0
       FloatClientHeight = 0
-      ItemLinks = <>
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'cxBarEditItem1'
+        end>
       OneOnRow = True
       Row = 0
       UseOwnFont = False

@@ -70,7 +70,6 @@ type
     procedure dxBarEdit3Change(Sender: TObject);
     procedure bNewPeopleClick(Sender: TObject);
     procedure bJornalPeopleClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
 
 
   private
@@ -117,11 +116,6 @@ begin
   uqPeople.MacroByName('w').Value:= '';
 
   uqPeople.Open;
-end;
-
-procedure TForm1.FormShow(Sender: TObject);
-begin
-   dxRibbonStatusBar1.Panels[0].Text:= login.fio;
 end;
 
 end.
