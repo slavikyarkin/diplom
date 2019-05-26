@@ -92,12 +92,12 @@ uses login, createNewUser, peopleJournal;
 
 procedure TForm1.bJornalPeopleClick(Sender: TObject);
 begin
-Form5.Show;
+Form5.ShowModal;
 end;
 
 procedure TForm1.bNewPeopleClick(Sender: TObject);
 begin
-Form4.Show;
+Form4.ShowModal;
 end;
 
 procedure TForm1.dxBarEdit3Change(Sender: TObject);
@@ -115,7 +115,6 @@ begin
   DisableAero := True;
   uqPeople.Close;
   uqPeople.MacroByName('w').Value:= '';
-
   uqPeople.Open;
 end;
 

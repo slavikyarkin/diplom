@@ -22,24 +22,19 @@ uses
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
   dxSkinXmas2008Blue, dxRibbonCustomizationForm, cxTextEdit, cxContainer,
   cxEdit, dxSkinsForm, dxStatusBar, dxRibbonStatusBar, cxLabel, dxGallery,
-  dxGalleryControl, dxRibbonBackstageViewGalleryControl;
+  dxGalleryControl, dxRibbonBackstageViewGalleryControl, cxScrollBox;
 
 type
   TForm8 = class(TdxRibbonForm)
     dxBarManager1: TdxBarManager;
     dxBarManager1Bar1: TdxBar;
-    dxRibbon1: TdxRibbon;
-    dxRibbon1Tab1: TdxRibbonTab;
-    dxRibbonBackstageView1: TdxRibbonBackstageView;
-    dxRibbonBackstageViewTabSheet1: TdxRibbonBackstageViewTabSheet;
     dxRibbonStatusBar1: TdxRibbonStatusBar;
-    dxRibbonBackstageViewGalleryControl1: TdxRibbonBackstageViewGalleryControl;
-    cxLabel1: TcxLabel;
-    dxRibbonBackstageViewGalleryControl1Group1: TdxRibbonBackstageViewGalleryGroup;
     dxSkinController1: TdxSkinController;
-    dxRibbonBackstageViewGalleryControl1Group1Item1: TdxRibbonBackstageViewGalleryItem;
     dxBarManager1Bar2: TdxBar;
     cxBarEditItem1: TcxBarEditItem;
+    dxRibbon1: TdxRibbon;
+    dxRibbon1Tab1: TdxRibbonTab;
+    cxScrollBox1: TcxScrollBox;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

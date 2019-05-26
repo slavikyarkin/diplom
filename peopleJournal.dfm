@@ -37,7 +37,6 @@ object Form5: TForm5
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 1084
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1052#1077#1085#1102
@@ -69,8 +68,6 @@ object Form5: TForm5
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 663
-    ExplicitWidth = 1084
   end
   object gPeopleJournal: TcxGrid
     Left = 0
@@ -80,8 +77,7 @@ object Form5: TForm5
     Align = alClient
     TabOrder = 2
     ExplicitTop = 131
-    ExplicitWidth = 1084
-    ExplicitHeight = 532
+    ExplicitHeight = 542
     object gPeopleJournalDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsJournal
@@ -212,6 +208,10 @@ object Form5: TForm5
         item
           Visible = True
           ItemName = 'dxbbAddNewBook'
+        end
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton2'
         end>
       OneOnRow = False
       Row = 0
@@ -268,6 +268,18 @@ object Form5: TForm5
       Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1085#1086#1074#1091#1102' '#1082#1085#1080#1075#1091
       Visible = ivAlways
     end
+    object dxBarButton4: TdxBarButton
+      Caption = 'New Button'
+      Category = 0
+      Hint = 'New Button'
+      Visible = ivAlways
+    end
+    object dxBarLargeButton2: TdxBarLargeButton
+      Caption = #1074#1086#1079
+      Category = 0
+      Hint = #1074#1086#1079
+      Visible = ivAlways
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
@@ -293,13 +305,15 @@ object Form5: TForm5
       'from mm.journal j'
       #9'left join mm.people p '
       '    '#9'on p.id = j.people_id'
+      #9'left join mm.library l'
+      '    '#9'on l.id = j.library_id'
       #9'left join mm.book b'
-      '    '#9'on b.id = j.book_id                 '
+      '    '#9'on b.id = l.book_id                 '
       #9'left join mm.book_author ba'
       '    '#9'on ba.book_id = b.id'
       #9'left join mm.author a'
       '    '#9'on a.id = ba.author_id   '
-      'where j.state = 1              ')
+      'where l.availability = 1')
     Left = 344
     Top = 8
   end

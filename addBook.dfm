@@ -32,7 +32,6 @@ object Form6: TForm6
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 640
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1052#1077#1085#1102
@@ -55,8 +54,6 @@ object Form6: TForm6
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 319
-    ExplicitWidth = 640
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
@@ -66,8 +63,7 @@ object Form6: TForm6
     Align = alClient
     TabOrder = 2
     ExplicitTop = 131
-    ExplicitWidth = 640
-    ExplicitHeight = 188
+    ExplicitHeight = 198
     object cxLabel1: TcxLabel
       Left = 24
       Top = 32
@@ -100,6 +96,7 @@ object Form6: TForm6
           FieldName = 'name'
         end>
       Properties.ListSource = dsNameBook
+      Properties.OnChange = cxBookPropertiesChange
       TabOrder = 3
       Width = 204
     end
@@ -108,15 +105,16 @@ object Form6: TForm6
       Top = 72
       Caption = #1048#1079#1076#1072#1085#1080#1077':'
     end
-    object cxLookupComboBox3: TcxLookupComboBox
+    object cxISBN: TcxLookupComboBox
       Left = 69
       Top = 71
       Properties.KeyFieldNames = 'id'
       Properties.ListColumns = <
         item
-          FieldName = 'name'
+          FieldName = 'isbn'
         end>
       Properties.ListSource = dsIzdanie
+      Properties.OnChange = cxISBNPropertiesChange
       TabOrder = 5
       Width = 196
     end
@@ -138,8 +136,8 @@ object Form6: TForm6
       Width = 532
     end
     object cbStatusBook: TComboBox
-      Left = 397
-      Top = 73
+      Left = 117
+      Top = 146
       Width = 204
       Height = 21
       TabOrder = 8
@@ -148,14 +146,14 @@ object Form6: TForm6
         #1042#1086#1079#1074#1088#1072#1090)
     end
     object cxLabel4: TcxLabel
-      Left = 291
-      Top = 72
+      Left = 459
+      Top = 150
       Caption = #1044#1077#1081#1089#1090#1074#1080#1077' '#1087#1086' '#1082#1085#1080#1075#1080
     end
     object cxApp: TComboBox
-      Left = 456
-      Top = 151
-      Width = 145
+      Left = 397
+      Top = 74
+      Width = 204
       Height = 21
       TabOrder = 10
       Items.Strings = (
@@ -163,8 +161,8 @@ object Form6: TForm6
         #1045#1089#1090#1100' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1103)
     end
     object cxLabel6: TcxLabel
-      Left = 344
-      Top = 152
+      Left = 301
+      Top = 72
       Caption = #1057#1086#1089#1090#1086#1103#1085#1080#1077' '#1082#1085#1080#1075#1080
     end
   end
@@ -264,22 +262,31 @@ object Form6: TForm6
     Connection = Form1.connect
     SQL.Strings = (
       
-        'select a.id, a.surname || '#39' '#39' || a.name || '#39' '#39' || coalesce(a.pat' +
-        'ron, '#39#39') as name'
-      'from mm.author a')
+        'select distinct a.id, a.surname || '#39' '#39' || a.name || '#39' '#39' || coale' +
+        'sce(a.patron, '#39#39') as name'
+      'from mm.library l'
+      #9'left join mm.book b'
+      '    '#9'on b.id = l.book_id'
+      '    left join mm.book_author ba'
+      '    '#9'on ba.book_id = b.id'
+      '    left join mm.author a'
+      '    '#9'on a.id = ba.author_id '
+      'where l.availability = 2        ')
     Left = 152
     Top = 16
   end
   object uqNameBook: TUniQuery
     Connection = Form1.connect
     SQL.Strings = (
-      'select b.id, b.name'
-      'from mm.book b'
-      #9'inner join mm.book_author ba'
-      #9#9'on ba.book_id = b.id'
-      '    inner join mm.author a '
-      '    '#9'on a.id = ba.author_id'
-      'where a.id = :author')
+      'select  DISTINCT b.id, b.name'
+      'from mm.library l'
+      #9'left join mm.book b'
+      '    '#9'on b.id = l.book_id'
+      '    left join mm.book_author ba'
+      '    '#9'on ba.book_id = b.id'
+      '    left join mm.author a'
+      '    '#9'on a.id = ba.author_id '
+      'where l.availability = 2   and a.id = :author     ')
     Left = 208
     Top = 16
     ParamData = <
@@ -305,10 +312,17 @@ object Form6: TForm6
   object uqIzdanie: TUniQuery
     Connection = Form1.connect
     SQL.Strings = (
-      'select e.id, e.name'
-      'from mm.edition e')
+      'select l.id, l.isbn '
+      'from mm.library l'
+      'where l.book_id = :book_id and l.availability = 2')
     Left = 272
     Top = 16
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'book_id'
+        Value = nil
+      end>
   end
   object dsAuthor: TUniDataSource
     DataSet = uqAuthor
@@ -334,7 +348,21 @@ object Form6: TForm6
     Connection = Form1.connect
     SQL.Strings = (
       'select * from mm.journal')
-    Left = 376
-    Top = 252
+    Left = 448
+    Top = 84
+  end
+  object uqLib: TUniQuery
+    Connection = Form1.connect
+    SQL.Strings = (
+      'select * from mm.library l'
+      'where l.id = :lib_id')
+    Left = 536
+    Top = 76
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'lib_id'
+        Value = nil
+      end>
   end
 end

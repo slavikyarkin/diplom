@@ -57,6 +57,8 @@ type
     dxbbAddNewBook: TdxBarButton;
     dsPeopleJournal: TDataSource;
     dsJournal: TUniDataSource;
+    dxBarButton4: TdxBarButton;
+    dxBarLargeButton2: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBB4Click(Sender: TObject);
   private
@@ -82,7 +84,7 @@ implementation
 
 procedure TForm5.dxBB4Click(Sender: TObject);
 begin
-  Form6.Show;
+  Form6.ShowModal;
 end;
 
 procedure TForm5.FormCreate(Sender: TObject);

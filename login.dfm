@@ -92,11 +92,14 @@ object Form3: TForm3
         '     , upper(p.surname) || '#39' '#39' || upper(left(p.name, 1)) || '#39'.'#39' ' +
         '|| upper(left(p.patron, 1)) || '#39'.'#39' as fio'
       '     , lc.number'
+      '     , em.id as emp'
       '  from mm.identification i '
       '       left join mm.people p'
       '         on p.id = i.people_id'
       '       left join mm.library_card lc'
       '         on lc.people_id = p.id'
+      #9'   left join mm.emp em'
+      #9'     on em.people_id = i.people_id'
       ' where i.login = :login '
       '   and i.password = :password ')
     Left = 16
@@ -114,7 +117,7 @@ object Form3: TForm3
       end>
   end
   object sqlMonitor: TUniSQLMonitor
-    Left = 80
+    Left = 88
     Top = 56
   end
 end

@@ -47,7 +47,7 @@ type
 
 var
   Form3: TForm3;
-  role, people_id : integer;
+  role, people_id, emp_id : integer;
   fio, card: string;
 
 
@@ -67,6 +67,7 @@ begin
   begin
     role:= uqIdent.FieldByName('role').AsInteger;
     people_id:= uqIdent.FieldByName('people_id').AsInteger;
+    emp_id:= uqIdent.FieldByName('emp').AsInteger;
     fio:= uqIdent.FieldByName('fio').AsString;
     card:= uqIdent.FieldByName('number').AsString;
     case role of

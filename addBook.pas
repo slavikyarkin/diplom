@@ -45,7 +45,7 @@ type
     cxLabel2: TcxLabel;
     cxBook: TcxLookupComboBox;
     cxLabel3: TcxLabel;
-    cxLookupComboBox3: TcxLookupComboBox;
+    cxISBN: TcxLookupComboBox;
     cxLabel5: TcxLabel;
     cxPeople: TcxLookupComboBox;
     uqAuthor: TUniQuery;
@@ -61,9 +61,12 @@ type
     cxApp: TComboBox;
     uqAll: TUniQuery;
     cxLabel6: TcxLabel;
+    uqLib: TUniQuery;
     procedure FormCreate(Sender: TObject);
     procedure bSaveInformClick(Sender: TObject);
     procedure cxAuthorPropertiesChange(Sender: TObject);
+    procedure cxBookPropertiesChange(Sender: TObject);
+    procedure cxISBNPropertiesChange(Sender: TObject);
 
   private
     { Private declarations }
@@ -78,11 +81,13 @@ implementation
 
 {$R *.dfm}
 
-uses mainEmp;
+uses mainEmp, login;
 { TForm6 }
 
 procedure TForm6.bSaveInformClick(Sender: TObject);
 begin
+
+
   uqAll.Append;
   uqAll.FieldValues ['people_id'] := cxPeople.EditValue;
   uqAll.FieldValues ['date_of_issue'] := Date;
@@ -94,8 +99,14 @@ begin
     uqAll.FieldValues['appearance']:= 1;
   if cxApp.Text = 'Возврат' then
     uqAll.FieldValues['appearance']:= 2;
-  uqAll.FieldValues ['book_id']:=cxBook.EditValue;
+  uqAll.FieldValues['library_id']:= cxISBN.EditValue;
+  uqAll.FieldValues['emp_issue_id']:= login.emp_id;
   uqAll.Post;
+
+
+  uqLib.Edit;
+  uqLib.FieldValues['availability']:= 1;
+  uqLib.Post;
 
 end;
 
@@ -106,6 +117,23 @@ begin
   uqNameBook.ParamByName('author').AsInteger:= cxAuthor.EditValue;
   uqNameBook.Open;
   cxBook.Enabled:= true;
+end;
+
+procedure TForm6.cxBookPropertiesChange(Sender: TObject);
+begin
+  uqIzdanie.Close;
+  uqIzdanie.ParamByName('book_id').AsInteger:= cxBook.EditValue;
+  uqIzdanie.Open;
+  cxISBN.Enabled:= true;
+
+end;
+
+
+procedure TForm6.cxISBNPropertiesChange(Sender: TObject);
+begin
+uqLib.Close;
+uqLib.ParamByName('lib_id').AsInteger:= cxISBN.EditValue;
+uqLib.Open;
 end;
 
 procedure TForm6.FormCreate(Sender: TObject);
@@ -121,6 +149,8 @@ begin
   uqIzdanie.Open;
   uqAll.Close;
   uqAll.Open;
+  uqLib.Close;
+  uqLib.Open;
 
 end;
 end.
