@@ -78,13 +78,15 @@ object Form5: TForm5
     ExplicitTop = 149
     object gPeopleJournalDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
-      DataController.DataSource = dsPeopleJournal
+      DataController.DataSource = dsJournal
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
       object gPeopleJournalDBTableView1name: TcxGridDBColumn
         Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1082#1085#1080#1075#1080
         DataBinding.FieldName = 'name'
+        BestFitMaxWidth = 300
+        HeaderGlyph.SourceWidth = 350
         MinWidth = 350
       end
       object gPeopleJournalDBTableView1author_fio: TcxGridDBColumn
@@ -264,7 +266,7 @@ object Form5: TForm5
   object dxSkinController1: TdxSkinController
     NativeStyle = False
     SkinName = 'Office2013LightGray'
-    Left = 536
+    Left = 696
     Top = 8
   end
   object uqPeopleJournal: TUniQuery
@@ -300,5 +302,10 @@ object Form5: TForm5
   object dsPeopleJournal: TDataSource
     Left = 440
     Top = 8
+  end
+  object dsJournal: TUniDataSource
+    DataSet = uqPeopleJournal
+    Left = 608
+    Top = 240
   end
 end

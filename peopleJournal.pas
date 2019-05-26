@@ -56,6 +56,7 @@ type
     dxBarManager1Bar4: TdxBar;
     dxbbAddNewBook: TdxBarButton;
     dsPeopleJournal: TDataSource;
+    dsJournal: TUniDataSource;
     procedure FormCreate(Sender: TObject);
     procedure dxBB4Click(Sender: TObject);
   private
