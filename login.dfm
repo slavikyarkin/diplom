@@ -39,6 +39,7 @@ object Form3: TForm3
     object tePassword: TcxTextEdit
       Left = 188
       Top = 56
+      Properties.EchoMode = eemPassword
       TabOrder = 3
       Width = 121
     end
@@ -86,8 +87,16 @@ object Form3: TForm3
   object uqIdent: TUniQuery
     Connection = con
     SQL.Strings = (
-      'select * '
+      'select i.*'
+      
+        '     , upper(p.surname) || '#39' '#39' || upper(left(p.name, 1)) || '#39'.'#39' ' +
+        '|| upper(left(p.patron, 1)) || '#39'.'#39' as fio'
+      '     , lc.number'
       '  from mm.identification i '
+      '       left join mm.people p'
+      '         on p.id = i.people_id'
+      '       left join mm.library_card lc'
+      '         on lc.people_id = p.id'
       ' where i.login = :login '
       '   and i.password = :password ')
     Left = 16
@@ -103,5 +112,9 @@ object Form3: TForm3
         Name = 'password'
         Value = nil
       end>
+  end
+  object sqlMonitor: TUniSQLMonitor
+    Left = 88
+    Top = 56
   end
 end

@@ -48,6 +48,7 @@ type
     dsMyJur: TUniDataSource;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,12 +67,17 @@ uses login, peopleInfo;
 
 procedure TForm2.dxBarLargeButton1Click(Sender: TObject);
 begin
-  Form7.Show;
+  Form7.ShowModal;
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
+end;
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+  dxRibbonStatusBar1.Panels[0].Text:= login.fio + ' ' + login.card;
 end;
 
 end.

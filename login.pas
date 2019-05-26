@@ -22,7 +22,7 @@ uses
   dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
   dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue;
+  dxSkinXmas2008Blue, DASQLMonitor, UniSQLMonitor;
 
 type
   TForm3 = class(TForm)
@@ -37,6 +37,7 @@ type
     Provaider: TPostgreSQLUniProvider;
     con: TUniConnection;
     uqIdent: TUniQuery;
+    sqlMonitor: TUniSQLMonitor;
     procedure bOkClick(Sender: TObject);
   private
     { Private declarations }
@@ -47,6 +48,7 @@ type
 var
   Form3: TForm3;
   role, people_id : integer;
+  fio, card: string;
 
 
 implementation
@@ -65,6 +67,8 @@ begin
   begin
     role:= uqIdent.FieldByName('role').AsInteger;
     people_id:= uqIdent.FieldByName('people_id').AsInteger;
+    fio:= uqIdent.FieldByName('fio').AsString;
+    card:= uqIdent.FieldByName('number').AsString;
     case role of
       1 :
         begin
