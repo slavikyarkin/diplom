@@ -37,13 +37,16 @@ object Form2: TForm2
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitTop = -6
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
       Groups = <
         item
           ToolbarName = 'dxBarManager1Bar3'
+        end
+        item
+          Caption = ''
+          ToolbarName = 'dxBarManager1Bar4'
         end>
       Index = 0
     end
@@ -71,13 +74,17 @@ object Form2: TForm2
     Height = 303
     Align = alClient
     TabOrder = 2
-    ExplicitTop = 149
+    ExplicitTop = 131
+    ExplicitHeight = 327
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsMyJur
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
+      OptionsData.Deleting = False
+      OptionsData.Editing = False
+      OptionsData.Inserting = False
       OptionsView.CellAutoHeight = True
       OptionsView.ColumnAutoWidth = True
       object cxGrid1DBTableView1name_book: TcxGridDBColumn
@@ -193,6 +200,26 @@ object Form2: TForm2
           ItemName = 'bBookInfo'
         end>
       OneOnRow = True
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar4: TdxBar
+      Caption = 'Custom 1'
+      CaptionButtons = <>
+      DockedLeft = 156
+      DockedTop = 0
+      FloatLeft = 851
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'bRefresh'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -216,6 +243,14 @@ object Form2: TForm2
       Category = 0
       Hint = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1082#1085#1080#1075#1077
       Visible = ivAlways
+      OnClick = bBookInfoClick
+    end
+    object bRefresh: TdxBarLargeButton
+      Caption = #1054#1073#1085#1086#1074#1080#1090#1100
+      Category = 0
+      Hint = #1054#1073#1085#1086#1074#1080#1090#1100
+      Visible = ivAlways
+      OnClick = bRefreshClick
     end
   end
   object dxSkinController1: TdxSkinController
@@ -269,7 +304,8 @@ object Form2: TForm2
       '         on e2.id = j.emp_recive_id'
       '       left join mm.people p2'
       '         on p2.id = e2.people_id'
-      ' where j.people_id = :p_people_id')
+      ' where j.people_id = :p_people_id'
+      ' order by j.id desc')
     Left = 360
     Top = 8
     ParamData = <

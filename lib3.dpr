@@ -10,7 +10,8 @@ uses
   addBook in 'addBook.pas' {Form6},
   peopleInfo in 'peopleInfo.pas' {Form7},
   issueBookpas in 'issueBookpas.pas' {Form8},
-  bookInfo in 'bookInfo.pas' {Form9};
+  bookInfo in 'bookInfo.pas' {Form9},
+  newReview in 'newReview.pas' {Form10};
 
 {$R *.res}
 
@@ -27,5 +28,6 @@ begin
   Application.CreateForm(TForm7, Form7);
   Application.CreateForm(TForm8, Form8);
   Application.CreateForm(TForm9, Form9);
+  Application.CreateForm(TForm10, Form10);
   Application.Run;
 end.

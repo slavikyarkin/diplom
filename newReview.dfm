@@ -1,9 +1,10 @@
-object Form2: TForm2
+object Form10: TForm10
   Left = 0
   Top = 0
-  Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1100
-  ClientHeight = 476
-  ClientWidth = 983
+  BorderStyle = bsToolWindow
+  Caption = #1053#1086#1074#1099#1081' '#1086#1090#1079#1099#1074
+  ClientHeight = 403
+  ClientWidth = 521
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +12,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = True
+  Position = poScreenCenter
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
@@ -18,31 +20,26 @@ object Form2: TForm2
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 983
+    Width = 521
     Height = 155
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016
     ColorSchemeAccent = rcsaOrange
     ColorSchemeName = 'Colorful'
-    Fonts.AssignedFonts = [afGroupHeader]
-    Fonts.GroupHeader.Charset = DEFAULT_CHARSET
-    Fonts.GroupHeader.Color = clWhite
-    Fonts.GroupHeader.Height = -12
-    Fonts.GroupHeader.Name = 'Segoe UI'
-    Fonts.GroupHeader.Style = []
     QuickAccessToolbar.Toolbar = dxBarManager1Bar1
     TabAreaToolbar.Toolbar = dxBarManager1Bar2
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 742
+    ExplicitWidth = 640
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
       Groups = <
         item
+          Caption = ''
           ToolbarName = 'dxBarManager1Bar3'
         end>
       Index = 0
@@ -50,41 +47,32 @@ object Form2: TForm2
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 453
-    Width = 983
+    Top = 380
+    Width = 521
     Height = 23
-    Panels = <
-      item
-        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
-      end>
+    Panels = <>
     Ribbon = dxRibbon1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clDefault
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 448
-    ExplicitWidth = 742
+    ExplicitTop = 457
+    ExplicitWidth = 640
   end
-  object cxGrid1: TcxGrid
+  object cxDBMemo1: TcxDBMemo
     Left = 0
     Top = 155
-    Width = 983
-    Height = 298
     Align = alClient
-    TabOrder = 2
-    ExplicitTop = 131
-    ExplicitWidth = 742
-    ExplicitHeight = 317
-    object cxGrid1DBTableView1: TcxGridDBTableView
-      Navigator.Buttons.CustomButtons = <>
-      DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <>
-      DataController.Summary.SummaryGroups = <>
-    end
-    object cxGrid1Level1: TcxGridLevel
-      GridView = cxGrid1DBTableView1
-    end
+    DataBinding.DataField = 'text'
+    DataBinding.DataSource = dsReview
+    TabOrder = 6
+    ExplicitLeft = 240
+    ExplicitTop = 216
+    ExplicitWidth = 185
+    ExplicitHeight = 89
+    Height = 225
+    Width = 521
   end
   object dxBarManager1: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
@@ -98,7 +86,6 @@ object Form2: TForm2
       2)
     Categories.Visibles = (
       True)
-    LookAndFeel.SkinName = 'Office2016Dark'
     PopupMenuLinks = <>
     UseSystemFont = True
     Left = 568
@@ -137,6 +124,7 @@ object Form2: TForm2
       WholeRow = False
     end
     object dxBarManager1Bar3: TdxBar
+      Caption = 'Custom 1'
       CaptionButtons = <>
       DockedLeft = 0
       DockedTop = 0
@@ -147,7 +135,11 @@ object Form2: TForm2
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxBarLargeButton1'
+          ItemName = 'bSend'
+        end
+        item
+          Visible = True
+          ItemName = 'bClose'
         end>
       OneOnRow = True
       Row = 0
@@ -161,12 +153,19 @@ object Form2: TForm2
       Visible = ivAlways
       PropertiesClassName = 'TcxTextEditProperties'
     end
-    object dxBarLargeButton1: TdxBarLargeButton
-      Caption = #1052#1086#1080' '#1076#1072#1085#1085#1099#1077
+    object bSend: TdxBarLargeButton
+      Caption = #1054#1090#1087#1088#1072#1074#1080#1090#1100
       Category = 0
-      Hint = #1052#1086#1080' '#1076#1072#1085#1085#1099#1077
+      Hint = #1054#1090#1087#1088#1072#1074#1080#1090#1100
       Visible = ivAlways
-      OnClick = dxBarLargeButton1Click
+      OnClick = bSendClick
+    end
+    object bClose: TdxBarLargeButton
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      Category = 0
+      Hint = #1047#1072#1082#1088#1099#1090#1100
+      Visible = ivAlways
+      OnClick = bCloseClick
     end
   end
   object dxSkinController1: TdxSkinController
@@ -175,13 +174,24 @@ object Form2: TForm2
     Left = 536
     Top = 8
   end
-  object uqMyJur: TUniQuery
+  object uqReview: TUniQuery
     Connection = Form3.con
-    Left = 360
+    SQL.Strings = (
+      'select * '
+      '  from mm.review '
+      ' where id = :p_review_id')
+    Left = 192
     Top = 8
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'p_review_id'
+        Value = nil
+      end>
   end
-  object dsMyJur: TUniDataSource
-    Left = 424
+  object dsReview: TUniDataSource
+    DataSet = uqReview
+    Left = 256
     Top = 8
   end
 end

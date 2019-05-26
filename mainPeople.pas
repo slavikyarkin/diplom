@@ -55,9 +55,13 @@ type
     cxGrid1DBTableView1date_of_return: TcxGridDBColumn;
     cxGrid1DBTableView1appearance: TcxGridDBColumn;
     bBookInfo: TdxBarLargeButton;
+    dxBarManager1Bar4: TdxBar;
+    bRefresh: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure bBookInfoClick(Sender: TObject);
+    procedure bRefreshClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,6 +77,17 @@ implementation
 
 uses login, peopleInfo, bookInfo;
 { TForm2 }
+
+procedure TForm2.bBookInfoClick(Sender: TObject);
+begin
+  bookInfo.book_id:= uqMyJur.FieldValues['book_id'];
+  Form9.ShowModal;
+end;
+
+procedure TForm2.bRefreshClick(Sender: TObject);
+begin
+  uqMyJur.Refresh;
+end;
 
 procedure TForm2.dxBarLargeButton1Click(Sender: TObject);
 begin
