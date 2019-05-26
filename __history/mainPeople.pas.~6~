@@ -77,7 +77,6 @@ end;
 
 procedure TForm2.FormShow(Sender: TObject);
 begin
-  Form2.WindowState := wsMaximized;
   dxRibbonStatusBar1.Panels[0].Text:= login.fio + ' ' + login.card;
 end;
 

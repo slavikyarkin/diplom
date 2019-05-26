@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1100
-  ClientHeight = 481
-  ClientWidth = 817
+  ClientHeight = 476
+  ClientWidth = 983
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object Form2: TForm2
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 817
+    Width = 983
     Height = 155
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
@@ -50,8 +50,8 @@ object Form2: TForm2
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 458
-    Width = 817
+    Top = 453
+    Width = 983
     Height = 23
     Panels = <
       item
@@ -69,8 +69,8 @@ object Form2: TForm2
   object cxGrid1: TcxGrid
     Left = 0
     Top = 155
-    Width = 817
-    Height = 303
+    Width = 983
+    Height = 298
     Align = alClient
     TabOrder = 2
     ExplicitTop = 131
@@ -78,7 +78,6 @@ object Form2: TForm2
     ExplicitHeight = 317
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
-      DataController.DataSource = dsMyJur
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>

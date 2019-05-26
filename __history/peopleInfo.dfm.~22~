@@ -1,10 +1,9 @@
 object Form7: TForm7
   Left = 0
   Top = 0
-  BorderStyle = bsToolWindow
   Caption = #1052#1086#1080' '#1076#1072#1085#1085#1099#1077
-  ClientHeight = 421
-  ClientWidth = 479
+  ClientHeight = 411
+  ClientWidth = 469
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,7 +11,6 @@ object Form7: TForm7
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = True
-  Position = poScreenCenter
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
@@ -21,11 +19,10 @@ object Form7: TForm7
     Left = 0
     Top = 155
     Width = 253
-    Height = 243
+    Height = 233
     Align = alLeft
     Caption = #1054#1089#1085#1086#1074#1085#1072#1103' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1103
     TabOrder = 6
-    ExplicitHeight = 233
     object teSurname: TcxDBTextEdit
       Left = 98
       Top = 20
@@ -135,7 +132,7 @@ object Form7: TForm7
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 479
+    Width = 469
     Height = 155
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
@@ -161,8 +158,8 @@ object Form7: TForm7
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 398
-    Width = 479
+    Top = 388
+    Width = 469
     Height = 23
     Panels = <
       item
@@ -180,14 +177,13 @@ object Form7: TForm7
   object GroupBox2: TGroupBox
     Left = 253
     Top = 155
-    Width = 226
-    Height = 243
+    Width = 216
+    Height = 233
     Align = alClient
     Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1074#1093#1086#1076#1072
     TabOrder = 7
     ExplicitLeft = 249
     ExplicitWidth = 212
-    ExplicitHeight = 233
     object cxLabel4: TcxLabel
       Left = 24
       Top = 20
