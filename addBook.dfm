@@ -16,39 +16,12 @@ object Form6: TForm6
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object dxRibbon1: TdxRibbon
-    Left = 0
-    Top = 0
-    Width = 650
-    Height = 155
-    BarManager = dxBarManager1
-    CapitalizeTabCaptions = bDefault
-    Style = rs2016
-    ColorSchemeAccent = rcsaGreen
-    ColorSchemeName = 'Colorful'
-    QuickAccessToolbar.Toolbar = dxBarManager1Bar1
-    TabAreaToolbar.Toolbar = dxBarManager1Bar2
-    SupportNonClientDrawing = True
-    Contexts = <>
-    TabOrder = 0
-    TabStop = False
-    object dxRibbon1Tab1: TdxRibbonTab
-      Active = True
-      Caption = #1052#1077#1085#1102
-      Groups = <
-        item
-          ToolbarName = 'dxBarManager1Bar3'
-        end>
-      Index = 0
-    end
-  end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
     Top = 329
     Width = 650
     Height = 23
     Panels = <>
-    Ribbon = dxRibbon1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clDefault
     Font.Height = -11
@@ -57,11 +30,11 @@ object Form6: TForm6
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
-    Top = 155
+    Top = 60
     Width = 650
-    Height = 174
+    Height = 269
     Align = alClient
-    TabOrder = 2
+    TabOrder = 1
     ExplicitTop = 131
     ExplicitHeight = 198
     object cxLabel1: TcxLabel
@@ -103,7 +76,7 @@ object Form6: TForm6
     object cxLabel3: TcxLabel
       Left = 12
       Top = 72
-      Caption = #1048#1079#1076#1072#1085#1080#1077':'
+      Caption = 'ISBN:'
     end
     object cxISBN: TcxLookupComboBox
       Left = 69
@@ -135,27 +108,12 @@ object Form6: TForm6
       TabOrder = 7
       Width = 532
     end
-    object cbStatusBook: TComboBox
-      Left = 117
-      Top = 146
-      Width = 204
-      Height = 21
-      TabOrder = 8
-      Items.Strings = (
-        #1042#1099#1076#1072#1095#1072
-        #1042#1086#1079#1074#1088#1072#1090)
-    end
-    object cxLabel4: TcxLabel
-      Left = 459
-      Top = 150
-      Caption = #1044#1077#1081#1089#1090#1074#1080#1077' '#1087#1086' '#1082#1085#1080#1075#1080
-    end
     object cxApp: TComboBox
       Left = 397
       Top = 74
       Width = 204
       Height = 21
-      TabOrder = 10
+      TabOrder = 8
       Items.Strings = (
         #1041#1077#1079' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1081
         #1045#1089#1090#1100' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1103)
@@ -164,6 +122,36 @@ object Form6: TForm6
       Left = 301
       Top = 72
       Caption = #1057#1086#1089#1090#1086#1103#1085#1080#1077' '#1082#1085#1080#1075#1080
+    end
+  end
+  object bSave: TdxRibbon
+    Left = 0
+    Top = 0
+    Width = 650
+    Height = 60
+    BarManager = dxBarManager1
+    CapitalizeTabCaptions = bDefault
+    Style = rs2016Tablet
+    ColorSchemeAccent = rcsaGreen
+    ColorSchemeName = 'Colorful'
+    SupportNonClientDrawing = True
+    Contexts = <>
+    TabOrder = 6
+    TabStop = False
+    ExplicitLeft = -344
+    ExplicitWidth = 994
+    object dxRibbon1Tab1: TdxRibbonTab
+      Active = True
+      Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
+      Groups = <
+        item
+        end
+        item
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar1'
+        end>
+      Index = 0
     end
   end
   object dxBarManager1: TdxBarManager
@@ -184,42 +172,7 @@ object Form6: TForm6
     Top = 8
     PixelsPerInch = 96
     object dxBarManager1Bar1: TdxBar
-      Caption = 'Quick Access Toolbar'
-      CaptionButtons = <>
-      DockedLeft = 0
-      DockedTop = 0
-      FloatLeft = 0
-      FloatTop = 0
-      FloatClientWidth = 0
-      FloatClientHeight = 0
-      ItemLinks = <>
-      OneOnRow = True
-      Row = 0
-      UseOwnFont = False
-      Visible = True
-      WholeRow = False
-    end
-    object dxBarManager1Bar2: TdxBar
-      Caption = 'Tab Area Toolbar'
-      CaptionButtons = <>
-      DockedLeft = 0
-      DockedTop = 0
-      FloatLeft = 0
-      FloatTop = 0
-      FloatClientWidth = 0
-      FloatClientHeight = 0
-      ItemLinks = <
-        item
-          Visible = True
-          ItemName = 'cxBarEditItem1'
-        end>
-      OneOnRow = True
-      Row = 0
-      UseOwnFont = False
-      Visible = True
-      WholeRow = False
-    end
-    object dxBarManager1Bar3: TdxBar
+      Caption = 'Custom 1'
       CaptionButtons = <>
       DockedLeft = 0
       DockedTop = 0
@@ -230,7 +183,7 @@ object Form6: TForm6
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'bSaveInform'
+          ItemName = 'dxBarButton1'
         end>
       OneOnRow = True
       Row = 0
@@ -249,7 +202,13 @@ object Form6: TForm6
       Category = 0
       Hint = #1057#1086#1093#1088#1072#1085#1080#1090#1100
       Visible = ivAlways
-      OnClick = bSaveInformClick
+    end
+    object dxBarButton1: TdxBarButton
+      Caption = 'C'#1086#1093#1088#1072#1085#1080#1090#1100
+      Category = 0
+      Hint = 'C'#1086#1093#1088#1072#1085#1080#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarButton1Click
     end
   end
   object dxSkinController1: TdxSkinController

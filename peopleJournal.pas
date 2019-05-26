@@ -59,8 +59,12 @@ type
     dsJournal: TUniDataSource;
     dxBarButton4: TdxBarButton;
     dxBarLargeButton2: TdxBarLargeButton;
+    dxBarLargeButton3: TdxBarLargeButton;
+    dxBarManager1Bar5: TdxBar;
+    dxBarButton6: TdxBarButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBB4Click(Sender: TObject);
+    procedure dxBarButton6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,7 +77,7 @@ var
 implementation
 
 {$R *.dfm}
-    uses mainEmp, addBook;
+    uses mainEmp, addBook, issueBookpas;
 { TForm4 }
 
 //procedure TForm4.dxBarButton2Click(Sender: TObject);
@@ -81,6 +85,11 @@ implementation
 //Application.CreateForm(TForm6, Form6);
 //Form6.ShowModal;
 //end;
+
+procedure TForm5.dxBarButton6Click(Sender: TObject);
+begin
+   Form8.Show;
+end;
 
 procedure TForm5.dxBB4Click(Sender: TObject);
 begin
@@ -94,6 +103,7 @@ begin
   uqPeopleJournal.Close;
   uqPeopleJournal.Open;
   end;
+
 
 end.
 

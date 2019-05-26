@@ -3,7 +3,7 @@ object Form8: TForm8
   Top = 0
   BorderStyle = bsToolWindow
   Caption = 'Form8'
-  ClientHeight = 395
+  ClientHeight = 251
   ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object Form8: TForm8
   TextHeight = 13
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 372
+    Top = 228
     Width = 650
     Height = 23
     Panels = <>
@@ -27,42 +27,46 @@ object Form8: TForm8
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 467
-  end
-  object dxRibbon1: TdxRibbon
-    Left = 0
-    Top = 0
-    Width = 650
-    Height = 155
-    BarManager = dxBarManager1
-    CapitalizeTabCaptions = bDefault
-    Style = rs2016
-    ColorSchemeAccent = rcsaGreen
-    ColorSchemeName = 'Colorful'
-    QuickAccessToolbar.Toolbar = dxBarManager1Bar1
-    TabAreaToolbar.Toolbar = dxBarManager1Bar2
-    SupportNonClientDrawing = True
-    Contexts = <>
-    TabOrder = 5
-    TabStop = False
-    object dxRibbon1Tab1: TdxRibbonTab
-      Active = True
-      Caption = #1052#1077#1085#1102
-      Groups = <
-        item
-        end>
-      Index = 0
-    end
+    ExplicitTop = 372
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
-    Top = 155
+    Top = 60
     Width = 650
-    Height = 217
+    Height = 168
     Align = alClient
-    TabOrder = 6
+    TabOrder = 1
     ExplicitTop = 131
-    ExplicitHeight = 198
+    ExplicitHeight = 241
+  end
+  object bSave: TdxRibbon
+    Left = 0
+    Top = 0
+    Width = 650
+    Height = 60
+    BarManager = dxBarManager1
+    CapitalizeTabCaptions = bDefault
+    Style = rs2016Tablet
+    ColorSchemeAccent = rcsaGreen
+    ColorSchemeName = 'Colorful'
+    SupportNonClientDrawing = True
+    Contexts = <>
+    TabOrder = 6
+    TabStop = False
+    ExplicitTop = 8
+    object dxRibbon1Tab1: TdxRibbonTab
+      Active = True
+      Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
+      Groups = <
+        item
+        end
+        item
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar1'
+        end>
+      Index = 0
+    end
   end
   object dxBarManager1: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
@@ -100,17 +104,15 @@ object Form8: TForm8
     object dxBarManager1Bar2: TdxBar
       Caption = 'Tab Area Toolbar'
       CaptionButtons = <>
+      DockedDockingStyle = dsNone
       DockedLeft = 0
       DockedTop = 0
+      DockingStyle = dsNone
       FloatLeft = 0
       FloatTop = 0
-      FloatClientWidth = 100
+      FloatClientWidth = 51
       FloatClientHeight = 22
-      ItemLinks = <
-        item
-          Visible = True
-          ItemName = 'cxBarEditItem1'
-        end>
+      ItemLinks = <>
       OneOnRow = True
       Row = 0
       UseOwnFont = False

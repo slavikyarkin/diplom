@@ -52,6 +52,11 @@ object Form5: TForm5
         end
         item
           ToolbarName = 'dxBarManager1Bar4'
+        end
+        item
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar5'
         end>
       Index = 0
     end
@@ -76,6 +81,7 @@ object Form5: TForm5
     Height = 518
     Align = alClient
     TabOrder = 2
+    TabStop = False
     ExplicitTop = 131
     ExplicitHeight = 542
     object gPeopleJournalDBTableView1: TcxGridDBTableView
@@ -84,6 +90,7 @@ object Form5: TForm5
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
+      OptionsView.ColumnAutoWidth = True
       object gPeopleJournalDBTableView1name: TcxGridDBColumn
         Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1082#1085#1080#1075#1080
         DataBinding.FieldName = 'name'
@@ -160,11 +167,7 @@ object Form5: TForm5
       FloatTop = 0
       FloatClientWidth = 0
       FloatClientHeight = 0
-      ItemLinks = <
-        item
-          Visible = True
-          ItemName = 'cxBarEditItem1'
-        end>
+      ItemLinks = <>
       OneOnRow = True
       Row = 0
       UseOwnFont = False
@@ -191,7 +194,7 @@ object Form5: TForm5
           ItemName = 'dxBB4'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 1
       UseOwnFont = True
       Visible = True
       WholeRow = False
@@ -208,12 +211,28 @@ object Form5: TForm5
         item
           Visible = True
           ItemName = 'dxbbAddNewBook'
-        end
-        item
-          Visible = True
-          ItemName = 'dxBarLargeButton2'
         end>
       OneOnRow = False
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar5: TdxBar
+      Caption = '  '
+      CaptionButtons = <>
+      DockedLeft = 282
+      DockedTop = 0
+      FloatLeft = 1118
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarButton6'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -279,6 +298,19 @@ object Form5: TForm5
       Category = 0
       Hint = #1074#1086#1079
       Visible = ivAlways
+    end
+    object dxBarLargeButton3: TdxBarLargeButton
+      Caption = 'New Button'
+      Category = 0
+      Hint = 'New Button'
+      Visible = ivAlways
+    end
+    object dxBarButton6: TdxBarButton
+      Caption = #1042#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
+      Category = 0
+      Hint = #1042#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
+      Visible = ivAlways
+      OnClick = dxBarButton6Click
     end
   end
   object dxSkinController1: TdxSkinController
