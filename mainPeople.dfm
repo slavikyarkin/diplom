@@ -187,6 +187,10 @@ object Form2: TForm2
         item
           Visible = True
           ItemName = 'dxBarLargeButton1'
+        end
+        item
+          Visible = True
+          ItemName = 'bBookInfo'
         end>
       OneOnRow = True
       Row = 0
@@ -207,6 +211,12 @@ object Form2: TForm2
       Visible = ivAlways
       OnClick = dxBarLargeButton1Click
     end
+    object bBookInfo: TdxBarLargeButton
+      Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1082#1085#1080#1075#1077
+      Category = 0
+      Hint = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1082#1085#1080#1075#1077
+      Visible = ivAlways
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
@@ -218,6 +228,7 @@ object Form2: TForm2
     Connection = Form3.con
     SQL.Strings = (
       'select b.name as name_book'
+      '     , b.id as book_id'
       
         '     , (select array_agg(a.surname || '#39' '#39' || a.name || '#39' '#39' || co' +
         'alesce(a.patron, '#39#39') ) '
@@ -246,15 +257,13 @@ object Form2: TForm2
       '  from mm.journal j'
       '       join mm.library l'
       '         on l.id = j.library_id '
-      '       join mm.emp e1'
+      '       left join mm.emp e1'
       '         on e1.id = j.emp_issue_id'
-      '       join mm.people p1'
-      '         on p1.id = e1.people_id'
-      '       join mm.edition e'
-      '         on e.id = l.edition_id   '
-      '       join mm.office o'
+      '       left join mm.people p1'
+      '         on p1.id = e1.people_id  '
+      '       left join mm.office o'
       '         on o.id = l.office_id'
-      '       join mm.book b'
+      '       left join mm.book b'
       '         on b.id = l.book_id'
       '       left join mm.emp e2'
       '         on e2.id = j.emp_recive_id'

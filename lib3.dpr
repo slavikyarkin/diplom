@@ -9,7 +9,8 @@ uses
   peopleJournal in 'peopleJournal.pas' {Form5},
   addBook in 'addBook.pas' {Form6},
   peopleInfo in 'peopleInfo.pas' {Form7},
-  issueBookpas in 'issueBookpas.pas' {Form8};
+  issueBookpas in 'issueBookpas.pas' {Form8},
+  bookInfo in 'bookInfo.pas' {Form9};
 
 {$R *.res}
 
@@ -25,5 +26,6 @@ begin
   Application.CreateForm(TForm6, Form6);
   Application.CreateForm(TForm7, Form7);
   Application.CreateForm(TForm8, Form8);
+  Application.CreateForm(TForm9, Form9);
   Application.Run;
 end.

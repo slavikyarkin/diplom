@@ -54,6 +54,7 @@ type
     cxGrid1DBTableView1date_of_issue: TcxGridDBColumn;
     cxGrid1DBTableView1date_of_return: TcxGridDBColumn;
     cxGrid1DBTableView1appearance: TcxGridDBColumn;
+    bBookInfo: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -70,7 +71,7 @@ implementation
 
 {$R *.dfm}
 
-uses login, peopleInfo;
+uses login, peopleInfo, bookInfo;
 { TForm2 }
 
 procedure TForm2.dxBarLargeButton1Click(Sender: TObject);
