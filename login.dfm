@@ -114,7 +114,7 @@ object Form3: TForm3
       end>
   end
   object sqlMonitor: TUniSQLMonitor
-    Left = 88
+    Left = 80
     Top = 56
   end
 end

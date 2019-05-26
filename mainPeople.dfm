@@ -37,7 +37,7 @@ object Form2: TForm2
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 742
+    ExplicitTop = -6
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
@@ -63,8 +63,6 @@ object Form2: TForm2
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 448
-    ExplicitWidth = 742
   end
   object cxGrid1: TcxGrid
     Left = 0
@@ -73,15 +71,55 @@ object Form2: TForm2
     Height = 303
     Align = alClient
     TabOrder = 2
-    ExplicitTop = 131
-    ExplicitWidth = 742
-    ExplicitHeight = 317
+    ExplicitTop = 149
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsMyJur
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
+      OptionsView.CellAutoHeight = True
+      OptionsView.ColumnAutoWidth = True
+      object cxGrid1DBTableView1name_book: TcxGridDBColumn
+        Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1082#1085#1080#1075#1080
+        DataBinding.FieldName = 'name_book'
+        Width = 160
+      end
+      object cxGrid1DBTableView1author: TcxGridDBColumn
+        Caption = #1040#1074#1090#1086#1088'('#1099') '#1082#1085#1080#1075#1080
+        DataBinding.FieldName = 'author'
+        Width = 160
+      end
+      object cxGrid1DBTableView1genre: TcxGridDBColumn
+        Caption = #1046#1072#1085#1088'('#1099')'
+        DataBinding.FieldName = 'genre'
+        Width = 160
+      end
+      object cxGrid1DBTableView1emp_issue: TcxGridDBColumn
+        Caption = #1057#1086#1090#1088#1091#1076#1085#1080#1082' '#1074#1099#1076#1072#1074#1096#1080#1081
+        DataBinding.FieldName = 'emp_issue'
+        Width = 160
+      end
+      object cxGrid1DBTableView1date_of_issue: TcxGridDBColumn
+        Caption = #1044#1072#1090#1072' '#1074#1099#1076#1072#1095#1080
+        DataBinding.FieldName = 'date_of_issue'
+        Width = 80
+      end
+      object cxGrid1DBTableView1emp_recive: TcxGridDBColumn
+        Caption = #1057#1086#1090#1088#1091#1076#1085#1080#1082' '#1087#1088#1080#1103#1074#1096#1080#1081
+        DataBinding.FieldName = 'emp_recive'
+        Width = 160
+      end
+      object cxGrid1DBTableView1date_of_return: TcxGridDBColumn
+        Caption = #1044#1072#1090#1072' '#1074#1086#1079#1074#1088#1072#1090#1072
+        DataBinding.FieldName = 'date_of_return'
+        Width = 80
+      end
+      object cxGrid1DBTableView1appearance: TcxGridDBColumn
+        Caption = #1057#1086#1089#1090#1086#1103#1085#1080#1077
+        DataBinding.FieldName = 'appearance'
+        Width = 60
+      end
     end
     object cxGrid1Level1: TcxGridLevel
       GridView = cxGrid1DBTableView1
@@ -178,10 +216,62 @@ object Form2: TForm2
   end
   object uqMyJur: TUniQuery
     Connection = Form3.con
+    SQL.Strings = (
+      'select b.name as name_book'
+      
+        '     , (select array_agg(a.surname || '#39' '#39' || a.name || '#39' '#39' || co' +
+        'alesce(a.patron, '#39#39') ) '
+      '          from mm.book_author au '
+      '               join mm.author a '
+      '                 on a.id = au.author_id '
+      '         where au.book_id = b.id) as author'
+      '     , (select array_agg(g.name)'
+      '          from mm.book_genre bg '
+      '               join mm.genre g'
+      '                 on g.id = bg.genre_id'
+      '         where bg.book_id = b.id) as genre'
+      
+        '     , p1.surname || '#39' '#39' || p1.name || '#39' '#39' || coalesce(p1.patron' +
+        ', '#39#39') as emp_issue'
+      
+        '     , p2.surname || '#39' '#39' || p2.name || '#39' '#39' || coalesce(p2.patron' +
+        ', '#39#39') as emp_recive'
+      '     , j.date_of_issue '
+      '     , j.date_of_return'
+      '     , j.appearance'
+      '     ,  case '
+      '         when j.appearance = 1 then '#39#1041#1077#1079' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1081#39
+      '         when j.appearance = 2 then '#39#1045#1089#1090#1100' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1103#39
+      '       end as appearance'
+      '  from mm.journal j'
+      '       join mm.library l'
+      '         on l.id = j.library_id '
+      '       join mm.emp e1'
+      '         on e1.id = j.emp_issue_id'
+      '       join mm.people p1'
+      '         on p1.id = e1.people_id'
+      '       join mm.edition e'
+      '         on e.id = l.edition_id   '
+      '       join mm.office o'
+      '         on o.id = l.office_id'
+      '       join mm.book b'
+      '         on b.id = l.book_id'
+      '       left join mm.emp e2'
+      '         on e2.id = j.emp_recive_id'
+      '       left join mm.people p2'
+      '         on p2.id = e2.people_id'
+      ' where j.people_id = :p_people_id')
     Left = 360
     Top = 8
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'p_people_id'
+        Value = nil
+      end>
   end
   object dsMyJur: TUniDataSource
+    DataSet = uqMyJur
     Left = 424
     Top = 8
   end

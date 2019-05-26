@@ -46,6 +46,14 @@ type
     dxBarLargeButton1: TdxBarLargeButton;
     uqMyJur: TUniQuery;
     dsMyJur: TUniDataSource;
+    cxGrid1DBTableView1name_book: TcxGridDBColumn;
+    cxGrid1DBTableView1author: TcxGridDBColumn;
+    cxGrid1DBTableView1genre: TcxGridDBColumn;
+    cxGrid1DBTableView1emp_issue: TcxGridDBColumn;
+    cxGrid1DBTableView1emp_recive: TcxGridDBColumn;
+    cxGrid1DBTableView1date_of_issue: TcxGridDBColumn;
+    cxGrid1DBTableView1date_of_return: TcxGridDBColumn;
+    cxGrid1DBTableView1appearance: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -79,6 +87,9 @@ procedure TForm2.FormShow(Sender: TObject);
 begin
   Form2.WindowState := wsMaximized;
   dxRibbonStatusBar1.Panels[0].Text:= login.fio + ' ' + login.card;
+  uqMyJur.Close;
+  uqMyJur.ParamByName('p_people_id').AsInteger:= login.people_id;
+  uqMyJur.Open;
 end;
 
 end.
