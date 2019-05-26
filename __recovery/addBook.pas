@@ -86,14 +86,16 @@ begin
   uqAll.Append;
   uqAll.FieldValues ['people_id'] := cxPeople.EditValue;
   uqAll.FieldValues ['date_of_issue'] := Date;
-  if cbStatusBook.Text = 'Выдача' then
+  if cbStatusBook.Text = 'Р’С‹РґР°С‡Р°' then
     uqAll.FieldValues['State']:= 1;
-  if cbStatusBook.Text = 'Возврат' then
+  if cbStatusBook.Text = 'Р’РѕР·РІСЂР°С‚' then
     uqAll.FieldValues['State']:= 2;
-  if cxApp.Text = 'Выдача' then
+  if cxApp.Text = 'Р‘РµР· РїРѕРІСЂРµР¶РґРµРЅРёР№' then
     uqAll.FieldValues['appearance']:= 1;
-  if cxApp.Text = 'Возврат' then
+  if cxApp.Text = 'Р•СЃС‚СЊ РїРѕРІСЂРµР¶РґРµРЅРёСЏ' then
     uqAll.FieldValues['appearance']:= 2;
+
+
   uqAll.FieldValues ['book_id']:=cxBook.EditValue;
   uqAll.Post;
 

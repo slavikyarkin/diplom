@@ -60,16 +60,17 @@ object Form6: TForm6
     Height = 164
     Align = alClient
     TabOrder = 2
+    VertScrollBar.Position = 10
     ExplicitTop = 36
     ExplicitHeight = 283
     object cxLabel1: TcxLabel
       Left = 24
-      Top = 32
+      Top = 22
       Caption = #1040#1074#1090#1086#1088':'
     end
     object cxAuthor: TcxLookupComboBox
       Left = 69
-      Top = 31
+      Top = 21
       Properties.KeyFieldNames = 'id'
       Properties.ListColumns = <
         item
@@ -82,12 +83,12 @@ object Form6: TForm6
     end
     object cxLabel2: TcxLabel
       Left = 303
-      Top = 32
+      Top = 22
       Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1082#1085#1080#1075#1080':'
     end
     object cxBook: TcxLookupComboBox
       Left = 397
-      Top = 31
+      Top = 21
       Properties.KeyFieldNames = 'id'
       Properties.ListColumns = <
         item
@@ -99,12 +100,12 @@ object Form6: TForm6
     end
     object cxLabel3: TcxLabel
       Left = 12
-      Top = 72
+      Top = 62
       Caption = #1048#1079#1076#1072#1085#1080#1077':'
     end
     object cxLookupComboBox3: TcxLookupComboBox
       Left = 69
-      Top = 71
+      Top = 61
       Properties.KeyFieldNames = 'id'
       Properties.ListColumns = <
         item
@@ -116,12 +117,12 @@ object Form6: TForm6
     end
     object cxLabel5: TcxLabel
       Left = 16
-      Top = 112
+      Top = 102
       Caption = #1042#1099#1076#1072#1090#1100':'
     end
     object cxPeople: TcxLookupComboBox
       Left = 69
-      Top = 111
+      Top = 101
       Properties.KeyFieldNames = 'id'
       Properties.ListColumns = <
         item
@@ -133,7 +134,7 @@ object Form6: TForm6
     end
     object cbStatusBook: TComboBox
       Left = 397
-      Top = 73
+      Top = 63
       Width = 204
       Height = 21
       TabOrder = 8
@@ -143,12 +144,12 @@ object Form6: TForm6
     end
     object cxLabel4: TcxLabel
       Left = 291
-      Top = 72
+      Top = 62
       Caption = #1044#1077#1081#1089#1090#1074#1080#1077' '#1087#1086' '#1082#1085#1080#1075#1080
     end
     object cxApp: TComboBox
       Left = 456
-      Top = 151
+      Top = 141
       Width = 145
       Height = 21
       TabOrder = 10
@@ -158,7 +159,7 @@ object Form6: TForm6
     end
     object cxLabel6: TcxLabel
       Left = 344
-      Top = 152
+      Top = 142
       Caption = #1057#1086#1089#1090#1086#1103#1085#1080#1077' '#1082#1085#1080#1075#1080
     end
   end

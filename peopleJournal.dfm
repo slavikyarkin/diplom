@@ -75,7 +75,8 @@ object Form5: TForm5
     Height = 508
     Align = alClient
     TabOrder = 2
-    ExplicitTop = 149
+    ExplicitTop = 131
+    ExplicitHeight = 532
     object gPeopleJournalDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsJournal
@@ -103,7 +104,7 @@ object Form5: TForm5
       end
       object gPeopleJournalDBTableView1date_of_issue: TcxGridDBColumn
         Caption = #1044#1072#1090#1072' '#1074#1099#1076#1072#1095#1080
-        DataBinding.FieldName = 'date'
+        DataBinding.FieldName = 'date_of_issue'
         MinWidth = 125
       end
       object gPeopleJournalDBTableView1st: TcxGridDBColumn
@@ -170,7 +171,7 @@ object Form5: TForm5
       WholeRow = False
     end
     object dxBarManager1Bar3: TdxBar
-      Caption = 'Custom 1'
+      Caption = ' '
       CaptionButtons = <>
       DockedLeft = 0
       DockedTop = 0
@@ -287,10 +288,8 @@ object Form5: TForm5
       'from mm.journal j'
       #9'left join mm.people p '
       '    '#9'on p.id = j.people_id'
-      #9'left join mm.library l'
-      '    '#9'on l.id = j.library_id'
       #9'left join mm.book b'
-      '    '#9'on b.id = l.book_id                 '
+      '    '#9'on b.id = j.book_id                 '
       #9'left join mm.book_author ba'
       '    '#9'on ba.book_id = b.id'
       #9'left join mm.author a'
