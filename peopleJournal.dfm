@@ -2,9 +2,10 @@ object Form5: TForm5
   AlignWithMargins = True
   Left = 0
   Top = 0
+  BorderStyle = bsToolWindow
   Caption = #1046#1091#1088#1085#1072#1083
-  ClientHeight = 686
-  ClientWidth = 1084
+  ClientHeight = 696
+  ClientWidth = 1094
   Color = clBtnFace
   Constraints.MaxHeight = 725
   Constraints.MaxWidth = 1100
@@ -16,14 +17,14 @@ object Form5: TForm5
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = True
-  Position = poDesigned
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 1084
+    Width = 1094
     Height = 155
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
@@ -36,6 +37,7 @@ object Form5: TForm5
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 1084
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1052#1077#1085#1102
@@ -57,8 +59,8 @@ object Form5: TForm5
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 663
-    Width = 1084
+    Top = 673
+    Width = 1094
     Height = 23
     Panels = <>
     Ribbon = dxRibbon1
@@ -67,15 +69,18 @@ object Form5: TForm5
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ExplicitTop = 663
+    ExplicitWidth = 1084
   end
   object gPeopleJournal: TcxGrid
     Left = 0
     Top = 155
-    Width = 1084
-    Height = 508
+    Width = 1094
+    Height = 518
     Align = alClient
     TabOrder = 2
     ExplicitTop = 131
+    ExplicitWidth = 1084
     ExplicitHeight = 532
     object gPeopleJournalDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>

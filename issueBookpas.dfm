@@ -1,9 +1,10 @@
 object Form8: TForm8
   Left = 0
   Top = 0
+  BorderStyle = bsToolWindow
   Caption = 'Form8'
-  ClientHeight = 480
-  ClientWidth = 640
+  ClientHeight = 490
+  ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,13 +12,14 @@ object Form8: TForm8
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = True
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 640
+    Width = 650
     Height = 155
     ApplicationButton.Menu = dxRibbonBackstageView1
     BarManager = dxBarManager1
@@ -30,6 +32,7 @@ object Form8: TForm8
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 640
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = 'dxRibbon1Tab1'
@@ -99,8 +102,8 @@ object Form8: TForm8
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 457
-    Width = 640
+    Top = 467
+    Width = 650
     Height = 23
     Panels = <>
     Ribbon = dxRibbon1
@@ -109,6 +112,8 @@ object Form8: TForm8
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ExplicitTop = 457
+    ExplicitWidth = 640
   end
   object dxBarManager1: TdxBarManager
     Font.Charset = DEFAULT_CHARSET

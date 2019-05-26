@@ -1,9 +1,10 @@
 object Form6: TForm6
   Left = 0
   Top = 0
+  BorderStyle = bsToolWindow
   Caption = #1042#1099#1076#1072#1095#1072'/'#1074#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
-  ClientHeight = 342
-  ClientWidth = 640
+  ClientHeight = 352
+  ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,13 +12,14 @@ object Form6: TForm6
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = True
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 640
+    Width = 650
     Height = 155
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
@@ -30,6 +32,7 @@ object Form6: TForm6
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 640
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1052#1077#1085#1102
@@ -42,8 +45,8 @@ object Form6: TForm6
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 319
-    Width = 640
+    Top = 329
+    Width = 650
     Height = 23
     Panels = <>
     Ribbon = dxRibbon1
@@ -52,16 +55,19 @@ object Form6: TForm6
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ExplicitTop = 319
+    ExplicitWidth = 640
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
     Top = 155
-    Width = 640
-    Height = 164
+    Width = 650
+    Height = 174
     Align = alClient
     TabOrder = 2
-    ExplicitTop = 36
-    ExplicitHeight = 283
+    ExplicitTop = 131
+    ExplicitWidth = 640
+    ExplicitHeight = 188
     object cxLabel1: TcxLabel
       Left = 24
       Top = 32

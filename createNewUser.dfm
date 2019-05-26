@@ -1,9 +1,10 @@
 object Form4: TForm4
   Left = 0
   Top = 185
+  BorderStyle = bsToolWindow
   Caption = #1053#1086#1074#1099#1081' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1100
-  ClientHeight = 561
-  ClientWidth = 984
+  ClientHeight = 571
+  ClientWidth = 994
   Color = clBtnFace
   Constraints.MaxHeight = 600
   Constraints.MaxWidth = 1000
@@ -15,14 +16,14 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = True
-  Position = poDesigned
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 984
+    Width = 994
     Height = 60
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
@@ -36,6 +37,7 @@ object Form4: TForm4
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 984
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1052#1077#1085#1102
@@ -50,8 +52,8 @@ object Form4: TForm4
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 561
-    Width = 984
+    Top = 571
+    Width = 994
     Height = 0
     Panels = <>
     Ribbon = dxRibbon1
@@ -60,6 +62,8 @@ object Form4: TForm4
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ExplicitTop = 561
+    ExplicitWidth = 984
   end
   object cxDBComboBox1: TcxDBComboBox
     Left = 656
@@ -70,14 +74,15 @@ object Form4: TForm4
   object pNewPeople: TPanel
     Left = 0
     Top = 60
-    Width = 984
-    Height = 501
+    Width = 994
+    Height = 511
     Align = alClient
     AutoSize = True
     Color = clWhite
     ParentBackground = False
     TabOrder = 3
     ExplicitTop = 36
+    ExplicitWidth = 984
     ExplicitHeight = 525
     object gbGeneralInform: TGroupBox
       Left = 25
