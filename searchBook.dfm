@@ -32,7 +32,6 @@ object Form11: TForm11
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 1121
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
@@ -59,8 +58,6 @@ object Form11: TForm11
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 618
-    ExplicitWidth = 1121
   end
   object cxGrid1: TcxGrid
     Left = 0
@@ -70,8 +67,7 @@ object Form11: TForm11
     Align = alClient
     TabOrder = 2
     ExplicitTop = 131
-    ExplicitWidth = 1121
-    ExplicitHeight = 487
+    ExplicitHeight = 477
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsSearchBook
@@ -207,6 +203,10 @@ object Form11: TForm11
         end
         item
           Visible = True
+          ItemName = 'bChosen'
+        end
+        item
+          Visible = True
           ItemName = 'bClose'
         end>
       OneOnRow = True
@@ -241,6 +241,13 @@ object Form11: TForm11
       Hint = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1082#1085#1080#1075#1077
       Visible = ivAlways
       OnClick = bBookInfoClick
+    end
+    object bChosen: TdxBarLargeButton
+      Caption = #1048#1079#1073#1088#1072#1085#1085#1099#1077
+      Category = 0
+      Hint = #1048#1079#1073#1088#1072#1085#1085#1099#1077
+      Visible = ivAlways
+      OnClick = bChosenClick
     end
   end
   object dxSkinController1: TdxSkinController

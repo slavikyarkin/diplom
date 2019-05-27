@@ -58,12 +58,14 @@ type
     dxBarManager1Bar4: TdxBar;
     bRefresh: TdxBarLargeButton;
     dxBarLargeButton2: TdxBarLargeButton;
+    dxBarLargeButton3: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bBookInfoClick(Sender: TObject);
     procedure bRefreshClick(Sender: TObject);
     procedure dxBarLargeButton2Click(Sender: TObject);
+    procedure dxBarLargeButton3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,7 +79,7 @@ implementation
 
 {$R *.dfm}
 
-uses login, peopleInfo, bookInfo, searchBook;
+uses login, peopleInfo, bookInfo, searchBook, chosenBook;
 { TForm2 }
 
 procedure TForm2.bBookInfoClick(Sender: TObject);
@@ -99,6 +101,11 @@ end;
 procedure TForm2.dxBarLargeButton2Click(Sender: TObject);
 begin
   Form11.ShowModal;
+end;
+
+procedure TForm2.dxBarLargeButton3Click(Sender: TObject);
+begin
+  Form13.ShowModal;
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);
