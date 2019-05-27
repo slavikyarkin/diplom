@@ -2,7 +2,7 @@ object Form6: TForm6
   Left = 0
   Top = 0
   BorderStyle = bsToolWindow
-  Caption = #1042#1099#1076#1072#1095#1072'/'#1074#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
+  Caption = #1042#1099#1076#1072#1095#1072' '#1082#1085#1080#1075#1080
   ClientHeight = 352
   ClientWidth = 650
   Color = clBtnFace
@@ -35,8 +35,6 @@ object Form6: TForm6
     Height = 269
     Align = alClient
     TabOrder = 1
-    ExplicitTop = 131
-    ExplicitHeight = 198
     object cxLabel1: TcxLabel
       Left = 24
       Top = 32
@@ -136,10 +134,8 @@ object Form6: TForm6
     ColorSchemeName = 'Colorful'
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 6
+    TabOrder = 2
     TabStop = False
-    ExplicitLeft = -344
-    ExplicitWidth = 994
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102

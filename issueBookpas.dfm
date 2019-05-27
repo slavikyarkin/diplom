@@ -2,7 +2,7 @@ object Form8: TForm8
   Left = 0
   Top = 0
   BorderStyle = bsToolWindow
-  Caption = 'Form8'
+  Caption = #1042#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
   ClientHeight = 251
   ClientWidth = 650
   Color = clBtnFace
@@ -99,8 +99,8 @@ object Form8: TForm8
           Visible = True
           ItemName = 'dxBarLargeButton1'
         end>
-      OneOnRow = True
-      Row = 1
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -136,7 +136,7 @@ object Form8: TForm8
           Visible = True
           ItemName = 'dxBarLargeButton2'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True

@@ -62,9 +62,14 @@ type
     dxBarLargeButton3: TdxBarLargeButton;
     dxBarManager1Bar5: TdxBar;
     dxReturn: TdxBarButton;
+    dxBarManager1Bar6: TdxBar;
+    dxBarLargeButton4: TdxBarLargeButton;
+    dxBarButton6: TdxBarButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBB4Click(Sender: TObject);
     procedure dxReturnClick(Sender: TObject);
+    procedure dxBarButton6Click(Sender: TObject);
+    procedure dxbbAddNewBookClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,7 +82,7 @@ var
 implementation
 
 {$R *.dfm}
-    uses mainEmp, addBook, issueBookpas;
+    uses mainEmp, addBook, issueBookpas, newBookRecord;
 { TForm4 }
 
 //procedure TForm4.dxBarButton2Click(Sender: TObject);
@@ -91,12 +96,22 @@ begin
    issueBookpas.lib_id:= uqPeopleJournal.FieldValues['lib_id'];
    Form8.Show;
 end;
-
+//------------------------------------------------------------------------------
+procedure TForm5.dxBarButton6Click(Sender: TObject);
+begin
+      uqPeopleJournal.Refresh;
+end;
+//------------------------------------------------------------------------------
 procedure TForm5.dxBB4Click(Sender: TObject);
 begin
   Form6.ShowModal;
 end;
 
+procedure TForm5.dxbbAddNewBookClick(Sender: TObject);
+begin
+   Form12.ShowModal;
+end;
+//------------------------------------------------------------------------------
 procedure TForm5.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
@@ -104,7 +119,5 @@ begin
   uqPeopleJournal.Close;
   uqPeopleJournal.Open;
   end;
-
-
 end.
 

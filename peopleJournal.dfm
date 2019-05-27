@@ -57,6 +57,9 @@ object Form5: TForm5
         end
         item
           ToolbarName = 'dxBarManager1Bar5'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar6'
         end>
       Index = 0
     end
@@ -194,14 +197,14 @@ object Form5: TForm5
           ItemName = 'dxBB4'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 1
       UseOwnFont = True
       Visible = True
       WholeRow = False
     end
     object dxBarManager1Bar4: TdxBar
       CaptionButtons = <>
-      DockedLeft = 140
+      DockedLeft = 93
       DockedTop = 0
       FloatLeft = 1203
       FloatTop = 8
@@ -213,7 +216,7 @@ object Form5: TForm5
           ItemName = 'dxbbAddNewBook'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -221,7 +224,7 @@ object Form5: TForm5
     object dxBarManager1Bar5: TdxBar
       Caption = '  '
       CaptionButtons = <>
-      DockedLeft = 282
+      DockedLeft = 235
       DockedTop = 0
       FloatLeft = 1118
       FloatTop = 8
@@ -233,6 +236,26 @@ object Form5: TForm5
           ItemName = 'dxReturn'
         end>
       OneOnRow = False
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar6: TdxBar
+      Caption = '    '
+      CaptionButtons = <>
+      DockedLeft = 330
+      DockedTop = 0
+      FloatLeft = 1118
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarButton6'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -269,9 +292,9 @@ object Form5: TForm5
       Visible = ivAlways
     end
     object dxBB4: TdxBarButton
-      Caption = #1042#1099#1076#1072#1095#1072'/'#1074#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
+      Caption = #1042#1099#1076#1072#1095#1072' '#1082#1085#1080#1075#1080
       Category = 0
-      Hint = #1042#1099#1076#1072#1095#1072'/'#1074#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
+      Hint = #1042#1099#1076#1072#1095#1072' '#1082#1085#1080#1075#1080
       Visible = ivAlways
       OnClick = dxBB4Click
     end
@@ -286,6 +309,7 @@ object Form5: TForm5
       Category = 0
       Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1085#1086#1074#1091#1102' '#1082#1085#1080#1075#1091
       Visible = ivAlways
+      OnClick = dxbbAddNewBookClick
     end
     object dxBarButton4: TdxBarButton
       Caption = 'New Button'
@@ -311,6 +335,19 @@ object Form5: TForm5
       Hint = #1042#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
       Visible = ivAlways
       OnClick = dxReturnClick
+    end
+    object dxBarLargeButton4: TdxBarLargeButton
+      Caption = #1054#1073#1085#1086#1074#1080#1090#1100
+      Category = 0
+      Hint = #1054#1073#1085#1086#1074#1080#1090#1100
+      Visible = ivAlways
+    end
+    object dxBarButton6: TdxBarButton
+      Caption = #1054#1073#1085#1086#1074#1080#1090#1100
+      Category = 0
+      Hint = #1054#1073#1085#1086#1074#1080#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarButton6Click
     end
   end
   object dxSkinController1: TdxSkinController

@@ -82,7 +82,7 @@ uses mainEmp, login;
 { TForm6 }
 
 
-
+//------------------------------------------------------------------------------
 procedure TForm6.cxAuthorPropertiesChange(Sender: TObject);
 begin
 
@@ -91,7 +91,7 @@ begin
   uqNameBook.Open;
   cxBook.Enabled:= true;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm6.cxBookPropertiesChange(Sender: TObject);
 begin
   uqIzdanie.Close;
@@ -100,34 +100,37 @@ begin
   cxISBN.Enabled:= true;
 
 end;
-
-
+//------------------------------------------------------------------------------
 procedure TForm6.cxISBNPropertiesChange(Sender: TObject);
 begin
 uqLib.Close;
 uqLib.ParamByName('lib_id').AsInteger:= cxISBN.EditValue;
 uqLib.Open;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm6.dxBarButton1Click(Sender: TObject);
 begin
-   uqAll.Append;
+  uqAll.Append;
   uqAll.FieldValues ['people_id'] := cxPeople.EditValue;
   uqAll.FieldValues ['date_of_issue'] := Date;
-  if cxApp.Text = 'Выдача' then
-    uqAll.FieldValues['appearance']:= 1;
-  if cxApp.Text = 'Возврат' then
-    uqAll.FieldValues['appearance']:= 2;
+if cxApp.Text = 'Без повреждений' then
+  uqAll.FieldValues['appearance']:= 1;
+if cxApp.Text = 'Есть повреждения' then
+  uqAll.FieldValues['appearance']:= 2;
   uqAll.FieldValues['library_id']:= cxISBN.EditValue;
   uqAll.FieldValues['emp_issue_id']:= login.emp_id;
   uqAll.Post;
 
-
   uqLib.Edit;
   uqLib.FieldValues['availability']:= 1;
   uqLib.Post;
-end;
 
+  uqAuthor.Refresh;
+  uqNameBook.Refresh;
+  uqPeople.Refresh;
+  uqIzdanie.Refresh;
+end;
+//------------------------------------------------------------------------------
 procedure TForm6.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
@@ -143,7 +146,7 @@ begin
   uqAll.Open;
   uqLib.Close;
   uqLib.Open;
-
 end;
+
 end.
 

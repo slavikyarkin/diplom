@@ -60,25 +60,25 @@ implementation
 uses login;
 
 { TForm8 }
-
+//------------------------------------------------------------------------------
 procedure TForm8.dxBarLargeButton1Click(Sender: TObject);
 begin
   uqReturn.FieldValues['availability']:= 2;
   uqReturn.Post;
   Form8.Close;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm8.dxBarLargeButton2Click(Sender: TObject);
 begin
     Form8.Close;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm8.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
 
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm8.FormShow(Sender: TObject);
 begin
   uqReturn.Close;
@@ -86,5 +86,4 @@ begin
   uqReturn.Open;
   uqReturn.Edit;
 end;
-
 end.
