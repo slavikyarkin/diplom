@@ -71,7 +71,6 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
-    procedure dxCloseClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,18 +84,14 @@ implementation
 
 {$R *.dfm}
 
-uses login, empBookInfo;
+uses login;
 
 { TForm16 }
 
 procedure TForm16.dxBarLargeButton1Click(Sender: TObject);
 begin
-    Form17.showModal;
-end;
+  //bookInfo.book_id:= uqSearchBook.FieldValues['book_id'];
 
-procedure TForm16.dxCloseClick(Sender: TObject);
-begin
- Form16.Close;
 end;
 
 procedure TForm16.FormCreate(Sender: TObject);

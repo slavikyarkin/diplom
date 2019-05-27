@@ -63,15 +63,8 @@ type
     dxRibbon1Tab1: TdxRibbonTab;
     uqSearchBook: TUniQuery;
     dsSearchBook: TUniDataSource;
-    dxClose: TdxBarButton;
-    dxBarManager1Bar1: TdxBar;
-    dxBarLargeButton1: TdxBarLargeButton;
-    dxBarButton1: TdxBarButton;
-    dxBarManager1Bar2: TdxBar;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure dxBarLargeButton1Click(Sender: TObject);
-    procedure dxCloseClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,25 +78,13 @@ implementation
 
 {$R *.dfm}
 
-uses login, empBookInfo;
+uses login;
 
 { TForm16 }
-
-procedure TForm16.dxBarLargeButton1Click(Sender: TObject);
-begin
-    Form17.showModal;
-end;
-
-procedure TForm16.dxCloseClick(Sender: TObject);
-begin
- Form16.Close;
-end;
 
 procedure TForm16.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
-  uqSearchBook.Close;
-  uqSearchBook.Open;
 end;
 
 procedure TForm16.FormShow(Sender: TObject);

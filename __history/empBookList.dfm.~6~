@@ -284,10 +284,10 @@ object Form16: TForm16
         item
         end
         item
-          ToolbarName = 'dxBarManager1Bar1'
+          ToolbarName = 'dxClosedasd'
         end
         item
-          ToolbarName = 'dxBarManager1Bar2'
+          ToolbarName = 'dxBarManager1Bar1'
         end>
       Index = 0
     end
@@ -308,8 +308,8 @@ object Form16: TForm16
     UseSystemFont = True
     Left = 1000
     PixelsPerInch = 96
-    object dxBarManager1Bar1: TdxBar
-      Caption = 'Custom 1'
+    object dxClosedasd: TdxBar
+      Caption = #1047#1072#1082#1088#1099#1090#1100
       CaptionButtons = <>
       DockedLeft = 0
       DockedTop = 0
@@ -320,7 +320,7 @@ object Form16: TForm16
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxBarLargeButton1'
+          ItemName = 'dxClose'
         end>
       OneOnRow = True
       Row = 1
@@ -328,10 +328,10 @@ object Form16: TForm16
       Visible = True
       WholeRow = False
     end
-    object dxBarManager1Bar2: TdxBar
-      Caption = 'Custom 2'
+    object dxBarManager1Bar1: TdxBar
+      Caption = 'Custom 1'
       CaptionButtons = <>
-      DockedLeft = 135
+      DockedLeft = 63
       DockedTop = 0
       FloatLeft = 1191
       FloatTop = 8
@@ -340,7 +340,7 @@ object Form16: TForm16
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxClose'
+          ItemName = 'dxBarLargeButton1'
         end>
       OneOnRow = True
       Row = 0
@@ -359,17 +359,11 @@ object Form16: TForm16
       Category = 0
       Hint = #1047#1072#1082#1088#1099#1090#1100
       Visible = ivAlways
-      OnClick = dxCloseClick
     end
     object dxBarLargeButton1: TdxBarLargeButton
       Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1082#1085#1080#1075#1077
       Category = 0
       Hint = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1082#1085#1080#1075#1077
-      Visible = ivAlways
-      OnClick = dxBarLargeButton1Click
-    end
-    object dxBarButton1: TdxBarButton
-      Category = 0
       Visible = ivAlways
     end
   end
