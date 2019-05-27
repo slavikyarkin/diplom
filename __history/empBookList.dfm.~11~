@@ -317,7 +317,7 @@ object Form16: TForm16
     object dxBarManager1Bar2: TdxBar
       Caption = 'Custom 2'
       CaptionButtons = <>
-      DockedLeft = 170
+      DockedLeft = 135
       DockedTop = 0
       FloatLeft = 1191
       FloatTop = 8
@@ -348,9 +348,9 @@ object Form16: TForm16
       OnClick = dxCloseClick
     end
     object dxBarLargeButton1: TdxBarLargeButton
-      Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1082#1086#1084#1084#1077#1085#1090#1072#1088#1080#1080
+      Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1082#1085#1080#1075#1077
       Category = 0
-      Hint = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1082#1086#1084#1084#1077#1085#1090#1072#1088#1080#1080
+      Hint = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1082#1085#1080#1075#1077
       Visible = ivAlways
       OnClick = dxBarLargeButton1Click
     end

@@ -63,12 +63,7 @@ uses login, newReview;
 
 procedure TForm19.dxBarButton1Click(Sender: TObject);
 begin
-// empBookInfo.comment_id:= uqReview.FieldValues['id'];
-     if uqReview.RecordCount > 0 then
-  begin
-    uqReview.Delete;
-    uqReview.Refresh;
-  end;
+ empBookInfo.comment_id:= uqReview.FieldValues['id'];
 end;
 
 procedure TForm19.dxBarLargeButton2Click(Sender: TObject);
