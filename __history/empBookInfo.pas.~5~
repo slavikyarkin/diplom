@@ -3,7 +3,7 @@ unit empBookInfo;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, 
   dxBar, dxRibbon, dxRibbonForm, dxRibbonSkins, cxGraphics, cxControls, cxLookAndFeels,
   cxLookAndFeelPainters, cxClasses, dxRibbonBackstageView, cxBarEditItem,
   dxRibbonCustomizationForm, cxTextEdit, cxContainer, cxEdit, dxSkinsForm,
@@ -15,7 +15,7 @@ uses
   cxGridDBTableView, cxGrid, Vcl.ExtCtrls, cxDBLabel, cxMemo, cxDBEdit;
 
 type
-  TForm19 = class(TdxRibbonForm)
+  TForm17 = class(TdxRibbonForm)
     dxBarManager1: TdxBarManager;
     dxBarManager1Bar1: TdxBar;
     dxRibbonStatusBar1: TdxRibbonStatusBar;
@@ -31,7 +31,9 @@ type
     dxBarLargeButton3: TdxBarLargeButton;
     uqReview: TUniQuery;
     dsReview: TUniDataSource;
-    cxGrid1DBTableView1text: TcxGridDBColumn;
+    cxGri
+
+uses peopleBookDetail;d1DBTableView1text: TcxGridDBColumn;
     cxGrid1DBTableView1date: TcxGridDBColumn;
     cxGrid1DBTableView1login: TcxGridDBColumn;
     bSave: TdxRibbon;
@@ -50,6 +52,7 @@ type
   public
     { Public declarations }
   end;
+
 var
   Form19: TForm19;
   comment_id : integer;
@@ -68,7 +71,7 @@ end;
 
 procedure TForm19.dxBarLargeButton2Click(Sender: TObject);
 begin
-  Form19.Close;
+  Form17.Close;
 end;
 
 procedure TForm19.dxBarLargeButton3Click(Sender: TObject);

@@ -71,7 +71,6 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dxCloseClick(Sender: TObject);
-    procedure dxBarLargeButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -88,11 +87,6 @@ implementation
 uses login, empBookInfo;
 
 { TForm16 }
-
-procedure TForm16.dxBarLargeButton1Click(Sender: TObject);
-begin
-  Form19.ShowModal;
-end;
 
 procedure TForm16.dxCloseClick(Sender: TObject);
 begin

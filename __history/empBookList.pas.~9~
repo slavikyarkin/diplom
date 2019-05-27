@@ -70,8 +70,8 @@ type
     dxBarManager1Bar2: TdxBar;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure dxCloseClick(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
+    procedure dxCloseClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -91,7 +91,7 @@ uses login, empBookInfo;
 
 procedure TForm16.dxBarLargeButton1Click(Sender: TObject);
 begin
-  Form19.ShowModal;
+    Form17.showModal;
 end;
 
 procedure TForm16.dxCloseClick(Sender: TObject);

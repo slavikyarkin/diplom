@@ -19,8 +19,7 @@ uses
   peopleBook in 'peopleBook.pas' {Form15},
   empBookList in 'empBookList.pas' {Form16},
   peopleBookDetail in 'peopleBookDetail.pas' {Form17},
-  peopleBookRating in 'peopleBookRating.pas' {Form18},
-  empBookInfo in 'empBookInfo.pas' {Form19};
+  peopleBookRating in 'peopleBookRating.pas' {Form18};
 
 {$R *.res}
 
@@ -46,6 +45,5 @@ begin
   Application.CreateForm(TForm16, Form16);
   Application.CreateForm(TForm17, Form17);
   Application.CreateForm(TForm18, Form18);
-  Application.CreateForm(TForm19, Form19);
   Application.Run;
 end.

@@ -29,6 +29,8 @@ object Form16: TForm16
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ExplicitTop = 457
+    ExplicitWidth = 640
   end
   object cxGrid1: TcxGrid
     Left = 0
@@ -37,6 +39,9 @@ object Form16: TForm16
     Height = 584
     Align = alClient
     TabOrder = 1
+    ExplicitTop = 27
+    ExplicitWidth = 1111
+    ExplicitHeight = 453
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.Summary.DefaultGroupSummaryItems = <>
@@ -108,7 +113,10 @@ object Form16: TForm16
     Width = 1157
     Height = 584
     Align = alClient
-    TabOrder = 2
+    TabOrder = 6
+    ExplicitTop = 131
+    ExplicitWidth = 1111
+    ExplicitHeight = 477
     object cxGridDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.Summary.DefaultGroupSummaryItems = <>
@@ -180,7 +188,10 @@ object Form16: TForm16
     Width = 1157
     Height = 584
     Align = alClient
-    TabOrder = 3
+    TabOrder = 7
+    ExplicitTop = 131
+    ExplicitWidth = 1111
+    ExplicitHeight = 477
     object cxGridDBTableView2: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsSearchBook
@@ -259,8 +270,11 @@ object Form16: TForm16
     ColorSchemeName = 'Colorful'
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 4
+    TabOrder = 8
     TabStop = False
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 650
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
@@ -308,8 +322,8 @@ object Form16: TForm16
           Visible = True
           ItemName = 'dxBarLargeButton1'
         end>
-      OneOnRow = False
-      Row = 0
+      OneOnRow = True
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -328,7 +342,7 @@ object Form16: TForm16
           Visible = True
           ItemName = 'dxClose'
         end>
-      OneOnRow = False
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
