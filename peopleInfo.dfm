@@ -24,8 +24,9 @@ object Form7: TForm7
     Height = 243
     Align = alLeft
     Caption = #1054#1089#1085#1086#1074#1085#1072#1103' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1103
-    TabOrder = 6
-    ExplicitHeight = 233
+    TabOrder = 1
+    ExplicitTop = 131
+    ExplicitHeight = 267
     object teSurname: TcxDBTextEdit
       Left = 98
       Top = 20
@@ -148,7 +149,6 @@ object Form7: TForm7
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 640
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
@@ -174,8 +174,6 @@ object Form7: TForm7
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 457
-    ExplicitWidth = 640
   end
   object GroupBox2: TGroupBox
     Left = 253
@@ -184,10 +182,9 @@ object Form7: TForm7
     Height = 243
     Align = alClient
     Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1074#1093#1086#1076#1072
-    TabOrder = 7
-    ExplicitLeft = 249
-    ExplicitWidth = 212
-    ExplicitHeight = 233
+    TabOrder = 3
+    ExplicitTop = 131
+    ExplicitHeight = 267
     object cxLabel4: TcxLabel
       Left = 24
       Top = 20

@@ -25,8 +25,6 @@ object Form14: TForm14
     Align = alLeft
     Caption = #1054#1089#1085#1086#1074#1085#1072#1103' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1103
     TabOrder = 0
-    ExplicitTop = 155
-    ExplicitHeight = 243
     object teSurname: TcxDBTextEdit
       Left = 98
       Top = 20
@@ -158,10 +156,6 @@ object Form14: TForm14
     Align = alClient
     Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1074#1093#1086#1076#1072
     TabOrder = 2
-    ExplicitLeft = 0
-    ExplicitTop = 260
-    ExplicitWidth = 396
-    ExplicitHeight = 474
     object cxLabel4: TcxLabel
       Left = 24
       Top = 20
@@ -214,7 +208,7 @@ object Form14: TForm14
     ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 7
+    TabOrder = 3
     TabStop = False
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
@@ -266,8 +260,8 @@ object Form14: TForm14
           Visible = True
           ItemName = 'bSave'
         end>
-      OneOnRow = True
-      Row = 2
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -286,8 +280,8 @@ object Form14: TForm14
           Visible = True
           ItemName = 'bSaveClose'
         end>
-      OneOnRow = True
-      Row = 1
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -306,7 +300,7 @@ object Form14: TForm14
           Visible = True
           ItemName = 'bClose'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True

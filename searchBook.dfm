@@ -72,13 +72,18 @@ object Form11: TForm11
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsSearchBook
       DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Kind = skCount
+          Column = cxGrid1DBTableView1book_name
+        end>
       DataController.Summary.SummaryGroups = <>
       OptionsData.Deleting = False
       OptionsData.Editing = False
       OptionsData.Inserting = False
       OptionsView.CellAutoHeight = True
       OptionsView.ColumnAutoWidth = True
+      OptionsView.Footer = True
       object cxGrid1DBTableView1book_name: TcxGridDBColumn
         Caption = #1053#1072#1079#1074#1072#1085#1080#1077
         DataBinding.FieldName = 'book_name'

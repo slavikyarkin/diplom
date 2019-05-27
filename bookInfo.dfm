@@ -122,13 +122,18 @@ object Form9: TForm9
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsReview
       DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Kind = skCount
+          Column = cxGrid1DBTableView1login
+        end>
       DataController.Summary.SummaryGroups = <>
       OptionsData.Deleting = False
       OptionsData.Editing = False
       OptionsData.Inserting = False
       OptionsView.CellAutoHeight = True
       OptionsView.ColumnAutoWidth = True
+      OptionsView.Footer = True
       object cxGrid1DBTableView1login: TcxGridDBColumn
         Caption = #1051#1086#1075#1080#1085
         DataBinding.FieldName = 'login'

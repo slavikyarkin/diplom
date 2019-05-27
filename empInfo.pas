@@ -3,7 +3,7 @@
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, 
+ Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs,
   dxBar, dxRibbon, dxRibbonForm, dxRibbonSkins, cxGraphics, cxControls, cxLookAndFeels,
   cxLookAndFeelPainters, cxClasses, dxRibbonBackstageView, cxBarEditItem,
   dxRibbonCustomizationForm, cxTextEdit, dxSkinsForm, dxStatusBar,

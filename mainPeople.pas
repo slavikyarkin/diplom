@@ -59,6 +59,7 @@ type
     bRefresh: TdxBarLargeButton;
     dxBarLargeButton2: TdxBarLargeButton;
     dxBarLargeButton3: TdxBarLargeButton;
+    dxBarLargeButton4: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -66,6 +67,7 @@ type
     procedure bRefreshClick(Sender: TObject);
     procedure dxBarLargeButton2Click(Sender: TObject);
     procedure dxBarLargeButton3Click(Sender: TObject);
+    procedure dxBarLargeButton4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -79,7 +81,7 @@ implementation
 
 {$R *.dfm}
 
-uses login, peopleInfo, bookInfo, searchBook, chosenBook;
+uses login, peopleInfo, bookInfo, searchBook, chosenBook, peopleBook;
 { TForm2 }
 
 procedure TForm2.bBookInfoClick(Sender: TObject);
@@ -106,6 +108,11 @@ end;
 procedure TForm2.dxBarLargeButton3Click(Sender: TObject);
 begin
   Form13.ShowModal;
+end;
+
+procedure TForm2.dxBarLargeButton4Click(Sender: TObject);
+begin
+  Form15.ShowModal;
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);

@@ -3,8 +3,8 @@ object Form13: TForm13
   Top = 0
   BorderStyle = bsToolWindow
   Caption = #1048#1079#1073#1088#1072#1085#1085#1099#1077
-  ClientHeight = 598
-  ClientWidth = 1082
+  ClientHeight = 672
+  ClientWidth = 1181
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object Form13: TForm13
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 1082
+    Width = 1181
     Height = 155
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
@@ -46,8 +46,8 @@ object Form13: TForm13
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 575
-    Width = 1082
+    Top = 649
+    Width = 1181
     Height = 23
     Panels = <
       item
@@ -63,23 +63,28 @@ object Form13: TForm13
   object cxGrid1: TcxGrid
     Left = 0
     Top = 155
-    Width = 1082
-    Height = 420
+    Width = 1181
+    Height = 494
     Align = alClient
     TabOrder = 2
     ExplicitTop = 131
-    ExplicitHeight = 444
+    ExplicitHeight = 518
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsChosen
       DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Kind = skCount
+          Column = cxGrid1DBTableView1book_name
+        end>
       DataController.Summary.SummaryGroups = <>
       OptionsData.Deleting = False
       OptionsData.Editing = False
       OptionsData.Inserting = False
       OptionsView.CellAutoHeight = True
       OptionsView.ColumnAutoWidth = True
+      OptionsView.Footer = True
       object cxGrid1DBTableView1book_name: TcxGridDBColumn
         Caption = #1053#1072#1079#1074#1072#1085#1080#1077
         DataBinding.FieldName = 'book_name'
