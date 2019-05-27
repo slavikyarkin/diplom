@@ -14,6 +14,7 @@ object Form8: TForm8
   OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbonStatusBar1: TdxRibbonStatusBar
@@ -27,7 +28,6 @@ object Form8: TForm8
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 372
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
@@ -36,8 +36,6 @@ object Form8: TForm8
     Height = 168
     Align = alClient
     TabOrder = 1
-    ExplicitTop = 131
-    ExplicitHeight = 241
   end
   object bSave: TdxRibbon
     Left = 0
@@ -51,9 +49,8 @@ object Form8: TForm8
     ColorSchemeName = 'Colorful'
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 6
+    TabOrder = 2
     TabStop = False
-    ExplicitTop = 8
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
@@ -64,6 +61,9 @@ object Form8: TForm8
         end
         item
           ToolbarName = 'dxBarManager1Bar1'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar3'
         end>
       Index = 0
     end
@@ -94,9 +94,13 @@ object Form8: TForm8
       FloatTop = 0
       FloatClientWidth = 51
       FloatClientHeight = 22
-      ItemLinks = <>
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton1'
+        end>
       OneOnRow = True
-      Row = 0
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -116,6 +120,25 @@ object Form8: TForm8
       OneOnRow = True
       Row = 0
       UseOwnFont = False
+      Visible = False
+      WholeRow = False
+    end
+    object dxBarManager1Bar3: TdxBar
+      CaptionButtons = <>
+      DockedLeft = 159
+      DockedTop = 0
+      FloatLeft = 674
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton2'
+        end>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
       Visible = True
       WholeRow = False
     end
@@ -125,11 +148,41 @@ object Form8: TForm8
       Visible = ivAlways
       PropertiesClassName = 'TcxTextEditProperties'
     end
+    object dxBarLargeButton1: TdxBarLargeButton
+      Caption = #1042#1099#1087#1086#1083#1085#1080#1090#1100' '#1074#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
+      Category = 0
+      Hint = #1042#1099#1087#1086#1083#1085#1080#1090#1100' '#1074#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
+      Visible = ivAlways
+      OnClick = dxBarLargeButton1Click
+    end
+    object dxBarLargeButton2: TdxBarLargeButton
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      Category = 0
+      Hint = #1047#1072#1082#1088#1099#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarLargeButton2Click
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
     SkinName = 'Office2013LightGray'
     Left = 536
     Top = 8
+  end
+  object uqReturn: TUniQuery
+    Connection = Form1.connect
+    SQL.Strings = (
+      'select *'#9
+      #9'from mm.library l'
+      '    where l.id = :lib_id'
+      '    ')
+    Left = 344
+    Top = 8
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'lib_id'
+        Value = nil
+      end>
   end
 end

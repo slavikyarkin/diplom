@@ -194,7 +194,7 @@ object Form5: TForm5
           ItemName = 'dxBB4'
         end>
       OneOnRow = False
-      Row = 1
+      Row = 0
       UseOwnFont = True
       Visible = True
       WholeRow = False
@@ -213,7 +213,7 @@ object Form5: TForm5
           ItemName = 'dxbbAddNewBook'
         end>
       OneOnRow = False
-      Row = 1
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -230,9 +230,9 @@ object Form5: TForm5
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxBarButton6'
+          ItemName = 'dxReturn'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -305,12 +305,12 @@ object Form5: TForm5
       Hint = 'New Button'
       Visible = ivAlways
     end
-    object dxBarButton6: TdxBarButton
+    object dxReturn: TdxBarButton
       Caption = #1042#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
       Category = 0
       Hint = #1042#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
       Visible = ivAlways
-      OnClick = dxBarButton6Click
+      OnClick = dxReturnClick
     end
   end
   object dxSkinController1: TdxSkinController
@@ -333,7 +333,8 @@ object Form5: TForm5
       '        , case '
       '        '#9' when j.appearance = 1 then '#39#1041#1077#1079' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1081#39
       '             when j.appearance = 2 then '#39#1045#1089#1090#1100' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1103#39
-      '       '#9'  end as st  '
+      '       '#9'  end as st '
+      '        , l.id as lib_id'
       'from mm.journal j'
       #9'left join mm.people p '
       '    '#9'on p.id = j.people_id'

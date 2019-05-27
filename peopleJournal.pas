@@ -61,10 +61,10 @@ type
     dxBarLargeButton2: TdxBarLargeButton;
     dxBarLargeButton3: TdxBarLargeButton;
     dxBarManager1Bar5: TdxBar;
-    dxBarButton6: TdxBarButton;
+    dxReturn: TdxBarButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBB4Click(Sender: TObject);
-    procedure dxBarButton6Click(Sender: TObject);
+    procedure dxReturnClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -86,8 +86,9 @@ implementation
 //Form6.ShowModal;
 //end;
 
-procedure TForm5.dxBarButton6Click(Sender: TObject);
+procedure TForm5.dxReturnClick(Sender: TObject);
 begin
+   issueBookpas.lib_id:= uqPeopleJournal.FieldValues['lib_id'];
    Form8.Show;
 end;
 
