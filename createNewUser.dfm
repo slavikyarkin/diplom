@@ -48,8 +48,6 @@ object Form4: TForm4
     Color = clWhite
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = 36
-    ExplicitHeight = 535
     object gbGeneralInform: TGroupBox
       Left = 25
       Top = 16
@@ -526,11 +524,8 @@ object Form4: TForm4
     TabAreaToolbar.Toolbar = dxBarManager1Bar2
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 10
+    TabOrder = 6
     TabStop = False
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 844
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102

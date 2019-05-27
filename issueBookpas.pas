@@ -40,6 +40,7 @@ type
     dxBarManager1Bar3: TdxBar;
     dxBarLargeButton2: TdxBarLargeButton;
     uqReturn: TUniQuery;
+    uqReturnJournal: TUniQuery;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton2Click(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
@@ -52,7 +53,8 @@ type
 
 var
   Form8: TForm8;
-    lib_id : integer;
+    journal_id ,lib_id : integer;
+
 
 implementation
 
@@ -65,6 +67,9 @@ procedure TForm8.dxBarLargeButton1Click(Sender: TObject);
 begin
   uqReturn.FieldValues['availability']:= 2;
   uqReturn.Post;
+
+  uqReturnJournal.FieldValues['emp_recive_id']:= login.emp_id;
+  uqReturnJournal.Post;
   Form8.Close;
 end;
 //------------------------------------------------------------------------------
@@ -85,5 +90,11 @@ begin
   uqReturn.ParamByName('lib_id').AsInteger:= lib_id;
   uqReturn.Open;
   uqReturn.Edit;
+
+  uqReturnJournal.Close;
+  uqReturnJournal.ParamByName('journal_id').AsInteger:= journal_id;
+  uqReturnJournal.Open;
+  uqReturnJournal.Edit;
+
 end;
 end.

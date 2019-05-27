@@ -58,12 +58,16 @@ type
     bSave: TdxRibbon;
     dxRibbon1Tab1: TdxRibbonTab;
     dxBarManager1Bar1: TdxBar;
-    dxBarButton1: TdxBarButton;
+    dxSave: TdxBarButton;
+    dxBarManager1Bar2: TdxBar;
+    bRefresh: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure cxAuthorPropertiesChange(Sender: TObject);
     procedure cxBookPropertiesChange(Sender: TObject);
     procedure cxISBNPropertiesChange(Sender: TObject);
-    procedure dxBarButton1Click(Sender: TObject);
+    procedure dxSaveClick(Sender: TObject);
+    procedure bRefreshClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -83,6 +87,21 @@ uses mainEmp, login;
 
 
 //------------------------------------------------------------------------------
+procedure TForm6.bRefreshClick(Sender: TObject);
+begin
+  uqNameBook.Refresh;
+  uqIzdanie.Refresh;
+  uqLib.Refresh;
+  uqAll.Refresh;
+  uqPeople.Refresh;
+  uqAuthor.Refresh;
+//
+//  // cxPeople.Clear;
+//   //cxISBN.Clear;
+//   cxBook.Items.Clear;
+//   cxAuthor.Items.Clear;
+end;
+//------------------------------------------------------------------------------
 procedure TForm6.cxAuthorPropertiesChange(Sender: TObject);
 begin
 
@@ -98,7 +117,6 @@ begin
   uqIzdanie.ParamByName('book_id').AsInteger:= cxBook.EditValue;
   uqIzdanie.Open;
   cxISBN.Enabled:= true;
-
 end;
 //------------------------------------------------------------------------------
 procedure TForm6.cxISBNPropertiesChange(Sender: TObject);
@@ -108,7 +126,7 @@ uqLib.ParamByName('lib_id').AsInteger:= cxISBN.EditValue;
 uqLib.Open;
 end;
 //------------------------------------------------------------------------------
-procedure TForm6.dxBarButton1Click(Sender: TObject);
+procedure TForm6.dxSaveClick(Sender: TObject);
 begin
   uqAll.Append;
   uqAll.FieldValues ['people_id'] := cxPeople.EditValue;
@@ -125,10 +143,13 @@ if cxApp.Text = 'Есть повреждения' then
   uqLib.FieldValues['availability']:= 1;
   uqLib.Post;
 
-  uqAuthor.Refresh;
+  uqNameBook.Refresh;
+  uqIzdanie.Refresh;
+  uqLib.Refresh;
+  uqAll.Refresh;
   uqNameBook.Refresh;
   uqPeople.Refresh;
-  uqIzdanie.Refresh;
+  uqAuthor.Refresh;
 end;
 //------------------------------------------------------------------------------
 procedure TForm6.FormCreate(Sender: TObject);
@@ -146,6 +167,14 @@ begin
   uqAll.Open;
   uqLib.Close;
   uqLib.Open;
+end;
+
+procedure TForm6.FormShow(Sender: TObject);
+begin
+//   cxPeople.Clear;
+//   cxISBN.Clear;
+//   cxBook.Clear;
+//   cxAuthor.Clear;
 end;
 
 end.

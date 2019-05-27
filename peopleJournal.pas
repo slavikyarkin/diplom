@@ -94,6 +94,7 @@ implementation
 procedure TForm5.dxReturnClick(Sender: TObject);
 begin
    issueBookpas.lib_id:= uqPeopleJournal.FieldValues['lib_id'];
+   issueBookpas.journal_id:= uqPeopleJournal.FieldValues['journal_id'];
    Form8.Show;
 end;
 //------------------------------------------------------------------------------

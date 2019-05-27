@@ -174,14 +174,31 @@ object Form8: TForm8
     SQL.Strings = (
       'select *'#9
       #9'from mm.library l'
-      '    where l.id = :lib_id'
-      '    ')
+      '    where l.id = :lib_id '
+      '   '
+      '')
     Left = 344
     Top = 8
     ParamData = <
       item
         DataType = ftUnknown
         Name = 'lib_id'
+        Value = nil
+      end>
+  end
+  object uqReturnJournal: TUniQuery
+    Connection = Form1.connect
+    SQL.Strings = (
+      'select *'#9
+      #9' from mm.journal j'
+      '    where j.id = :journal_id'
+      '    ')
+    Left = 440
+    Top = 8
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'journal_id'
         Value = nil
       end>
   end

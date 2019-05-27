@@ -197,7 +197,7 @@ object Form5: TForm5
           ItemName = 'dxBB4'
         end>
       OneOnRow = False
-      Row = 1
+      Row = 0
       UseOwnFont = True
       Visible = True
       WholeRow = False
@@ -216,7 +216,7 @@ object Form5: TForm5
           ItemName = 'dxbbAddNewBook'
         end>
       OneOnRow = False
-      Row = 1
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -236,7 +236,7 @@ object Form5: TForm5
           ItemName = 'dxReturn'
         end>
       OneOnRow = False
-      Row = 1
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -255,7 +255,7 @@ object Form5: TForm5
           Visible = True
           ItemName = 'dxBarButton6'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -372,6 +372,7 @@ object Form5: TForm5
       '             when j.appearance = 2 then '#39#1045#1089#1090#1100' '#1087#1086#1074#1088#1077#1078#1076#1077#1085#1080#1103#39
       '       '#9'  end as st '
       '        , l.id as lib_id'
+      '        , j.id as journal_id'
       'from mm.journal j'
       #9'left join mm.people p '
       '    '#9'on p.id = j.people_id'
@@ -383,7 +384,7 @@ object Form5: TForm5
       '    '#9'on ba.book_id = b.id'
       #9'left join mm.author a'
       '    '#9'on a.id = ba.author_id   '
-      'where l.availability = 1')
+      'where l.availability = 1 and j.emp_recive_id is null')
     Left = 344
     Top = 8
   end

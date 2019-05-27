@@ -14,6 +14,7 @@ object Form6: TForm6
   OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbonStatusBar1: TdxRibbonStatusBar
@@ -146,6 +147,9 @@ object Form6: TForm6
         end
         item
           ToolbarName = 'dxBarManager1Bar1'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar2'
         end>
       Index = 0
     end
@@ -179,7 +183,27 @@ object Form6: TForm6
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxBarButton1'
+          ItemName = 'dxSave'
+        end>
+      OneOnRow = True
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar2: TdxBar
+      Caption = 'Custom 2'
+      CaptionButtons = <>
+      DockedLeft = 75
+      DockedTop = 0
+      FloatLeft = 674
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'bRefresh'
         end>
       OneOnRow = True
       Row = 0
@@ -199,12 +223,19 @@ object Form6: TForm6
       Hint = #1057#1086#1093#1088#1072#1085#1080#1090#1100
       Visible = ivAlways
     end
-    object dxBarButton1: TdxBarButton
+    object dxSave: TdxBarButton
       Caption = 'C'#1086#1093#1088#1072#1085#1080#1090#1100
       Category = 0
       Hint = 'C'#1086#1093#1088#1072#1085#1080#1090#1100
       Visible = ivAlways
-      OnClick = dxBarButton1Click
+      OnClick = dxSaveClick
+    end
+    object bRefresh: TdxBarLargeButton
+      Caption = #1054#1073#1085#1086#1074#1080#1090#1100
+      Category = 0
+      Hint = #1054#1073#1085#1086#1074#1080#1090#1100
+      Visible = ivAlways
+      OnClick = bRefreshClick
     end
   end
   object dxSkinController1: TdxSkinController
@@ -254,7 +285,7 @@ object Form6: TForm6
   object uqPeople: TUniQuery
     Connection = Form1.connect
     SQL.Strings = (
-      'select p.id'
+      'select distinct p.id'
       
         ' , p.surname || '#39' '#39' || p.name || '#39' '#39' || coalesce(p.patron, '#39#39') |' +
         '| '#39' '#8470' '#1073#1080#1083#1077#1090#1072' '#39' || lc.number as Name'
