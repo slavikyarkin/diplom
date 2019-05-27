@@ -202,6 +202,10 @@ object Form2: TForm2
         item
           Visible = True
           ItemName = 'dxBarLargeButton2'
+        end
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton3'
         end>
       OneOnRow = False
       Row = 0
@@ -212,7 +216,7 @@ object Form2: TForm2
     object dxBarManager1Bar4: TdxBar
       Caption = 'Custom 1'
       CaptionButtons = <>
-      DockedLeft = 207
+      DockedLeft = 286
       DockedTop = 0
       FloatLeft = 851
       FloatTop = 8
@@ -262,6 +266,13 @@ object Form2: TForm2
       Hint = #1055#1086#1080#1089#1082' '#1082#1085#1080#1075
       Visible = ivAlways
       OnClick = dxBarLargeButton2Click
+    end
+    object dxBarLargeButton3: TdxBarLargeButton
+      Caption = #1048#1079#1073#1088#1072#1085#1085#1099#1077
+      Category = 0
+      Hint = #1048#1079#1073#1088#1072#1085#1085#1099#1077
+      Visible = ivAlways
+      OnClick = dxBarLargeButton3Click
     end
   end
   object dxSkinController1: TdxSkinController

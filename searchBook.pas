@@ -44,12 +44,14 @@ type
     cxGrid1DBTableView1Column1: TcxGridDBColumn;
     cxGrid1DBTableView1Column2: TcxGridDBColumn;
     bBookInfo: TdxBarLargeButton;
+    bChosen: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
     procedure bAddChosenClick(Sender: TObject);
     procedure uqSearchBookAfterScroll(DataSet: TDataSet);
     procedure bBookInfoClick(Sender: TObject);
+    procedure bChosenClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,7 +67,7 @@ implementation
 {$R *.dfm}
 
 { TForm11 }
-uses login, bookInfo;
+uses login, bookInfo, chosenBook;
 
 procedure TForm11.bAddChosenClick(Sender: TObject);
 begin
@@ -91,6 +93,11 @@ end;
 procedure TForm11.bCloseClick(Sender: TObject);
 begin
   Form11.Close;
+end;
+
+procedure TForm11.bChosenClick(Sender: TObject);
+begin
+  Form13.ShowModal;
 end;
 
 procedure TForm11.FormCreate(Sender: TObject);
