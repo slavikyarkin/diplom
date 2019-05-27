@@ -33,7 +33,6 @@ object Form9: TForm9
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 650
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
@@ -59,8 +58,6 @@ object Form9: TForm9
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 467
-    ExplicitWidth = 650
   end
   object Panel1: TPanel
     Left = 0
@@ -68,8 +65,8 @@ object Form9: TForm9
     Width = 933
     Height = 198
     Align = alTop
-    TabOrder = 6
-    ExplicitWidth = 848
+    TabOrder = 2
+    ExplicitTop = 131
     object cxDBLabel1: TcxDBLabel
       Left = 20
       Top = 20
@@ -114,14 +111,13 @@ object Form9: TForm9
   end
   object cxGrid1: TcxGrid
     Left = 0
-    Top = 361
+    Top = 365
     Width = 933
-    Height = 228
+    Height = 224
     Align = alClient
-    TabOrder = 7
-    ExplicitTop = 336
-    ExplicitWidth = 848
-    ExplicitHeight = 245
+    TabOrder = 3
+    ExplicitTop = 341
+    ExplicitHeight = 248
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsReview
@@ -157,11 +153,10 @@ object Form9: TForm9
     Left = 0
     Top = 353
     Width = 933
-    Height = 8
+    Height = 12
     AlignSplitter = salTop
     Control = cxGrid1
-    ExplicitTop = 289
-    ExplicitWidth = 178
+    ExplicitTop = 329
   end
   object dxBarManager1: TdxBarManager
     Font.Charset = DEFAULT_CHARSET

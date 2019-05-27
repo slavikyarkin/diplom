@@ -198,9 +198,13 @@ object Form2: TForm2
         item
           Visible = True
           ItemName = 'bBookInfo'
+        end
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton2'
         end>
-      OneOnRow = True
-      Row = 1
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -208,7 +212,7 @@ object Form2: TForm2
     object dxBarManager1Bar4: TdxBar
       Caption = 'Custom 1'
       CaptionButtons = <>
-      DockedLeft = 156
+      DockedLeft = 207
       DockedTop = 0
       FloatLeft = 851
       FloatTop = 8
@@ -219,7 +223,7 @@ object Form2: TForm2
           Visible = True
           ItemName = 'bRefresh'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -252,6 +256,13 @@ object Form2: TForm2
       Visible = ivAlways
       OnClick = bRefreshClick
     end
+    object dxBarLargeButton2: TdxBarLargeButton
+      Caption = #1055#1086#1080#1089#1082' '#1082#1085#1080#1075
+      Category = 0
+      Hint = #1055#1086#1080#1089#1082' '#1082#1085#1080#1075
+      Visible = ivAlways
+      OnClick = dxBarLargeButton2Click
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
@@ -265,13 +276,13 @@ object Form2: TForm2
       'select b.name as name_book'
       '     , b.id as book_id'
       
-        '     , (select array_agg(a.surname || '#39' '#39' || a.name || '#39' '#39' || co' +
-        'alesce(a.patron, '#39#39') ) '
+        '     , (select trim(both '#39'{}'#39' from array_agg(a.surname || '#39' '#39' ||' +
+        ' a.name || '#39' '#39' || coalesce(a.patron, '#39#39') )::varchar )'
       '          from mm.book_author au '
       '               join mm.author a '
       '                 on a.id = au.author_id '
       '         where au.book_id = b.id) as author'
-      '     , (select array_agg(g.name)'
+      '     , (select trim(both '#39'{}'#39' from array_agg(g.name)::varchar)'
       '          from mm.book_genre bg '
       '               join mm.genre g'
       '                 on g.id = bg.genre_id'
