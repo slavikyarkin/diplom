@@ -11,7 +11,8 @@ uses
   peopleInfo in 'peopleInfo.pas' {Form7},
   issueBookpas in 'issueBookpas.pas' {Form8},
   bookInfo in 'bookInfo.pas' {Form9},
-  newReview in 'newReview.pas' {Form10};
+  newReview in 'newReview.pas' {Form10},
+  searchBook in 'searchBook.pas' {Form11};
 
 {$R *.res}
 
@@ -29,5 +30,6 @@ begin
   Application.CreateForm(TForm8, Form8);
   Application.CreateForm(TForm9, Form9);
   Application.CreateForm(TForm10, Form10);
+  Application.CreateForm(TForm11, Form11);
   Application.Run;
 end.
