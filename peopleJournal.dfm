@@ -19,6 +19,7 @@ object Form5: TForm5
   OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbon1: TdxRibbon
@@ -69,7 +70,10 @@ object Form5: TForm5
     Top = 673
     Width = 1094
     Height = 23
-    Panels = <>
+    Panels = <
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+      end>
     Ribbon = dxRibbon1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clDefault

@@ -95,6 +95,6 @@ begin
   uqReturnJournal.ParamByName('journal_id').AsInteger:= journal_id;
   uqReturnJournal.Open;
   uqReturnJournal.Edit;
-
+  dxRibbonStatusBar1.Panels[0].Text:= login.fio;
 end;
 end.

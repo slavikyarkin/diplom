@@ -171,6 +171,7 @@ end;
 
 procedure TForm6.FormShow(Sender: TObject);
 begin
+  dxRibbonStatusBar1.Panels[0].Text:= login.fio;
 //   cxPeople.Clear;
 //   cxISBN.Clear;
 //   cxBook.Clear;

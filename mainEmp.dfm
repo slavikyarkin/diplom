@@ -210,6 +210,7 @@ object Form1: TForm1
       Category = 0
       Hint = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1077
       Visible = ivAlways
+      OnClick = bInfPeopleClick
     end
     object bJornalPeople: TdxBarLargeButton
       Caption = #1046#1091#1088#1085#1072#1083' '#1095#1080#1090#1072#1090#1077#1083#1103
@@ -229,6 +230,7 @@ object Form1: TForm1
       Category = 0
       Hint = #1057#1087#1080#1089#1086#1082' '#1082#1085#1080#1075
       Visible = ivAlways
+      OnClick = dxBarButton1Click
     end
     object dxBarEdit1: TdxBarEdit
       Caption = 'New Item'

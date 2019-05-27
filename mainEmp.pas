@@ -71,6 +71,8 @@ type
     procedure bNewPeopleClick(Sender: TObject);
     procedure bJornalPeopleClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure bInfPeopleClick(Sender: TObject);
+    procedure dxBarButton1Click(Sender: TObject);
 
 
   private
@@ -87,8 +89,13 @@ implementation
 {$R *.dfm}
 
 //uses newPeople, PeopleJournal, BookList, PeopleInform, login;
-uses login, createNewUser, peopleJournal;
+uses login, createNewUser, peopleJournal, empInfo, empBookList;
 
+
+procedure TForm1.bInfPeopleClick(Sender: TObject);
+begin
+    Form14.ShowModal;
+end;
 
 procedure TForm1.bJornalPeopleClick(Sender: TObject);
 begin
@@ -98,6 +105,11 @@ end;
 procedure TForm1.bNewPeopleClick(Sender: TObject);
 begin
 Form4.ShowModal;
+end;
+
+procedure TForm1.dxBarButton1Click(Sender: TObject);
+begin
+Form16.ShowModal;
 end;
 
 procedure TForm1.dxBarEdit3Change(Sender: TObject);

@@ -70,6 +70,7 @@ type
     procedure dxReturnClick(Sender: TObject);
     procedure dxBarButton6Click(Sender: TObject);
     procedure dxbbAddNewBookClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -82,7 +83,7 @@ var
 implementation
 
 {$R *.dfm}
-    uses mainEmp, addBook, issueBookpas, newBookRecord;
+    uses mainEmp, addBook, issueBookpas, newBookRecord, login;
 { TForm4 }
 
 //procedure TForm4.dxBarButton2Click(Sender: TObject);
@@ -120,5 +121,11 @@ begin
   uqPeopleJournal.Close;
   uqPeopleJournal.Open;
   end;
+//------------------------------------------------------------------------------
+procedure TForm5.FormShow(Sender: TObject);
+begin
+ dxRibbonStatusBar1.Panels[0].Text:= login.fio;
+end;
+
 end.
 

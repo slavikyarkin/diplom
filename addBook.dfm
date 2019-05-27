@@ -22,7 +22,10 @@ object Form6: TForm6
     Top = 329
     Width = 650
     Height = 23
-    Panels = <>
+    Panels = <
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+      end>
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clDefault
     Font.Height = -11
@@ -185,8 +188,8 @@ object Form6: TForm6
           Visible = True
           ItemName = 'dxSave'
         end>
-      OneOnRow = True
-      Row = 1
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -205,7 +208,7 @@ object Form6: TForm6
           Visible = True
           ItemName = 'bRefresh'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True

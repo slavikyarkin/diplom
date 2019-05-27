@@ -16,7 +16,8 @@ uses
   newBookRecord in 'newBookRecord.pas' {Form12},
   chosenBook in 'chosenBook.pas' {Form13},
   empInfo in 'empInfo.pas' {Form14},
-  peopleBook in 'peopleBook.pas' {Form15};
+  peopleBook in 'peopleBook.pas' {Form15},
+  empBookList in 'empBookList.pas' {Form16};
 
 {$R *.res}
 
@@ -39,5 +40,6 @@ begin
   Application.CreateForm(TForm13, Form13);
   Application.CreateForm(TForm14, Form14);
   Application.CreateForm(TForm15, Form15);
+  Application.CreateForm(TForm16, Form16);
   Application.Run;
 end.

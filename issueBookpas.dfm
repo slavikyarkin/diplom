@@ -22,7 +22,10 @@ object Form8: TForm8
     Top = 228
     Width = 650
     Height = 23
-    Panels = <>
+    Panels = <
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+      end>
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clDefault
     Font.Height = -11
