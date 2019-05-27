@@ -13,7 +13,8 @@ uses
   bookInfo in 'bookInfo.pas' {Form9},
   newReview in 'newReview.pas' {Form10},
   searchBook in 'searchBook.pas' {Form11},
-  newBookRecord in 'newBookRecord.pas' {Form12};
+  newBookRecord in 'newBookRecord.pas' {Form12},
+  chosenBook in 'chosenBook.pas' {Form13};
 
 {$R *.res}
 
@@ -33,5 +34,6 @@ begin
   Application.CreateForm(TForm10, Form10);
   Application.CreateForm(TForm11, Form11);
   Application.CreateForm(TForm12, Form12);
+  Application.CreateForm(TForm13, Form13);
   Application.Run;
 end.
