@@ -60,6 +60,8 @@ type
     dxBarLargeButton2: TdxBarLargeButton;
     dxBarLargeButton3: TdxBarLargeButton;
     dxBarLargeButton4: TdxBarLargeButton;
+    bExit: TdxBarLargeButton;
+    bRating: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -68,6 +70,9 @@ type
     procedure dxBarLargeButton2Click(Sender: TObject);
     procedure dxBarLargeButton3Click(Sender: TObject);
     procedure dxBarLargeButton4Click(Sender: TObject);
+    procedure bExitClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure bRatingClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -81,13 +86,24 @@ implementation
 
 {$R *.dfm}
 
-uses login, peopleInfo, bookInfo, searchBook, chosenBook, peopleBook;
+uses login, peopleInfo, bookInfo, searchBook, chosenBook, peopleBook,
+     peopleBookRating;
 { TForm2 }
 
 procedure TForm2.bBookInfoClick(Sender: TObject);
 begin
   bookInfo.book_id:= uqMyJur.FieldValues['book_id'];
   Form9.ShowModal;
+end;
+
+procedure TForm2.bExitClick(Sender: TObject);
+begin
+  Form3.Close;
+end;
+
+procedure TForm2.bRatingClick(Sender: TObject);
+begin
+  Form18.ShowModal;
 end;
 
 procedure TForm2.bRefreshClick(Sender: TObject);
@@ -113,6 +129,11 @@ end;
 procedure TForm2.dxBarLargeButton4Click(Sender: TObject);
 begin
   Form15.ShowModal;
+end;
+
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Form3.Close;
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);

@@ -44,6 +44,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
+    procedure bDetailClick(Sender: TObject);
+    procedure bRatingClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,12 +59,23 @@ implementation
 
 {$R *.dfm}
 
-uses login;
+uses login, peopleBookDetail, peopleBookRating;
 { TForm15 }
 
 procedure TForm15.bCloseClick(Sender: TObject);
 begin
   Form15.Close;
+end;
+
+procedure TForm15.bDetailClick(Sender: TObject);
+begin
+  peopleBookDetail.library_id:= uqMyBook.FieldValues['id'];
+  Form17.ShowModal;
+end;
+
+procedure TForm15.bRatingClick(Sender: TObject);
+begin
+  Form18.ShowModal;
 end;
 
 procedure TForm15.FormCreate(Sender: TObject);

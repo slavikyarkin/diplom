@@ -45,6 +45,7 @@ type
     cxGrid1DBTableView1Column2: TcxGridDBColumn;
     bBookInfo: TdxBarLargeButton;
     bChosen: TdxBarLargeButton;
+    bRefresh: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
@@ -52,6 +53,7 @@ type
     procedure uqSearchBookAfterScroll(DataSet: TDataSet);
     procedure bBookInfoClick(Sender: TObject);
     procedure bChosenClick(Sender: TObject);
+    procedure bRefreshClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -93,6 +95,11 @@ end;
 procedure TForm11.bCloseClick(Sender: TObject);
 begin
   Form11.Close;
+end;
+
+procedure TForm11.bRefreshClick(Sender: TObject);
+begin
+  applyFilter;
 end;
 
 procedure TForm11.bChosenClick(Sender: TObject);
