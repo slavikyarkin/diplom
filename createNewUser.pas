@@ -39,16 +39,6 @@ type
     bSave: TdxBarLargeButton;
     bSaveClose: TdxBarLargeButton;
     bClose: TdxBarLargeButton;
-//    uqPeople: TPgQuery;
-//    uqDoc: TPgQuery;
-//    uqAddr: TPgQuery;
-//    uqGetDistrict: TPgQuery;
-//    uqGetRegion: TPgQuery;
-//    uqGetTown: TPgQuery;
-//    dsGetDistrict: TPgDataSource;
-//    dsGetRegion: TPgDataSource;
-//    dsGetTown: TPgDataSource;
-    cxDBComboBox1: TcxDBComboBox;
     pNewPeople: TPanel;
     gbGeneralInform: TGroupBox;
     gbBirth: TGroupBox;
@@ -84,11 +74,6 @@ type
     Label15: TLabel;
     Label16: TLabel;
     eStreet: TEdit;
-    lcbDistrict: TcxLookupComboBox;
-//    uqLibraryCard: TPgQuery;
-//    uqGetPeople: TPgQuery;
-    lcbRegion: TcxLookupComboBox;
-    lcbTown: TcxLookupComboBox;
     eHouse: TEdit;
     eFlat: TEdit;
     Label17: TLabel;
@@ -111,6 +96,9 @@ type
     dxRibbon1: TdxRibbon;
     dxRibbon1Tab1: TdxRibbonTab;
     bSaveAll1: TdxBarButton;
+    lcbTown: TcxLookupComboBox;
+    lcbRegion: TcxLookupComboBox;
+    lcbDistrict: TcxLookupComboBox;
     procedure FormCreate(Sender: TObject);
     procedure lcbDistrictPropertiesChange(Sender: TObject);
     procedure lcbRegionPropertiesChange(Sender: TObject);
@@ -134,6 +122,47 @@ implementation
 //------------------------------------------------------------------------------
 procedure TForm4.bSaveAll1Click(Sender: TObject);
 begin
+  if eEssue.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "выдан"');
+    abort;
+  end;
+  if DateToStr(dtpEssueDate.Date) = ''  then
+  begin
+    ShowMessage('Заполните поле "Дата выдачи"');
+    abort;
+  end;
+  if eUnitCode.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "код подразделения"');
+    abort;
+  end;
+  if eSerial.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Серия"');
+    abort;
+  end;
+  if eDocNumber.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Номер"');
+    abort;
+  end;
+    if eStreet.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Улица"');
+    abort;
+  end;
+  if eHouse.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Дом"');
+    abort;
+  end;
+  if eFlat.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Квартира"');
+    abort;
+  end;
+
    uqDoc.Append;
   uqDoc.FieldValues['issueed_by']:=eEssue.Text;
   uqDoc.FieldValues['date_of_issue']:=dtpEssueDate.Date;
@@ -165,6 +194,29 @@ begin
   uqGetAddr.ParamByName('region_id').AsString := lcbregion.EditValue;
   uqGetAddr.ParamByName('town_id').AsString := lcbTown.EditValue;
   uqGetAddr.Open;
+
+  if eName.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Имя"');
+    abort;
+  end;
+    if eSurname.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Фамилия"');
+    abort;
+  end;
+    if cbSex.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "пол"');
+    abort;
+  end;
+    if eNumber.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Номер телефона"');
+    abort;
+  end;
+
+
 
   uqPeople.Append;
   uqPeople.FieldValues['name']:=eName.Text;

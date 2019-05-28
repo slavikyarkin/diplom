@@ -3,7 +3,7 @@ object Form8: TForm8
   Top = 0
   BorderStyle = bsToolWindow
   Caption = #1042#1086#1079#1074#1088#1072#1090' '#1082#1085#1080#1075#1080
-  ClientHeight = 251
+  ClientHeight = 243
   ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,7 +19,7 @@ object Form8: TForm8
   TextHeight = 13
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 228
+    Top = 220
     Width = 650
     Height = 23
     Panels = <
@@ -31,14 +31,45 @@ object Form8: TForm8
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ExplicitTop = 228
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
     Top = 60
     Width = 650
-    Height = 168
+    Height = 160
     Align = alClient
     TabOrder = 1
+    ExplicitTop = 136
+    ExplicitHeight = 144
+    object Label1: TLabel
+      Left = 61
+      Top = 29
+      Width = 536
+      Height = 33
+      Caption = #1042#1099' '#1091#1074#1077#1088#1077#1085#1099', '#1095#1090#1086' '#1093#1086#1090#1080#1090#1077' '#1074#1099#1087#1086#1083#1085#1080#1090#1100' '#1076#1072#1085#1085#1086#1077
+      Constraints.MaxWidth = 700
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 61
+      Top = 68
+      Width = 557
+      Height = 33
+      Caption = #1076#1077#1081#1089#1090#1074#1080#1077', '#1086#1090#1084#1077#1085#1080#1090#1100' '#1077#1075#1086' '#1073#1091#1076#1077#1090' '#1085#1077#1074#1086#1079#1084#1086#1078#1085#1086'!!!'
+      Constraints.MaxWidth = 700
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
   end
   object bSave: TdxRibbon
     Left = 0

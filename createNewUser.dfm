@@ -32,12 +32,6 @@ object Form4: TForm4
     Font.Name = 'Tahoma'
     Font.Style = []
   end
-  object cxDBComboBox1: TcxDBComboBox
-    Left = 656
-    Top = 383
-    TabOrder = 1
-    Width = 121
-  end
   object pNewPeople: TPanel
     Left = 0
     Top = 60
@@ -47,7 +41,7 @@ object Form4: TForm4
     AutoSize = True
     Color = clWhite
     ParentBackground = False
-    TabOrder = 2
+    TabOrder = 1
     object gbGeneralInform: TGroupBox
       Left = 25
       Top = 16
@@ -454,6 +448,72 @@ object Form4: TForm4
           Height = 27
           TabOrder = 0
         end
+        object lcbTown: TcxLookupComboBox
+          Left = 120
+          Top = 79
+          Constraints.MaxHeight = 20
+          Enabled = False
+          ParentFont = False
+          Properties.KeyFieldNames = 'id'
+          Properties.ListColumns = <
+            item
+              FieldName = 'name'
+            end>
+          Properties.ListSource = dsGetTown
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = []
+          Style.IsFontAssigned = True
+          TabOrder = 1
+          Width = 286
+        end
+        object lcbRegion: TcxLookupComboBox
+          Left = 120
+          Top = 53
+          Constraints.MaxHeight = 20
+          Enabled = False
+          ParentFont = False
+          Properties.KeyFieldNames = 'id'
+          Properties.ListColumns = <
+            item
+              FieldName = 'name'
+            end>
+          Properties.ListSource = dsGetRegion
+          Properties.OnChange = lcbRegionPropertiesChange
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = []
+          Style.IsFontAssigned = True
+          TabOrder = 2
+          Width = 286
+        end
+        object lcbDistrict: TcxLookupComboBox
+          Left = 120
+          Top = 21
+          AutoSize = False
+          Constraints.MaxHeight = 20
+          ParentFont = False
+          Properties.KeyFieldNames = 'id'
+          Properties.ListColumns = <
+            item
+              FieldName = 'name'
+            end>
+          Properties.ListSource = dsGetDistrict
+          Properties.OnChange = lcbDistrictPropertiesChange
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = []
+          Style.IsFontAssigned = True
+          TabOrder = 3
+          Height = 20
+          Width = 286
+        end
       end
     end
     object eHouse: TEdit
@@ -471,46 +531,6 @@ object Form4: TForm4
       TabOrder = 4
     end
   end
-  object lcbDistrict: TcxLookupComboBox
-    Left = 645
-    Top = 380
-    Properties.KeyFieldNames = 'id'
-    Properties.ListColumns = <
-      item
-        FieldName = 'name'
-      end>
-    Properties.ListSource = dsGetDistrict
-    Properties.OnChange = lcbDistrictPropertiesChange
-    TabOrder = 3
-    Width = 281
-  end
-  object lcbRegion: TcxLookupComboBox
-    Left = 645
-    Top = 410
-    Enabled = False
-    Properties.KeyFieldNames = 'id'
-    Properties.ListColumns = <
-      item
-        FieldName = 'name'
-      end>
-    Properties.ListSource = dsGetRegion
-    Properties.OnChange = lcbRegionPropertiesChange
-    TabOrder = 4
-    Width = 281
-  end
-  object lcbTown: TcxLookupComboBox
-    Left = 645
-    Top = 440
-    Enabled = False
-    Properties.KeyFieldNames = 'id'
-    Properties.ListColumns = <
-      item
-        FieldName = 'name'
-      end>
-    Properties.ListSource = dsGetTown
-    TabOrder = 5
-    Width = 281
-  end
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
@@ -524,7 +544,7 @@ object Form4: TForm4
     TabAreaToolbar.Toolbar = dxBarManager1Bar2
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 6
+    TabOrder = 2
     TabStop = False
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True

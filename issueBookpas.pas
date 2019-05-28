@@ -23,7 +23,7 @@ uses
   dxSkinXmas2008Blue, dxRibbonCustomizationForm, cxTextEdit, cxContainer,
   cxEdit, dxSkinsForm, dxStatusBar, dxRibbonStatusBar, cxLabel, dxGallery,
   dxGalleryControl, dxRibbonBackstageViewGalleryControl, cxScrollBox, Data.DB,
-  MemDS, DBAccess, Uni;
+  MemDS, DBAccess, Uni, Vcl.StdCtrls;
 
 type
   TForm8 = class(TdxRibbonForm)
@@ -41,6 +41,8 @@ type
     dxBarLargeButton2: TdxBarLargeButton;
     uqReturn: TUniQuery;
     uqReturnJournal: TUniQuery;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton2Click(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
@@ -97,4 +99,6 @@ begin
   uqReturnJournal.Edit;
   dxRibbonStatusBar1.Panels[0].Text:= login.fio;
 end;
+
+
 end.
