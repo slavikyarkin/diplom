@@ -94,6 +94,7 @@ object Form4: TForm4
           Width = 201
           Height = 27
           TabOrder = 0
+          OnKeyPress = eMailKeyPress
         end
         object eNumber: TEdit
           Left = 200
@@ -101,6 +102,7 @@ object Form4: TForm4
           Width = 201
           Height = 27
           TabOrder = 1
+          OnKeyPress = eNumberKeyPress
         end
       end
       object gbName: TGroupBox
@@ -149,6 +151,7 @@ object Form4: TForm4
           Width = 284
           Height = 27
           TabOrder = 0
+          OnKeyPress = eSurnameKeyPress
         end
         object eParton: TEdit
           Left = 117
@@ -156,6 +159,7 @@ object Form4: TForm4
           Width = 284
           Height = 27
           TabOrder = 1
+          OnKeyPress = ePartonKeyPress
         end
         object eName: TEdit
           Left = 117
@@ -163,6 +167,7 @@ object Form4: TForm4
           Width = 284
           Height = 27
           TabOrder = 2
+          OnKeyPress = eNameKeyPress
         end
         object cbSex: TComboBox
           Left = 117
@@ -309,6 +314,7 @@ object Form4: TForm4
           Font.Style = []
           ParentFont = False
           TabOrder = 1
+          OnKeyPress = eEssueKeyPress
         end
         object eUnitCode: TEdit
           Left = 176
@@ -322,6 +328,7 @@ object Form4: TForm4
           Font.Style = []
           ParentFont = False
           TabOrder = 2
+          OnKeyPress = eUnitCodeKeyPress
         end
         object eSerial: TEdit
           Left = 117
@@ -335,6 +342,7 @@ object Form4: TForm4
           Font.Style = []
           ParentFont = False
           TabOrder = 3
+          OnKeyPress = eSerialKeyPress
         end
         object eDocNumber: TEdit
           Left = 293
@@ -348,6 +356,7 @@ object Form4: TForm4
           Font.Style = []
           ParentFont = False
           TabOrder = 4
+          OnKeyPress = eDocNumberKeyPress
         end
       end
       object gbAddres: TGroupBox
@@ -447,6 +456,7 @@ object Form4: TForm4
           Width = 281
           Height = 27
           TabOrder = 0
+          OnKeyPress = eStreetKeyPress
         end
         object lcbTown: TcxLookupComboBox
           Left = 120
@@ -522,6 +532,7 @@ object Form4: TForm4
       Width = 73
       Height = 21
       TabOrder = 3
+      OnKeyPress = eHouseKeyPress
     end
     object eFlat: TEdit
       Left = 832
@@ -529,6 +540,7 @@ object Form4: TForm4
       Width = 94
       Height = 21
       TabOrder = 4
+      OnKeyPress = eFlatKeyPress
     end
   end
   object dxRibbon1: TdxRibbon

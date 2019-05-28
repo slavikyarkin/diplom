@@ -56,6 +56,13 @@ type
     ebDate: TDateTimePicker;
     procedure FormCreate(Sender: TObject);
     procedure dxSaveClick(Sender: TObject);
+    procedure eaNameKeyPress(Sender: TObject; var Key: Char);
+    procedure eaSurnameKeyPress(Sender: TObject; var Key: Char);
+    procedure eaPatronKeyPress(Sender: TObject; var Key: Char);
+    procedure ebNameKeyPress(Sender: TObject; var Key: Char);
+    procedure ebISBNKeyPress(Sender: TObject; var Key: Char);
+    procedure eaAuthorKeyPress(Sender: TObject; var Key: Char);
+    procedure ebBookKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -73,6 +80,38 @@ implementation
 
 procedure TForm12.dxSaveClick(Sender: TObject);
 begin
+//Блок проверки на заполненность полей
+  if ebName.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Название книги"');
+    abort;
+  end;
+   if ebBook.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Описание книги"');
+    abort;
+  end;
+  if eaName.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Имя"');
+    abort;
+  end;
+     if eaSurname.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Фамилия"');
+    abort;
+  end;
+     if eaAuthor.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Об авторе"');
+    abort;
+  end;
+    if ebISBN.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "ISBN"');
+    abort;
+  end;
+//Блок заполнения бд данными
   uqGetPeople.Close;
   uqGetPeople.ParamByName('pid').AsString :=cxPeople.EditValue;
   uqGetPeople.Open;
@@ -114,10 +153,85 @@ begin
   uqLib.FieldValues['people_id']:= uqGetPeople.FieldByName('id').AsInteger;
   uqLib.FieldValues['date_of_edition']:= ebDateBook.Date;
   uqLib.Post;
-
-
+end;
+//------------------------------------------------------------------------------
+// Блок регулярных выжений
+procedure TForm12.eaAuthorKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-','0'..'9','A'..'Z','a'..'z']) then Key := #0;
+   if eaAuthor.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
 end;
 
+procedure TForm12.eaNameKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-','A'..'Z','a'..'z']) then Key := #0;
+   if eaName.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+procedure TForm12.eaPatronKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-','A'..'Z','a'..'z']) then Key := #0;
+   if eaPatron.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm12.eaSurnameKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-','A'..'Z','a'..'z']) then Key := #0;
+   if eaSurname.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm12.ebBookKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-','A'..'Z','a'..'z','0'..'9']) then Key := #0;
+   if ebBook.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm12.ebISBNKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['0'..'9',#08,#32]) then Key := #0;
+   if ebISBN.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm12.ebNameKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-','A'..'Z','a'..'z','0'..'9']) then Key := #0;
+   if ebName.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+//------------------------------------------------------------------------------
 procedure TForm12.FormCreate(Sender: TObject);
 begin
   DisableAero := True;

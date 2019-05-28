@@ -27,8 +27,6 @@ object Form12: TForm12
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 457
-    ExplicitWidth = 640
   end
   object gbGeneralInform: TGroupBox
     Left = 0
@@ -45,7 +43,7 @@ object Form12: TForm12
     ParentBackground = False
     ParentColor = False
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 1
     object Label5: TLabel
       Left = 24
       Top = 185
@@ -71,9 +69,10 @@ object Form12: TForm12
       Left = 24
       Top = 210
       Width = 1049
-      Height = 23
+      Height = 27
       MaxLength = 1000
       TabOrder = 0
+      OnKeyPress = eaAuthorKeyPress
     end
     object gbName: TGroupBox
       Left = 24
@@ -116,22 +115,25 @@ object Form12: TForm12
         Left = 109
         Top = 16
         Width = 324
-        Height = 23
+        Height = 27
         TabOrder = 0
+        OnKeyPress = eaNameKeyPress
       end
       object eaSurname: TEdit
         Left = 109
         Top = 47
         Width = 324
-        Height = 22
+        Height = 27
         TabOrder = 1
+        OnKeyPress = eaSurnameKeyPress
       end
       object eaPatron: TEdit
         Left = 109
         Top = 83
         Width = 324
-        Height = 22
+        Height = 27
         TabOrder = 2
+        OnKeyPress = eaPatronKeyPress
       end
     end
     object GroupBox1: TGroupBox
@@ -153,14 +155,14 @@ object Form12: TForm12
       object Label12: TLabel
         Left = 24
         Top = 28
-        Width = 129
+        Width = 121
         Height = 19
         Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1082#1085#1080#1075#1080':'
       end
       object Label6: TLabel
         Left = 11
         Top = 53
-        Width = 137
+        Width = 133
         Height = 19
         Caption = #1044#1072#1090#1072' '#1087#1091#1073#1083#1080#1082#1072#1094#1080#1080':'
       end
@@ -182,15 +184,17 @@ object Form12: TForm12
         Left = 167
         Top = 24
         Width = 324
-        Height = 23
+        Height = 27
         TabOrder = 0
+        OnKeyPress = ebNameKeyPress
       end
       object ebISBN: TEdit
         Left = 167
         Top = 82
         Width = 324
-        Height = 23
+        Height = 27
         TabOrder = 1
+        OnKeyPress = ebISBNKeyPress
       end
       object ebDateBook: TDateTimePicker
         Left = 168
@@ -227,9 +231,10 @@ object Form12: TForm12
       Left = 24
       Top = 264
       Width = 1049
-      Height = 25
+      Height = 27
       MaxLength = 1000
       TabOrder = 3
+      OnKeyPress = ebBookKeyPress
     end
     object cxPeople: TcxLookupComboBox
       Left = 165
@@ -256,9 +261,8 @@ object Form12: TForm12
     ColorSchemeName = 'Colorful'
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 6
+    TabOrder = 2
     TabStop = False
-    ExplicitWidth = 650
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102

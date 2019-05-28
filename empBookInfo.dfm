@@ -2,7 +2,7 @@ object Form19: TForm19
   Left = 0
   Top = 0
   BorderStyle = bsToolWindow
-  Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1082#1085#1080#1075#1077
+  Caption = #1050#1086#1084#1084#1077#1085#1090#1072#1088#1080#1080
   ClientHeight = 612
   ClientWidth = 933
   Color = clBtnFace

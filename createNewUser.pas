@@ -103,6 +103,18 @@ type
     procedure lcbDistrictPropertiesChange(Sender: TObject);
     procedure lcbRegionPropertiesChange(Sender: TObject);
     procedure bSaveAll1Click(Sender: TObject);
+    procedure eNameKeyPress(Sender: TObject; var Key: Char);
+    procedure eSurnameKeyPress(Sender: TObject; var Key: Char);
+    procedure ePartonKeyPress(Sender: TObject; var Key: Char);
+    procedure eEssueKeyPress(Sender: TObject; var Key: Char);
+    procedure eSerialKeyPress(Sender: TObject; var Key: Char);
+    procedure eMailKeyPress(Sender: TObject; var Key: Char);
+    procedure eStreetKeyPress(Sender: TObject; var Key: Char);
+    procedure eHouseKeyPress(Sender: TObject; var Key: Char);
+    procedure eFlatKeyPress(Sender: TObject; var Key: Char);
+    procedure eDocNumberKeyPress(Sender: TObject; var Key: Char);
+    procedure eNumberKeyPress(Sender: TObject; var Key: Char);
+    procedure eUnitCodeKeyPress(Sender: TObject; var Key: Char);
 
 
   private
@@ -122,6 +134,7 @@ implementation
 //------------------------------------------------------------------------------
 procedure TForm4.bSaveAll1Click(Sender: TObject);
 begin
+//Проверки на заполнение полей формы
   if eEssue.Text = ''  then
   begin
     ShowMessage('Заполните поле "выдан"');
@@ -162,8 +175,28 @@ begin
     ShowMessage('Заполните поле "Квартира"');
     abort;
   end;
-
-   uqDoc.Append;
+    if eName.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Имя"');
+    abort;
+  end;
+    if eSurname.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Фамилия"');
+    abort;
+  end;
+    if cbSex.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "пол"');
+    abort;
+  end;
+    if eNumber.Text = ''  then
+  begin
+    ShowMessage('Заполните поле "Номер телефона"');
+    abort;
+  end;
+  //Заполнение бд данными
+  uqDoc.Append;
   uqDoc.FieldValues['issueed_by']:=eEssue.Text;
   uqDoc.FieldValues['date_of_issue']:=dtpEssueDate.Date;
   uqDoc.FieldValues['unit_code']:=eUnitCode.Text;
@@ -194,29 +227,6 @@ begin
   uqGetAddr.ParamByName('region_id').AsString := lcbregion.EditValue;
   uqGetAddr.ParamByName('town_id').AsString := lcbTown.EditValue;
   uqGetAddr.Open;
-
-  if eName.Text = ''  then
-  begin
-    ShowMessage('Заполните поле "Имя"');
-    abort;
-  end;
-    if eSurname.Text = ''  then
-  begin
-    ShowMessage('Заполните поле "Фамилия"');
-    abort;
-  end;
-    if cbSex.Text = ''  then
-  begin
-    ShowMessage('Заполните поле "пол"');
-    abort;
-  end;
-    if eNumber.Text = ''  then
-  begin
-    ShowMessage('Заполните поле "Номер телефона"');
-    abort;
-  end;
-
-
 
   uqPeople.Append;
   uqPeople.FieldValues['name']:=eName.Text;
@@ -250,6 +260,138 @@ end;
 
 
 //------------------------------------------------------------------------------
+//Блок регулярных выражений для полей Edit
+procedure TForm4.eDocNumberKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['0'..'9',#08,#32]) then Key := #0;
+   if eDocNumber.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eEssueKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-']) then Key := #0;
+   if eEssue.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eFlatKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['0'..'9',#08,#32]) then Key := #0;
+   if eFlat.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eHouseKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['0'..'9',#08,#32]) then Key := #0;
+   if eHouse.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eMailKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['A'..'Z','a'..'z',#08,#32,'-','@','_','.','0'..'9']) then Key := #0;
+   if eMail.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eNameKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-']) then Key := #0;
+   if eName.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eNumberKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['0'..'9',#08,#32]) then Key := #0;
+   if eNumber.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.ePartonKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-']) then Key := #0;
+   if eParton.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eSerialKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['0'..'9',#08,#32]) then Key := #0;
+   if eSerial.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eStreetKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-']) then Key := #0;
+   if eStreet.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eSurnameKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['А'..'Я','а'..'я',#08,#32,'-']) then Key := #0;
+   if eSurname.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
+
+procedure TForm4.eUnitCodeKeyPress(Sender: TObject; var Key: Char);
+var
+ simvol: AnsiString;
+begin
+  simvol:=String(Key);
+  if not ( Char(simvol [1]) in ['0'..'9',#08,#32]) then Key := #0;
+   if eUnitCode.SelStart = 0 then
+    if  (key in [#32]) then
+     key:= #0;
+end;
 procedure TForm4.FormCreate(Sender: TObject);
 begin
   uqPeople.Open;
@@ -260,6 +402,7 @@ begin
   uqAddr.Open;
 end;
 //------------------------------------------------------------------------------
+//передача параметров в скрипты
 procedure TForm4.lcbDistrictPropertiesChange(Sender: TObject);
 begin
   uqGetRegion.Close;
