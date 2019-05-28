@@ -22,7 +22,7 @@ uses
   dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
   dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue, DASQLMonitor, UniSQLMonitor;
+  dxSkinXmas2008Blue, DASQLMonitor, UniSQLMonitor, dxGDIPlusClasses, cxImage;
 
 type
   TForm3 = class(TForm)
@@ -30,15 +30,16 @@ type
     tePassword: TcxTextEdit;
     cxLabel1: TcxLabel;
     cxLabel2: TcxLabel;
-    Panel1: TPanel;
-    Panel2: TPanel;
     bOk: TcxButton;
     bCancel: TcxButton;
     Provaider: TPostgreSQLUniProvider;
     con: TUniConnection;
     uqIdent: TUniQuery;
     sqlMonitor: TUniSQLMonitor;
+    cxImage1: TcxImage;
+    Panel1: TPanel;
     procedure bOkClick(Sender: TObject);
+    procedure bCancelClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +57,11 @@ implementation
 {$R *.dfm}
 
 uses mainEmp, mainPeople;
+
+procedure TForm3.bCancelClick(Sender: TObject);
+begin
+  Form3.Close;
+end;
 
 procedure TForm3.bOkClick(Sender: TObject);
 begin
@@ -81,5 +87,11 @@ begin
         end;
     end;
   end
+  else
+  begin
+    ShowMessage('Неправильно введен логин или пароль!');
+    cxLabel1.Style.TextColor:= clRed;
+    cxLabel2.Style.TextColor:= clRed;
+  end;
 end;
 end.
