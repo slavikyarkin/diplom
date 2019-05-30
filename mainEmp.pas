@@ -125,9 +125,9 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
-  uqPeople.Close;
-  uqPeople.MacroByName('w').Value:= '';
-  uqPeople.Open;
+//  uqPeople.Close;
+//  uqPeople.MacroByName('w').Value:= '';
+//  uqPeople.Open;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
