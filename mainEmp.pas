@@ -28,7 +28,7 @@ uses
   cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
   cxGridLevel, cxGridCustomView, cxGridCustomTableView, cxGridTableView,
   cxGridDBTableView, cxGrid, DBAccess, MemDS, Uni, UniProvider,
-  PostgreSQLUniProvider;
+  PostgreSQLUniProvider, frxClass, frxDBSet;
 
 type
   TForm1 = class(TdxRibbonForm)
@@ -66,6 +66,12 @@ type
     dxBarSubItem2: TdxBarSubItem;
     cxBarEditItem3: TcxBarEditItem;
     dxBarEdit3: TdxBarEdit;
+    dxBarManager1Bar3: TdxBar;
+    fast: TdxBarLargeButton;
+    f1: TfrxDBDataset;
+    frxReport2: TfrxReport;
+    f2: TfrxDBDataset;
+    frxReport1: TfrxReport;
     procedure FormCreate(Sender: TObject);
     procedure dxBarEdit3Change(Sender: TObject);
     procedure bNewPeopleClick(Sender: TObject);
@@ -73,6 +79,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure bInfPeopleClick(Sender: TObject);
     procedure dxBarButton1Click(Sender: TObject);
+    procedure fastClick(Sender: TObject);
+
 
 
   private
@@ -122,18 +130,30 @@ begin
   uqPeople.Open;
 end;
 
+procedure TForm1.fastClick(Sender: TObject);
+begin
+// frxReport2.ShowPreparedReport;
+// frxReport2.Print;
+// TForm1.frxReport2.Preview;
+if frxReport2.PrepareReport then
+frxReport2.ShowPreparedReport;
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
 //  uqPeople.Close;
 //  uqPeople.MacroByName('w').Value:= '';
 //  uqPeople.Open;
+uqPeople.Open;
+   uqPeople.Refresh;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
    dxRibbonStatusBar1.Panels[0].Text:= login.fio;
+   uqPeople.Open;
+   uqPeople.Refresh;
 end;
-
 end.
 

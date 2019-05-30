@@ -26,7 +26,7 @@ uses
   dxRibbonBackstageViewGalleryControl, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
   dxCore, cxDateUtils, cxMaskEdit, cxDropDownEdit, cxCalendar, Data.DB,
   DBAccess, MemDS, cxDBEdit, cxLookupEdit, cxDBLookupEdit,
-  cxDBLookupComboBox, DateUtils, Uni;
+  cxDBLookupComboBox, DateUtils, Uni, frxClass, frxDBSet;
 
 
 type
@@ -99,6 +99,12 @@ type
     lcbTown: TcxLookupComboBox;
     lcbRegion: TcxLookupComboBox;
     lcbDistrict: TcxLookupComboBox;
+    dxBarManager1Bar3: TdxBar;
+    perData: TfrxReport;
+    dxBarLargeButton1: TdxBarLargeButton;
+    fDataset1: TfrxDBDataset;
+    fDoc: TfrxDBDataset;
+    fAddr: TfrxDBDataset;
     procedure FormCreate(Sender: TObject);
     procedure lcbDistrictPropertiesChange(Sender: TObject);
     procedure lcbRegionPropertiesChange(Sender: TObject);
@@ -115,6 +121,8 @@ type
     procedure eDocNumberKeyPress(Sender: TObject; var Key: Char);
     procedure eNumberKeyPress(Sender: TObject; var Key: Char);
     procedure eUnitCodeKeyPress(Sender: TObject; var Key: Char);
+    procedure dxBarLargeButton1Click(Sender: TObject);
+    procedure gdSecondInforlClick(Sender: TObject);
 
 
   private
@@ -256,11 +264,26 @@ begin
   uqLibraryCard.FieldValues ['number']:= IntToStr(uqgetPeople.FieldByName('id').AsInteger) + '-' + IntToStr(yearof(date));
   uqLibraryCard.FieldValues['people_id']:= uqGetPeople.FieldByName('id').AsInteger;
   uqLibraryCard.Post;
+
 end;
 
 
 //------------------------------------------------------------------------------
 //Ѕлок регул€рных выражений дл€ полей Edit
+procedure TForm4.dxBarLargeButton1Click(Sender: TObject);
+begin
+  if uqGetDoc.RecordCount > 0 then
+  begin
+    if perData.PrepareReport then
+  perData.ShowPreparedReport;
+  end;
+
+      // perData.Print;
+
+  if perData.PrepareReport then
+  perData.ShowPreparedReport;
+end;
+
 procedure TForm4.eDocNumberKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -400,7 +423,13 @@ begin
   uqGetDistrict.Open;
   uqDoc.Open;
   uqAddr.Open;
+  uqGetDoc.Open;
 end;
+procedure TForm4.gdSecondInforlClick(Sender: TObject);
+begin
+
+end;
+
 //------------------------------------------------------------------------------
 //передача параметров в скрипты
 procedure TForm4.lcbDistrictPropertiesChange(Sender: TObject);

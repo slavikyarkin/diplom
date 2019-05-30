@@ -25,17 +25,14 @@ uses
   cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
   cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
   DBAccess, MemDS, cxGridLevel, cxGridCustomView,
-  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, Uni;
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, Uni,
+  frxClass, frxDBSet;
 
 type
   TForm5 = class(TdxRibbonForm)
     dxBarManager1: TdxBarManager;
-    dxBarManager1Bar1: TdxBar;
-    dxRibbon1: TdxRibbon;
-    dxRibbon1Tab1: TdxRibbonTab;
     dxRibbonStatusBar1: TdxRibbonStatusBar;
     dxSkinController1: TdxSkinController;
-    dxBarManager1Bar2: TdxBar;
     cxBarEditItem1: TcxBarEditItem;
     gPeopleJournalDBTableView1: TcxGridDBTableView;
     gPeopleJournalLevel1: TcxGridLevel;
@@ -50,27 +47,36 @@ type
     dxBarLargeButton1: TdxBarLargeButton;
     dxBarButton2: TdxBarButton;
     dxBarButton3: TdxBarButton;
-    dxBarManager1Bar3: TdxBar;
     dxBB4: TdxBarButton;
     dxBarButton5: TdxBarButton;
-    dxBarManager1Bar4: TdxBar;
     dxbbAddNewBook: TdxBarButton;
     dsPeopleJournal: TDataSource;
     dsJournal: TUniDataSource;
     dxBarButton4: TdxBarButton;
     dxBarLargeButton2: TdxBarLargeButton;
     dxBarLargeButton3: TdxBarLargeButton;
-    dxBarManager1Bar5: TdxBar;
     dxReturn: TdxBarButton;
-    dxBarManager1Bar6: TdxBar;
     dxBarLargeButton4: TdxBarLargeButton;
     dxBarButton6: TdxBarButton;
+    ReportBook: TfrxReport;
+    fjournal: TfrxDBDataset;
+    frxJournal2: TfrxDBDataset;
+    dxBarButton7: TdxBarButton;
+    dxBarLargeButton5: TdxBarLargeButton;
+    bSave: TdxRibbon;
+    dxRibbon1Tab1: TdxRibbonTab;
+    dxBarManager1Bar1: TdxBar;
+    dxBarManager1Bar2: TdxBar;
+    dxBarManager1Bar8: TdxBar;
+    dxBarManager1Bar9: TdxBar;
+    dxBarManager1Bar10: TdxBar;
     procedure FormCreate(Sender: TObject);
     procedure dxBB4Click(Sender: TObject);
     procedure dxReturnClick(Sender: TObject);
     procedure dxBarButton6Click(Sender: TObject);
     procedure dxbbAddNewBookClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure dxBarButton7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -104,6 +110,15 @@ begin
       uqPeopleJournal.Refresh;
 end;
 //------------------------------------------------------------------------------
+procedure TForm5.dxBarButton7Click(Sender: TObject);
+begin
+       if uqPeopleJournal.RecordCount > 0 then
+  begin
+    if ReportBook.PrepareReport then
+  ReportBook.ShowPreparedReport;
+  end;
+end;
+
 procedure TForm5.dxBB4Click(Sender: TObject);
 begin
   Form6.ShowModal;

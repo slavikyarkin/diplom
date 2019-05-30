@@ -39,6 +39,9 @@ object Form1: TForm1
         end
         item
           ToolbarName = 'dxBarManager1Bar1'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar3'
         end>
       Index = 0
     end
@@ -187,6 +190,26 @@ object Form1: TForm1
           ItemName = 'dxBarEdit3'
         end>
       OneOnRow = True
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar3: TdxBar
+      Caption = 'Custom 2'
+      CaptionButtons = <>
+      DockedLeft = 640
+      DockedTop = 0
+      FloatLeft = 878
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'fast'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -276,6 +299,13 @@ object Form1: TForm1
       Visible = ivAlways
       OnChange = dxBarEdit3Change
     end
+    object fast: TdxBarLargeButton
+      Caption = 'Fast Report'
+      Category = 0
+      Hint = 'Fast Report'
+      Visible = ivAlways
+      OnClick = fastClick
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
@@ -315,6 +345,7 @@ object Form1: TForm1
       ''
       ' &w'
       ' &v')
+    Active = True
     Left = 600
     Top = 168
     MacroData = <
@@ -329,5 +360,139 @@ object Form1: TForm1
     DataSet = uqPeople
     Left = 608
     Top = 240
+  end
+  object f1: TfrxDBDataset
+    UserName = 'f1'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'id=id'
+      'number=number'
+      'name=name'
+      'surname=surname'
+      'patron=patron'
+      'birth=birth'
+      'date_of_issue=date_of_issue'
+      'expirate_date=expirate_date')
+    DataSet = uqPeople
+    BCDToCurrency = False
+    Left = 272
+    Top = 320
+  end
+  object frxReport2: TfrxReport
+    Version = '5.6.11'
+    DataSet = f1
+    DataSetName = 'f1'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = #1055#1086' '#1091#1084#1086#1083#1095#1072#1085#1080#1102
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43615.813037338000000000
+    ReportOptions.LastChange = 43615.816325463000000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 120
+    Top = 320
+    Datasets = <
+      item
+        DataSet = f1
+        DataSetName = 'f1'
+      end
+      item
+        DataSet = f2
+        DataSetName = 'f2'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Height = 22.677180000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        DataSet = f2
+        DataSetName = 'f2'
+        RowCount = 0
+        object Memo1: TfrxMemoView
+          Left = 37.795300000000000000
+          Top = 3.779530000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          DataField = 'name'
+          DataSet = f2
+          DataSetName = 'f2'
+          Memo.UTF8W = (
+            '[f2."name"]')
+        end
+      end
+    end
+  end
+  object f2: TfrxDBDataset
+    UserName = 'f2'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'id=id'
+      'number=number'
+      'name=name'
+      'surname=surname'
+      'patron=patron'
+      'birth=birth'
+      'date_of_issue=date_of_issue'
+      'expirate_date=expirate_date')
+    DataSet = uqPeople
+    BCDToCurrency = False
+    Left = 176
+    Top = 320
+  end
+  object frxReport1: TfrxReport
+    Version = '5.6.11'
+    DataSet = f1
+    DataSetName = 'f1'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = #1055#1086' '#1091#1084#1086#1083#1095#1072#1085#1080#1102
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43615.847092175900000000
+    ReportOptions.LastChange = 43615.847092175900000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 384
+    Top = 336
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+    end
   end
 end
