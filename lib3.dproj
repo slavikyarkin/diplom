@@ -176,15 +176,14 @@
         </DCCReference>
         <DCCReference Include="bookExchange.pas">
             <Form>Form20</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="newAnnouncement.pas">
             <Form>Form21</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="peopleAnnouncement.pas">
             <Form>Form22</Form>
-        </DCCReference>
-        <DCCReference Include="empBookPeople.pas">
-            <Form>Form23</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -209,7 +208,7 @@
                 </Source>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Win32\Debug\lib3.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="F:\Win32\Debug\lib3.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>lib3.exe</RemoteName>
                         <Overwrite>true</Overwrite>
