@@ -32,9 +32,6 @@ object Form18: TForm18
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitLeft = 8
-    ExplicitTop = -6
-    ExplicitWidth = 640
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
@@ -61,8 +58,6 @@ object Form18: TForm18
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 457
-    ExplicitWidth = 640
   end
   object cxPageControl1: TcxPageControl
     Left = 0
@@ -71,12 +66,10 @@ object Form18: TForm18
     Height = 423
     Align = alClient
     TabOrder = 2
-    Properties.ActivePage = tsBook
+    Properties.ActivePage = tsCountReadBook
     Properties.CustomButtons.Buttons = <>
-    ExplicitLeft = 128
-    ExplicitTop = 224
-    ExplicitWidth = 289
-    ExplicitHeight = 193
+    ExplicitTop = 131
+    ExplicitHeight = 447
     ClientRectBottom = 421
     ClientRectLeft = 2
     ClientRectRight = 678
@@ -84,8 +77,6 @@ object Form18: TForm18
     object tsBook: TcxTabSheet
       Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1087#1088#1080#1085#1077#1089#1077#1085#1085#1099#1093' '#1082#1085#1080#1075
       ImageIndex = 0
-      ExplicitWidth = 285
-      ExplicitHeight = 163
       object cxGrid1: TcxGrid
         Left = 0
         Top = 0
@@ -93,10 +84,6 @@ object Form18: TForm18
         Height = 393
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 192
-        ExplicitTop = 72
-        ExplicitWidth = 250
-        ExplicitHeight = 200
         object cxGrid1DBTableView1: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           DataController.DataSource = dsBook
@@ -132,8 +119,6 @@ object Form18: TForm18
     object bExtradition: TcxTabSheet
       Caption = #1057#1091#1084#1084#1072' '#1087#1088#1080#1085#1077#1089#1077#1085#1085#1099#1093' '#1082#1085#1080#1075' '#1074' '#1078#1091#1088#1085#1072#1083#1072#1093
       ImageIndex = 1
-      ExplicitWidth = 636
-      ExplicitHeight = 272
       object cxGrid2: TcxGrid
         Left = 0
         Top = 0
@@ -141,10 +126,6 @@ object Form18: TForm18
         Height = 393
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 296
-        ExplicitTop = 121
-        ExplicitWidth = 250
-        ExplicitHeight = 200
         object cxGrid2DBTableView1: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           DataController.DataSource = dsExtradition
@@ -180,8 +161,7 @@ object Form18: TForm18
     object tsCountReadBook: TcxTabSheet
       Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1087#1088#1086#1095#1080#1090#1072#1085#1085#1099#1093' '#1082#1085#1080#1075
       ImageIndex = 2
-      ExplicitWidth = 779
-      ExplicitHeight = 321
+      ExplicitHeight = 417
       object cxGrid3: TcxGrid
         Left = 0
         Top = 0
@@ -189,10 +169,7 @@ object Form18: TForm18
         Height = 393
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 328
-        ExplicitTop = 121
-        ExplicitWidth = 250
-        ExplicitHeight = 200
+        ExplicitHeight = 417
         object cxGrid3DBTableView1: TcxGridDBTableView
           Navigator.Buttons.CustomButtons = <>
           DataController.DataSource = dsCountReadBook

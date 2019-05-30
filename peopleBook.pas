@@ -41,11 +41,13 @@ type
     bClose: TdxBarLargeButton;
     bDetail: TdxBarLargeButton;
     bRating: TdxBarLargeButton;
+    bRefresh: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
     procedure bDetailClick(Sender: TObject);
     procedure bRatingClick(Sender: TObject);
+    procedure bRefreshClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -76,6 +78,11 @@ end;
 procedure TForm15.bRatingClick(Sender: TObject);
 begin
   Form18.ShowModal;
+end;
+
+procedure TForm15.bRefreshClick(Sender: TObject);
+begin
+  uqMyBook.Refresh;
 end;
 
 procedure TForm15.FormCreate(Sender: TObject);

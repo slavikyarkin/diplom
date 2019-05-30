@@ -1,9 +1,10 @@
 object Form3: TForm3
   Left = 0
   Top = 0
+  BorderStyle = bsToolWindow
   Caption = #1044#1086#1073#1088#1086' '#1087#1086#1078#1072#1083#1086#1074#1072#1090#1100'!'
-  ClientHeight = 96
-  ClientWidth = 282
+  ClientHeight = 106
+  ClientWidth = 292
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,15 +12,18 @@ object Form3: TForm3
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 73
     Top = 0
-    Width = 209
-    Height = 96
+    Width = 219
+    Height = 106
     Align = alClient
     TabOrder = 1
+    ExplicitWidth = 209
+    ExplicitHeight = 96
     object cxLabel2: TcxLabel
       Left = 25
       Top = 33
@@ -129,7 +133,8 @@ object Form3: TForm3
       B10F0B3880C16FFF52FF0783809973FB056FA40000000049454E44AE426082}
     TabOrder = 0
     Transparent = True
-    Height = 96
+    ExplicitHeight = 96
+    Height = 106
     Width = 73
   end
   object Provaider: TPostgreSQLUniProvider

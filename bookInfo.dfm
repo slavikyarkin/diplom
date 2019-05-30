@@ -33,6 +33,7 @@ object Form9: TForm9
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitTop = -6
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103

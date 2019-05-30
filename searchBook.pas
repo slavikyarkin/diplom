@@ -73,16 +73,20 @@ uses login, bookInfo, chosenBook;
 
 procedure TForm11.bAddChosenClick(Sender: TObject);
 begin
-  if uqChosen.RecordCount = 0 then
+  if uqSearchBook.RecordCount > 0 then
   begin
-    uqChosen.Edit;
-    uqChosen.FieldValues['people_id']:= login.people_id;
-    uqChosen.FieldValues['library_id']:= uqSearchBook.FieldValues['id'];
-    uqChosen.Post;
+    if uqChosen.RecordCount = 0 then
+    begin
+      uqChosen.Edit;
+      uqChosen.FieldValues['people_id']:= login.people_id;
+      uqChosen.FieldValues['library_id']:= uqSearchBook.FieldValues['id'];
+      uqChosen.Post;
+    end
+    else
+      uqChosen.Delete;
   end
   else
-    uqChosen.Delete;
-
+    ShowMessage('Нет записей!');
   applyFilter;
 end;
 

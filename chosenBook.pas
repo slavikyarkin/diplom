@@ -65,17 +65,23 @@ uses login, bookInfo;
 
 procedure TForm13.bBooKInfoClick(Sender: TObject);
 begin
-  bookInfo.book_id:= uqChosen.FieldValues['book_id'];
-  Form9.ShowModal;
+  if uqChosen.RecordCount > 0 then
+  begin
+    bookInfo.book_id:= uqChosen.FieldValues['book_id'];
+    Form9.ShowModal;
+  end
+  else
+    ShowMessage('Нет записей!');
 end;
 
 procedure TForm13.bDelChosenClick(Sender: TObject);
 begin
   if uqChosen.RecordCount > 0 then
-  begin
-    uqChosen.Delete;
-    uqChosen.Refresh;
-  end;
+    uqChosen.Delete
+  else
+    ShowMessage('Нет записей!');
+
+  uqChosen.Refresh;
 end;
 
 procedure TForm13.dxBarLargeButton1Click(Sender: TObject);
