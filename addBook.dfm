@@ -34,11 +34,13 @@ object Form6: TForm6
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
-    Top = 60
+    Top = 27
     Width = 650
-    Height = 269
+    Height = 302
     Align = alClient
     TabOrder = 1
+    ExplicitTop = 60
+    ExplicitHeight = 269
     object cxLabel1: TcxLabel
       Left = 24
       Top = 32
@@ -130,12 +132,13 @@ object Form6: TForm6
     Left = 0
     Top = 0
     Width = 650
-    Height = 60
+    Height = 27
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
+    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 2

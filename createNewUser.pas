@@ -101,7 +101,7 @@ type
     lcbDistrict: TcxLookupComboBox;
     dxBarManager1Bar3: TdxBar;
     perData: TfrxReport;
-    dxBarLargeButton1: TdxBarLargeButton;
+    printFRX: TdxBarLargeButton;
     fDataset1: TfrxDBDataset;
     fDoc: TfrxDBDataset;
     fAddr: TfrxDBDataset;
@@ -121,7 +121,7 @@ type
     procedure eDocNumberKeyPress(Sender: TObject; var Key: Char);
     procedure eNumberKeyPress(Sender: TObject; var Key: Char);
     procedure eUnitCodeKeyPress(Sender: TObject; var Key: Char);
-    procedure dxBarLargeButton1Click(Sender: TObject);
+    procedure printFRXClick(Sender: TObject);
     procedure gdSecondInforlClick(Sender: TObject);
 
 
@@ -137,7 +137,7 @@ var
 implementation
 
 {$R *.dfm}
-                  uses mainEmp;
+   uses mainEmp;
 { TForm3 }
 //------------------------------------------------------------------------------
 procedure TForm4.bSaveAll1Click(Sender: TObject);
@@ -264,24 +264,21 @@ begin
   uqLibraryCard.FieldValues ['number']:= IntToStr(uqgetPeople.FieldByName('id').AsInteger) + '-' + IntToStr(yearof(date));
   uqLibraryCard.FieldValues['people_id']:= uqGetPeople.FieldByName('id').AsInteger;
   uqLibraryCard.Post;
-
+  printFRX.Enabled:= True;
 end;
 
 
 //------------------------------------------------------------------------------
 //Ѕлок регул€рных выражений дл€ полей Edit
-procedure TForm4.dxBarLargeButton1Click(Sender: TObject);
+procedure TForm4.printFRXClick(Sender: TObject);
 begin
   if uqGetDoc.RecordCount > 0 then
   begin
     if perData.PrepareReport then
   perData.ShowPreparedReport;
   end;
-
-      // perData.Print;
-
-  if perData.PrepareReport then
-  perData.ShowPreparedReport;
+//  if perData.PrepareReport then
+//  perData.ShowPreparedReport;
 end;
 
 procedure TForm4.eDocNumberKeyPress(Sender: TObject; var Key: Char);

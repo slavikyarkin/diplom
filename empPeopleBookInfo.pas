@@ -18,14 +18,12 @@ type
     dxBarManager1Bar1: TdxBar;
     dxRibbonStatusBar1: TdxRibbonStatusBar;
     dxSkinController1: TdxSkinController;
-    dxBarManager1Bar2: TdxBar;
     cxBarEditItem1: TcxBarEditItem;
     cxGrid1: TcxGrid;
     cxGrid1DBTableView1: TcxGridDBTableView;
     cxGrid1Level1: TcxGridLevel;
     dsMyJur: TUniDataSource;
     uqMyJur: TUniQuery;
-    frxReport2: TfrxReport;
     f1: TfrxDBDataset;
     f2: TfrxDBDataset;
     bSave: TdxRibbon;
@@ -34,6 +32,8 @@ type
     cxGrid1DBTableView1author_fio: TcxGridDBColumn;
     cxGrid1DBTableView1date_of_issue: TcxGridDBColumn;
     dxBarButton1: TdxBarButton;
+    frxReport1: TfrxReport;
+    dxBarButton2: TdxBarButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -54,8 +54,8 @@ implementation
 
 procedure TForm24.dxBarButton1Click(Sender: TObject);
 begin
- if frxReport2.PrepareReport then
-  frxReport2.ShowPreparedReport;
+ if frxReport1.PrepareReport then
+  frxReport1.ShowPreparedReport;
 end;
 
 procedure TForm24.FormCreate(Sender: TObject);

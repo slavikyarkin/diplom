@@ -39,12 +39,14 @@ object Form5: TForm5
   end
   object gPeopleJournal: TcxGrid
     Left = 0
-    Top = 60
+    Top = 27
     Width = 1094
-    Height = 613
+    Height = 646
     Align = alClient
     TabOrder = 1
     TabStop = False
+    ExplicitTop = 60
+    ExplicitHeight = 613
     object gPeopleJournalDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsJournal
@@ -90,12 +92,13 @@ object Form5: TForm5
     Left = 0
     Top = 0
     Width = 1094
-    Height = 60
+    Height = 27
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
+    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 2

@@ -31,17 +31,16 @@ object Form8: TForm8
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 228
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
-    Top = 60
+    Top = 27
     Width = 650
-    Height = 160
+    Height = 193
     Align = alClient
     TabOrder = 1
-    ExplicitTop = 136
-    ExplicitHeight = 144
+    ExplicitTop = 60
+    ExplicitHeight = 160
     object Label1: TLabel
       Left = 61
       Top = 29
@@ -75,12 +74,13 @@ object Form8: TForm8
     Left = 0
     Top = 0
     Width = 650
-    Height = 60
+    Height = 27
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
+    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 2

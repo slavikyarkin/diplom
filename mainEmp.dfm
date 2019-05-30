@@ -20,18 +20,18 @@ object Form1: TForm1
     Left = 0
     Top = 0
     Width = 1130
-    Height = 60
+    Height = 27
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
     TabAreaToolbar.Toolbar = dxBarManager1Bar2
+    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 844
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
@@ -69,13 +69,14 @@ object Form1: TForm1
   end
   object gPeople: TcxGrid
     Left = 0
-    Top = 60
+    Top = 27
     Width = 1130
-    Height = 397
+    Height = 430
     Align = alClient
     TabOrder = 2
     ExplicitTop = 54
     ExplicitWidth = 844
+    ExplicitHeight = 397
     object gdbtvPeople: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsPeople

@@ -609,8 +609,8 @@ object Form4: TForm4
           Visible = True
           ItemName = 'bSaveAll1'
         end>
-      OneOnRow = True
-      Row = 1
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -643,9 +643,9 @@ object Form4: TForm4
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxBarLargeButton1'
+          ItemName = 'printFRX'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -682,12 +682,13 @@ object Form4: TForm4
       Visible = ivAlways
       OnClick = bSaveAll1Click
     end
-    object dxBarLargeButton1: TdxBarLargeButton
+    object printFRX: TdxBarLargeButton
       Caption = #1054#1073#1088#1072#1073#1086#1090#1082#1072' '#1087#1077#1088#1089#1086#1085#1072#1083#1100#1085#1099#1093' '#1076#1072#1085#1085#1099#1093
       Category = 0
+      Enabled = False
       Hint = #1054#1073#1088#1072#1073#1086#1090#1082#1072' '#1087#1077#1088#1089#1086#1085#1072#1083#1100#1085#1099#1093' '#1076#1072#1085#1085#1099#1093
       Visible = ivAlways
-      OnClick = dxBarLargeButton1Click
+      OnClick = printFRXClick
     end
   end
   object dxSkinController1: TdxSkinController

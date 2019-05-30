@@ -144,7 +144,7 @@ begin
   uqPeopleID.ParamByName('pid').AsInteger:= uqPeople.FieldValues['id'];
   uqPeopleID.Open;
   empPeopleBookInfo.pid:= uqPeople.FieldValues['id'];
-  Form24.show;
+  Form24.ShowModal;
 end;
 
 procedure TForm1.fastClick(Sender: TObject);

@@ -261,6 +261,8 @@ object Form16: TForm16
     Contexts = <>
     TabOrder = 4
     TabStop = False
+    ExplicitLeft = -8
+    ExplicitTop = 8
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
@@ -274,6 +276,12 @@ object Form16: TForm16
         end
         item
           ToolbarName = 'dxBarManager1Bar2'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar3'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar4'
         end>
       Index = 0
     end
@@ -309,7 +317,7 @@ object Form16: TForm16
           ItemName = 'dxBarLargeButton1'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 2
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -326,9 +334,48 @@ object Form16: TForm16
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxClose'
+          ItemName = 'dxBarLargeButton2'
         end>
       OneOnRow = False
+      Row = 2
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar3: TdxBar
+      CaptionButtons = <>
+      DockedLeft = 384
+      DockedTop = 0
+      FloatLeft = 1191
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarButton2'
+        end>
+      OneOnRow = True
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar4: TdxBar
+      Caption = 'Custom 3'
+      CaptionButtons = <>
+      DockedLeft = 562
+      DockedTop = 0
+      FloatLeft = 1191
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxClose'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -358,6 +405,19 @@ object Form16: TForm16
       Category = 0
       Visible = ivAlways
     end
+    object dxBarLargeButton2: TdxBarLargeButton
+      Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1102' '#1086' '#1082#1085#1080#1075#1077
+      Category = 0
+      Hint = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1102' '#1086' '#1082#1085#1080#1075#1077
+      Visible = ivAlways
+      OnClick = dxBarLargeButton2Click
+    end
+    object dxBarButton2: TdxBarButton
+      Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1089#1090#1086#1088#1080#1102' '#1082#1085#1080#1075#1080
+      Category = 0
+      Hint = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1089#1090#1086#1088#1080#1102' '#1082#1085#1080#1075#1080
+      Visible = ivAlways
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
@@ -367,7 +427,7 @@ object Form16: TForm16
   object uqSearchBook: TUniQuery
     Connection = Form3.con
     SQL.Strings = (
-      'select l.id'
+      'select l.id as lib_id'
       '     , b.name as book_name'
       '     , b.id as book_id'
       '     , e.name as edition_name'
@@ -410,7 +470,8 @@ object Form16: TForm16
       ' order by l.id desc'
       ''
       '')
-    Left = 936
+    Left = 672
+    Top = 65528
     ParamData = <
       item
         DataType = ftUnknown
