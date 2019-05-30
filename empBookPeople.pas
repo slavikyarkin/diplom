@@ -26,7 +26,7 @@ type
   end;
 
 var
-  Form23: TForm23;
+  Form23: TForm23;       // check
 
 implementation
 

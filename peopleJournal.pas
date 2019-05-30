@@ -92,11 +92,7 @@ implementation
     uses mainEmp, addBook, issueBookpas, newBookRecord, login;
 { TForm4 }
 
-//procedure TForm4.dxBarButton2Click(Sender: TObject);
-//begin
-//Application.CreateForm(TForm6, Form6);
-//Form6.ShowModal;
-//end;
+// check
 
 procedure TForm5.dxReturnClick(Sender: TObject);
 begin

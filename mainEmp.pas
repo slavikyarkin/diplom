@@ -93,6 +93,7 @@ type
   public
     { Public declarations }
   end;
+ // check
 
 var
   Form1: TForm1;
