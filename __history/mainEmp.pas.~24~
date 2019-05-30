@@ -84,7 +84,6 @@ type
     procedure bInfPeopleClick(Sender: TObject);
     procedure dxBarButton1Click(Sender: TObject);
     procedure fastClick(Sender: TObject);
-    procedure dxBarLargeButton1Click(Sender: TObject);
 
 
 
@@ -103,7 +102,7 @@ implementation
 {$R *.dfm}
 
 //uses newPeople, PeopleJournal, BookList, PeopleInform, login;
-uses login, createNewUser, peopleJournal, empInfo, empBookList, empBookPeople;
+uses login, createNewUser, peopleJournal, empInfo, empBookList;
 
 
 procedure TForm1.bInfPeopleClick(Sender: TObject);
@@ -134,11 +133,6 @@ begin
   uqPeople.MacroByName('w').Value:= ' where lc.number ilike ' + s +'%' + dxBarEdit3.Text + '%' + s;
   s := uqPeople.MacroByName('w').Value;
   uqPeople.Open;
-end;
-
-procedure TForm1.dxBarLargeButton1Click(Sender: TObject);
-begin
-        Form23.show;
 end;
 
 procedure TForm1.fastClick(Sender: TObject);

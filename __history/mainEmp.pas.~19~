@@ -72,10 +72,6 @@ type
     frxReport2: TfrxReport;
     f2: TfrxDBDataset;
     frxReport1: TfrxReport;
-    uqPeopleID: TUniQuery;
-    dsPeopleID: TUniDataSource;
-    dxBarManager1Bar4: TdxBar;
-    dxBarLargeButton1: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarEdit3Change(Sender: TObject);
     procedure bNewPeopleClick(Sender: TObject);
@@ -84,7 +80,6 @@ type
     procedure bInfPeopleClick(Sender: TObject);
     procedure dxBarButton1Click(Sender: TObject);
     procedure fastClick(Sender: TObject);
-    procedure dxBarLargeButton1Click(Sender: TObject);
 
 
 
@@ -96,14 +91,13 @@ type
 
 var
   Form1: TForm1;
-  people_id : integer;
 
 implementation
 
 {$R *.dfm}
 
 //uses newPeople, PeopleJournal, BookList, PeopleInform, login;
-uses login, createNewUser, peopleJournal, empInfo, empBookList, empBookPeople;
+uses login, createNewUser, peopleJournal, empInfo, empBookList;
 
 
 procedure TForm1.bInfPeopleClick(Sender: TObject);
@@ -136,19 +130,11 @@ begin
   uqPeople.Open;
 end;
 
-procedure TForm1.dxBarLargeButton1Click(Sender: TObject);
-begin
-        Form23.show;
-end;
-
 procedure TForm1.fastClick(Sender: TObject);
 begin
 // frxReport2.ShowPreparedReport;
 // frxReport2.Print;
 // TForm1.frxReport2.Preview;
-    uqPeopleID.close;
-    uqPeopleID.ParamByName('pid').AsInteger:= uqPeople.FieldValues['id'];
-    uqPeopleID.Open;
 if frxReport2.PrepareReport then
 frxReport2.ShowPreparedReport;
 end;
@@ -159,8 +145,8 @@ begin
 //  uqPeople.Close;
 //  uqPeople.MacroByName('w').Value:= '';
 //  uqPeople.Open;
-    uqPeople.Open;
-    uqPeople.Refresh;
+uqPeople.Open;
+   uqPeople.Refresh;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
