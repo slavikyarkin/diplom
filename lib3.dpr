@@ -22,7 +22,8 @@ uses
   peopleBookRating in 'peopleBookRating.pas' {Form18},
   empBookInfo in 'empBookInfo.pas' {Form19},
   bookExchange in 'bookExchange.pas' {Form20},
-  newAnnouncement in 'newAnnouncement.pas' {Form21};
+  newAnnouncement in 'newAnnouncement.pas' {Form21},
+  peopleAnnouncement in 'peopleAnnouncement.pas' {Form22};
 
 {$R *.res}
 
@@ -51,5 +52,6 @@ begin
   Application.CreateForm(TForm19, Form19);
   Application.CreateForm(TForm20, Form20);
   Application.CreateForm(TForm21, Form21);
+  Application.CreateForm(TForm22, Form22);
   Application.Run;
 end.

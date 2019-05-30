@@ -8,7 +8,11 @@ uses
   cxLookAndFeelPainters, cxClasses, dxRibbonBackstageView, cxBarEditItem,
   dxRibbonCustomizationForm, cxTextEdit, cxContainer, cxEdit, dxSkinsForm,
   dxStatusBar, dxRibbonStatusBar, cxLabel, dxGallery, dxGalleryControl,
-  dxRibbonBackstageViewGalleryControl;
+  dxRibbonBackstageViewGalleryControl, cxStyles, cxCustomData, cxFilter, cxData,
+  cxDataStorage, cxNavigator,
+  cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, DBAccess, Uni,
+  MemDS, cxGridLevel, cxGridCustomView, cxGrid;
 
 type
   TForm20 = class(TdxRibbonForm)
@@ -24,10 +28,24 @@ type
     bAdd: TdxBarLargeButton;
     bRefresh: TdxBarLargeButton;
     bClose: TdxBarLargeButton;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    uqAnnouncement: TUniQuery;
+    dsAnnouncement: TUniDataSource;
+    cxGrid1DBTableView1name: TcxGridDBColumn;
+    cxGrid1DBTableView1author: TcxGridDBColumn;
+    cxGrid1DBTableView1genre: TcxGridDBColumn;
+    cxGrid1DBTableView1login: TcxGridDBColumn;
+    cxGrid1DBTableView1announcement_name: TcxGridDBColumn;
+    cxGrid1DBTableView1comm: TcxGridDBColumn;
+    cxGrid1DBTableView1date: TcxGridDBColumn;
+    cxGrid1DBTableView1case: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
     procedure bAddClick(Sender: TObject);
+    procedure bRefreshClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,11 +65,17 @@ uses login, newAnnouncement;
 procedure TForm20.bAddClick(Sender: TObject);
 begin
   Form21.ShowModal;
+  uqAnnouncement.Refresh;
 end;
 
 procedure TForm20.bCloseClick(Sender: TObject);
 begin
   Form20.Close;
+end;
+
+procedure TForm20.bRefreshClick(Sender: TObject);
+begin
+  uqAnnouncement.Refresh;
 end;
 
 procedure TForm20.FormCreate(Sender: TObject);
@@ -63,6 +87,8 @@ procedure TForm20.FormShow(Sender: TObject);
 begin
   dxRibbonStatusBar1.Panels[0].Text:=  login.fio + ' ' + login.card;
   Form20.WindowState := wsMaximized;
+  uqAnnouncement.Close;
+  uqAnnouncement.Open;
 end;
 
 end.

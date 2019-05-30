@@ -9,7 +9,7 @@ uses
   dxRibbonCustomizationForm, cxTextEdit, dxSkinsForm, dxStatusBar,
   dxRibbonStatusBar, cxContainer, cxEdit, Data.DB, DBAccess, Uni, MemDS,
   cxMaskEdit, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox,
-  cxLabel, cxMemo, cxDBEdit;
+  cxLabel, cxMemo, cxDBEdit, Vcl.ExtCtrls;
 
 type
   TForm21 = class(TdxRibbonForm)
@@ -36,6 +36,7 @@ type
     cxLabel2: TcxLabel;
     cxLabel3: TcxLabel;
     bAdd: TdxBarLargeButton;
+    Panel1: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
@@ -48,6 +49,7 @@ type
 
 var
   Form21: TForm21;
+  openForm : boolean;
 
 implementation
 
@@ -71,6 +73,8 @@ end;
 procedure TForm21.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
+  openForm:= false;
+  cxDBLookupComboBox1.Focused;
 end;
 
 procedure TForm21.FormShow(Sender: TObject);
@@ -80,9 +84,13 @@ begin
   uqBook.Open;
   uqAnnouncement.Close;
   uqAnnouncement.Open;
-  uqBookExchange.Close;
-  uqBookExchange.Open;
-  uqBookExchange.Edit;
+  if not openForm then
+  begin
+    uqBookExchange.Close;
+    uqBookExchange.ParamByName('p_id').AsInteger:= -1;
+    uqBookExchange.Open;
+    uqBookExchange.Edit;
+  end;
 end;
 
 end.

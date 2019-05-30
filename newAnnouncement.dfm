@@ -3,8 +3,8 @@ object Form21: TForm21
   Top = 0
   BorderStyle = bsToolWindow
   Caption = #1053#1086#1074#1086#1077' '#1086#1073#1098#1103#1074#1083#1077#1085#1080#1077
-  ClientHeight = 409
-  ClientWidth = 491
+  ClientHeight = 407
+  ClientWidth = 495
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,10 +17,79 @@ object Form21: TForm21
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 155
+    Width = 495
+    Height = 229
+    Align = alClient
+    TabOrder = 6
+    ExplicitLeft = 56
+    ExplicitTop = 288
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object cxDBLookupComboBox1: TcxDBLookupComboBox
+      Left = 112
+      Top = 6
+      DataBinding.DataField = 'book_id'
+      DataBinding.DataSource = dsBookExchange
+      Properties.KeyFieldNames = 'id'
+      Properties.ListColumns = <
+        item
+          FieldName = 'book'
+        end>
+      Properties.ListOptions.ShowHeader = False
+      Properties.ListSource = dsBook
+      TabOrder = 0
+      Width = 361
+    end
+    object cxDBLookupComboBox2: TcxDBLookupComboBox
+      Left = 112
+      Top = 33
+      DataBinding.DataField = 'announcement_id'
+      DataBinding.DataSource = dsBookExchange
+      Properties.KeyFieldNames = 'id'
+      Properties.ListColumns = <
+        item
+          FieldName = 'type'
+        end>
+      Properties.ListOptions.ShowHeader = False
+      Properties.ListSource = dsAnnouncement
+      TabOrder = 1
+      Width = 361
+    end
+    object cxDBMemo1: TcxDBMemo
+      Left = 112
+      Top = 60
+      DataBinding.DataField = 'text'
+      DataBinding.DataSource = dsBookExchange
+      TabOrder = 2
+      Height = 153
+      Width = 361
+    end
+    object cxLabel1: TcxLabel
+      Left = 68
+      Top = 6
+      Caption = #1050#1085#1080#1075#1072':'
+      Transparent = True
+    end
+    object cxLabel2: TcxLabel
+      Left = 16
+      Top = 33
+      Caption = #1058#1080#1087' '#1086#1073#1098#1103#1074#1083#1077#1085#1080#1103':'
+      Transparent = True
+    end
+    object cxLabel3: TcxLabel
+      Left = 31
+      Top = 60
+      Caption = #1050#1086#1084#1084#1077#1085#1090#1072#1088#1080#1081':'
+      Transparent = True
+    end
+  end
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 491
+    Width = 495
     Height = 155
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
@@ -47,8 +116,8 @@ object Form21: TForm21
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 386
-    Width = 491
+    Top = 384
+    Width = 495
     Height = 23
     Panels = <
       item
@@ -62,61 +131,6 @@ object Form21: TForm21
     Font.Style = []
     ExplicitTop = 457
     ExplicitWidth = 640
-  end
-  object cxDBLookupComboBox1: TcxDBLookupComboBox
-    Left = 112
-    Top = 168
-    DataBinding.DataField = 'book_id'
-    DataBinding.DataSource = dsBookExchange
-    Properties.KeyFieldNames = 'id'
-    Properties.ListColumns = <
-      item
-        FieldName = 'book'
-      end>
-    Properties.ListSource = dsBook
-    TabOrder = 6
-    Width = 361
-  end
-  object cxDBLookupComboBox2: TcxDBLookupComboBox
-    Left = 112
-    Top = 195
-    DataBinding.DataField = 'announcement_id'
-    DataBinding.DataSource = dsBookExchange
-    Properties.KeyFieldNames = 'id'
-    Properties.ListColumns = <
-      item
-        FieldName = 'type'
-      end>
-    Properties.ListSource = dsAnnouncement
-    TabOrder = 7
-    Width = 361
-  end
-  object cxDBMemo1: TcxDBMemo
-    Left = 112
-    Top = 222
-    DataBinding.DataField = 'text'
-    DataBinding.DataSource = dsBookExchange
-    TabOrder = 8
-    Height = 153
-    Width = 361
-  end
-  object cxLabel1: TcxLabel
-    Left = 68
-    Top = 169
-    Caption = #1050#1085#1080#1075#1072':'
-    Transparent = True
-  end
-  object cxLabel2: TcxLabel
-    Left = 16
-    Top = 195
-    Caption = #1058#1080#1087' '#1086#1073#1098#1103#1074#1083#1077#1085#1080#1103':'
-    Transparent = True
-  end
-  object cxLabel3: TcxLabel
-    Left = 31
-    Top = 222
-    Caption = #1050#1086#1084#1084#1077#1085#1090#1072#1088#1080#1081':'
-    Transparent = True
   end
   object dxBarManager1: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
@@ -387,9 +401,16 @@ object Form21: TForm21
     Connection = Form3.con
     SQL.Strings = (
       'select *'
-      '  from mm.book_exchange ')
+      '  from mm.book_exchange '
+      ' where id = :p_id')
     Left = 184
     Top = 72
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'p_id'
+        Value = nil
+      end>
   end
   object dsBookExchange: TUniDataSource
     DataSet = uqBookExchange
