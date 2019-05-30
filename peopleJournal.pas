@@ -87,6 +87,8 @@ var
   Form5: TForm5;
 
 implementation
+// check
+
 
 {$R *.dfm}
     uses mainEmp, addBook, issueBookpas, newBookRecord, login;

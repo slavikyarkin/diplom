@@ -104,7 +104,8 @@ implementation
 {$R *.dfm}
 
 //uses newPeople, PeopleJournal, BookList, PeopleInform, login;
-uses login, createNewUser, peopleJournal, empInfo, empBookList, empBookPeople;
+uses login, createNewUser, peopleJournal, empInfo, empBookList,
+  empPeopleBookInfo;
 
 
 procedure TForm1.bInfPeopleClick(Sender: TObject);
@@ -139,14 +140,15 @@ end;
 
 procedure TForm1.dxBarLargeButton1Click(Sender: TObject);
 begin
-        Form23.show;
+  uqPeopleID.close;
+  uqPeopleID.ParamByName('pid').AsInteger:= uqPeople.FieldValues['id'];
+  uqPeopleID.Open;
+  empPeopleBookInfo.pid:= uqPeople.FieldValues['id'];
+  Form24.show;
 end;
 
 procedure TForm1.fastClick(Sender: TObject);
 begin
-// frxReport2.ShowPreparedReport;
-// frxReport2.Print;
-// TForm1.frxReport2.Preview;
     uqPeopleID.close;
     uqPeopleID.ParamByName('pid').AsInteger:= uqPeople.FieldValues['id'];
     uqPeopleID.Open;
@@ -157,11 +159,8 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
-//  uqPeople.Close;
-//  uqPeople.MacroByName('w').Value:= '';
-//  uqPeople.Open;
-    uqPeople.Open;
-    uqPeople.Refresh;
+  uqPeople.Open;
+  uqPeople.Refresh;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);

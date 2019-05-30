@@ -183,8 +183,8 @@
         <DCCReference Include="peopleAnnouncement.pas">
             <Form>Form22</Form>
         </DCCReference>
-        <DCCReference Include="empBookPeople.pas">
-            <Form>Form23</Form>
+        <DCCReference Include="empPeopleBookInfo.pas">
+            <Form>Form24</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
