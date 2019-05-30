@@ -103,7 +103,7 @@ implementation
 {$R *.dfm}
 
 //uses newPeople, PeopleJournal, BookList, PeopleInform, login;
-uses login, createNewUser, peopleJournal, empInfo, empBookList, empBookPeople;
+uses login, createNewUser, peopleJournal, empInfo, empBookList;
 
 
 procedure TForm1.bInfPeopleClick(Sender: TObject);

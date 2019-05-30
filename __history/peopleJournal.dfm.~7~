@@ -45,6 +45,9 @@ object Form5: TForm5
     Align = alClient
     TabOrder = 1
     TabStop = False
+    ExplicitLeft = 24
+    ExplicitTop = 149
+    ExplicitHeight = 518
     object gPeopleJournalDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsJournal
@@ -98,8 +101,11 @@ object Form5: TForm5
     ColorSchemeName = 'Colorful'
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 2
+    TabOrder = 6
     TabStop = False
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 650
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
@@ -157,8 +163,8 @@ object Form5: TForm5
           Visible = True
           ItemName = 'dxBB4'
         end>
-      OneOnRow = False
-      Row = 0
+      OneOnRow = True
+      Row = 4
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -177,8 +183,8 @@ object Form5: TForm5
           Visible = True
           ItemName = 'dxReturn'
         end>
-      OneOnRow = False
-      Row = 0
+      OneOnRow = True
+      Row = 3
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -197,8 +203,8 @@ object Form5: TForm5
           Visible = True
           ItemName = 'dxBarButton6'
         end>
-      OneOnRow = False
-      Row = 0
+      OneOnRow = True
+      Row = 2
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -217,8 +223,8 @@ object Form5: TForm5
           Visible = True
           ItemName = 'dxbbAddNewBook'
         end>
-      OneOnRow = False
-      Row = 0
+      OneOnRow = True
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -237,7 +243,7 @@ object Form5: TForm5
           Visible = True
           ItemName = 'dxBarButton7'
         end>
-      OneOnRow = False
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -777,7 +783,8 @@ object Form5: TForm5
   end
   object dsJournal: TUniDataSource
     DataSet = uqPeopleJournal
-    Left = 624
+    Left = 608
+    Top = 240
   end
   object ReportBook: TfrxReport
     Version = '5.6.11'
@@ -790,7 +797,7 @@ object Form5: TForm5
     PrintOptions.Printer = #1055#1086' '#1091#1084#1086#1083#1095#1072#1085#1080#1102
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43615.886605393500000000
-    ReportOptions.LastChange = 43615.979217696760000000
+    ReportOptions.LastChange = 43615.914715613400000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -824,7 +831,7 @@ object Form5: TForm5
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Height = 37.795300000000000000
-        Top = 226.771800000000000000
+        Top = 162.519790000000000000
         Width = 718.110700000000000000
         DataSet = frxJournal2
         DataSetName = 'frxJournal2'
@@ -916,7 +923,7 @@ object Form5: TForm5
       end
       object PageHeader1: TfrxPageHeader
         FillType = ftBrush
-        Height = 105.826840000000000000
+        Height = 41.574830000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
@@ -932,20 +939,11 @@ object Form5: TForm5
             #1057#1087#1080#1089#1086#1082' '#1074#1089#1077#1093' '#1074#1099#1076#1072#1085#1085#1099#1093' '#1082#1085#1080#1075' '#1085#1072' [DATE]')
           ParentFont = False
         end
-        object Memo12: TfrxMemoView
-          Left = 3.779530000000000000
-          Top = 34.015770000000000000
-          Width = 241.889920000000000000
-          Height = 52.913420000000000000
-          Memo.UTF8W = (
-            #1042' '#1073#1080#1073#1083#1080#1086#1090#1077#1082#1077' '#1080#1084'. '#1050#1091#1079#1085#1077#1094#1086#1074#1072' '#1050#1080#1088#1080#1083#1083#1072' '#1080' '#1071#1088#1082#1080#1085#1072' '#1042#1103#1095#1077#1089#1083#1072#1074#1072' '
-            #1072#1076#1088#1077#1089': '#1075'.'#1058#1072#1075#1072#1085#1088#1086#1075' '#1087#1088#1086#1089#1087#1077#1082#1090' '#1051#1077#1085#1080#1085#1072' 23 ')
-        end
       end
       object Header1: TfrxHeader
         FillType = ftBrush
         Height = 18.897650000000000000
-        Top = 185.196970000000000000
+        Top = 120.944960000000000000
         Width = 718.110700000000000000
         object Memo7: TfrxMemoView
           Width = 204.094620000000000000
