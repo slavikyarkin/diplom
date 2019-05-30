@@ -68,10 +68,15 @@ type
     dxBarLargeButton1: TdxBarLargeButton;
     dxBarButton1: TdxBarButton;
     dxBarManager1Bar2: TdxBar;
+    dxBarManager1Bar3: TdxBar;
+    dxBarLargeButton2: TdxBarLargeButton;
+    dxBarManager1Bar4: TdxBar;
+    dxBarButton2: TdxBarButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dxCloseClick(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
+    procedure dxBarLargeButton2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,13 +90,19 @@ implementation
 
 {$R *.dfm}
 
-uses login, empBookInfo;
+uses login, empBookInfo, empJournalBook;
 
 { TForm16 }
 
 procedure TForm16.dxBarLargeButton1Click(Sender: TObject);
 begin
   Form19.ShowModal;
+end;
+
+procedure TForm16.dxBarLargeButton2Click(Sender: TObject);
+begin
+ Form23.ShowModal;
+ empJournalBook.lib_id:= uqSearchBook.FieldValues['lib_id'];
 end;
 
 procedure TForm16.dxCloseClick(Sender: TObject);
