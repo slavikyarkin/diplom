@@ -1,9 +1,10 @@
 object Form22: TForm22
   Left = 0
   Top = 0
+  BorderStyle = bsToolWindow
   Caption = #1052#1086#1080' '#1086#1073#1098#1103#1074#1083#1077#1085#1080#1103
-  ClientHeight = 480
-  ClientWidth = 640
+  ClientHeight = 490
+  ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,13 +12,15 @@ object Form22: TForm22
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = True
+  Position = poScreenCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 640
+    Width = 650
     Height = 155
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
@@ -30,6 +33,7 @@ object Form22: TForm22
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 640
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
@@ -39,16 +43,21 @@ object Form22: TForm22
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 457
-    Width = 640
+    Top = 467
+    Width = 650
     Height = 23
-    Panels = <>
+    Panels = <
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+      end>
     Ribbon = dxRibbon1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clDefault
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ExplicitTop = 457
+    ExplicitWidth = 640
   end
   object dxBarManager1: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
@@ -92,11 +101,7 @@ object Form22: TForm22
       FloatTop = 0
       FloatClientWidth = 0
       FloatClientHeight = 0
-      ItemLinks = <
-        item
-          Visible = True
-          ItemName = 'cxBarEditItem1'
-        end>
+      ItemLinks = <>
       OneOnRow = True
       Row = 0
       UseOwnFont = False

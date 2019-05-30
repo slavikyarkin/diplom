@@ -41,11 +41,13 @@ type
     cxGrid1DBTableView1comm: TcxGridDBColumn;
     cxGrid1DBTableView1date: TcxGridDBColumn;
     cxGrid1DBTableView1case: TcxGridDBColumn;
+    bPeopleAnn: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
     procedure bAddClick(Sender: TObject);
     procedure bRefreshClick(Sender: TObject);
+    procedure bPeopleAnnClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,7 +61,7 @@ implementation
 
 {$R *.dfm}
 
-uses login, newAnnouncement;
+uses login, newAnnouncement, peopleAnnouncement;
 { TForm20 }
 
 procedure TForm20.bAddClick(Sender: TObject);
@@ -71,6 +73,11 @@ end;
 procedure TForm20.bCloseClick(Sender: TObject);
 begin
   Form20.Close;
+end;
+
+procedure TForm20.bPeopleAnnClick(Sender: TObject);
+begin
+  Form22.ShowModal;
 end;
 
 procedure TForm20.bRefreshClick(Sender: TObject);

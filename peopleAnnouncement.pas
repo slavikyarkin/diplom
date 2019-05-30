@@ -20,6 +20,7 @@ type
     dxBarManager1Bar2: TdxBar;
     cxBarEditItem1: TcxBarEditItem;
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,11 +34,17 @@ implementation
 
 {$R *.dfm}
 
+uses login;
 { TForm22 }
 
 procedure TForm22.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
+end;
+
+procedure TForm22.FormShow(Sender: TObject);
+begin
+  dxRibbonStatusBar1.Panels[0].Text:= login.fio + ' ' + login.card;
 end;
 
 end.
