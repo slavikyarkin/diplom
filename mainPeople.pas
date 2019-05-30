@@ -62,6 +62,7 @@ type
     dxBarLargeButton4: TdxBarLargeButton;
     bExit: TdxBarLargeButton;
     bRating: TdxBarLargeButton;
+    bBookExchange: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -73,6 +74,7 @@ type
     procedure bExitClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure bRatingClick(Sender: TObject);
+    procedure bBookExchangeClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -87,8 +89,13 @@ implementation
 {$R *.dfm}
 
 uses login, peopleInfo, bookInfo, searchBook, chosenBook, peopleBook,
-     peopleBookRating;
+     peopleBookRating, bookExchange;
 { TForm2 }
+
+procedure TForm2.bBookExchangeClick(Sender: TObject);
+begin
+  Form20.ShowModal;
+end;
 
 procedure TForm2.bBookInfoClick(Sender: TObject);
 begin
