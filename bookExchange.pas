@@ -42,12 +42,14 @@ type
     cxGrid1DBTableView1date: TcxGridDBColumn;
     cxGrid1DBTableView1case: TcxGridDBColumn;
     bPeopleAnn: TdxBarLargeButton;
+    bBookInfo: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
     procedure bAddClick(Sender: TObject);
     procedure bRefreshClick(Sender: TObject);
     procedure bPeopleAnnClick(Sender: TObject);
+    procedure bBookInfoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,13 +63,23 @@ implementation
 
 {$R *.dfm}
 
-uses login, newAnnouncement, peopleAnnouncement;
+uses login, newAnnouncement, peopleAnnouncement, bookInfo;
 { TForm20 }
 
 procedure TForm20.bAddClick(Sender: TObject);
 begin
+  newAnnouncement.openForm:= false;
   Form21.ShowModal;
   uqAnnouncement.Refresh;
+end;
+
+procedure TForm20.bBookInfoClick(Sender: TObject);
+begin
+  if uqAnnouncement.RecordCount > 0 then
+  begin
+    bookInfo.book_id:= uqAnnouncement.FieldValues['book_id'];
+    Form9.ShowModal;
+  end;
 end;
 
 procedure TForm20.bCloseClick(Sender: TObject);
@@ -78,6 +90,7 @@ end;
 procedure TForm20.bPeopleAnnClick(Sender: TObject);
 begin
   Form22.ShowModal;
+  uqAnnouncement.Refresh;
 end;
 
 procedure TForm20.bRefreshClick(Sender: TObject);

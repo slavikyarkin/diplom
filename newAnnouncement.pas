@@ -50,6 +50,7 @@ type
 var
   Form21: TForm21;
   openForm : boolean;
+  AnnouncementId : integer;
 
 implementation
 
@@ -84,13 +85,20 @@ begin
   uqBook.Open;
   uqAnnouncement.Close;
   uqAnnouncement.Open;
+  uqBookExchange.Close;
   if not openForm then
   begin
-    uqBookExchange.Close;
     uqBookExchange.ParamByName('p_id').AsInteger:= -1;
-    uqBookExchange.Open;
-    uqBookExchange.Edit;
+    bAdd.Caption:= 'Добавить';
+  end
+  else
+  begin
+    uqBookExchange.ParamByName('p_id').AsInteger:= AnnouncementId;
+    bAdd.Caption:= 'Сохранить';
   end;
+
+  uqBookExchange.Open;
+  uqBookExchange.Edit;
 end;
 
 end.

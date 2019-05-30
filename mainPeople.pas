@@ -58,7 +58,6 @@ type
     dxBarManager1Bar4: TdxBar;
     bRefresh: TdxBarLargeButton;
     dxBarLargeButton2: TdxBarLargeButton;
-    dxBarLargeButton3: TdxBarLargeButton;
     dxBarLargeButton4: TdxBarLargeButton;
     bExit: TdxBarLargeButton;
     bRating: TdxBarLargeButton;

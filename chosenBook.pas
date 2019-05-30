@@ -42,11 +42,13 @@ type
     bDelChosen: TdxBarLargeButton;
     dxBarLargeButton1: TdxBarLargeButton;
     bBooKInfo: TdxBarLargeButton;
+    bSearchBook: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
     procedure bDelChosenClick(Sender: TObject);
     procedure bBooKInfoClick(Sender: TObject);
+    procedure bSearchBookClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,7 +62,7 @@ implementation
 
 {$R *.dfm}
 
-uses login, bookInfo;
+uses login, bookInfo, searchBook;
 { TForm13 }
 
 procedure TForm13.bBooKInfoClick(Sender: TObject);
@@ -82,6 +84,11 @@ begin
     ShowMessage('Нет записей!');
 
   uqChosen.Refresh;
+end;
+
+procedure TForm13.bSearchBookClick(Sender: TObject);
+begin
+  Form11.ShowModal;
 end;
 
 procedure TForm13.dxBarLargeButton1Click(Sender: TObject);

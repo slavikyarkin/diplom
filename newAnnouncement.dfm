@@ -23,11 +23,9 @@ object Form21: TForm21
     Width = 495
     Height = 229
     Align = alClient
-    TabOrder = 6
-    ExplicitLeft = 56
-    ExplicitTop = 288
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    TabOrder = 1
+    ExplicitTop = 131
+    ExplicitHeight = 253
     object cxDBLookupComboBox1: TcxDBLookupComboBox
       Left = 112
       Top = 6
@@ -102,7 +100,6 @@ object Form21: TForm21
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 640
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1044#1077#1081#1089#1090#1074#1080#1103
@@ -129,8 +126,6 @@ object Form21: TForm21
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 457
-    ExplicitWidth = 640
   end
   object dxBarManager1: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
