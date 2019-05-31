@@ -20,14 +20,13 @@ object Form1: TForm1
     Left = 0
     Top = 0
     Width = 1130
-    Height = 27
+    Height = 60
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
     TabAreaToolbar.Toolbar = dxBarManager1Bar2
-    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 0
@@ -65,18 +64,16 @@ object Form1: TForm1
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitWidth = 844
   end
   object gPeople: TcxGrid
     Left = 0
-    Top = 27
+    Top = 60
     Width = 1130
-    Height = 430
+    Height = 397
     Align = alClient
     TabOrder = 2
-    ExplicitTop = 54
-    ExplicitWidth = 844
-    ExplicitHeight = 397
+    ExplicitTop = 27
+    ExplicitHeight = 430
     object gdbtvPeople: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsPeople
@@ -196,9 +193,13 @@ object Form1: TForm1
         item
           Visible = True
           ItemName = 'dxBarLargeButton1'
+        end
+        item
+          Visible = True
+          ItemName = 'dxBarButton2'
         end>
-      OneOnRow = True
-      Row = 2
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -206,7 +207,7 @@ object Form1: TForm1
     object dxBarManager1Bar3: TdxBar
       Caption = 'Custom 2'
       CaptionButtons = <>
-      DockedLeft = 757
+      DockedLeft = 803
       DockedTop = 0
       FloatLeft = 878
       FloatTop = 8
@@ -217,8 +218,8 @@ object Form1: TForm1
           Visible = True
           ItemName = 'fast'
         end>
-      OneOnRow = True
-      Row = 1
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -226,7 +227,7 @@ object Form1: TForm1
     object dxBarManager1Bar4: TdxBar
       Caption = 'Custom 3'
       CaptionButtons = <>
-      DockedLeft = 993
+      DockedLeft = 1039
       DockedTop = 0
       FloatLeft = 1164
       FloatTop = 8
@@ -237,7 +238,7 @@ object Form1: TForm1
           Visible = True
           ItemName = 'dxBarEdit3'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -341,6 +342,19 @@ object Form1: TForm1
       Visible = ivAlways
       OnClick = dxBarLargeButton1Click
     end
+    object dxBarLargeButton2: TdxBarLargeButton
+      Caption = 'New Button'
+      Category = 0
+      Hint = 'New Button'
+      Visible = ivAlways
+    end
+    object dxBarButton2: TdxBarButton
+      Caption = #1060#1086#1088#1091#1084
+      Category = 0
+      Hint = #1060#1086#1088#1091#1084
+      Visible = ivAlways
+      OnClick = dxBarButton2Click
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
@@ -381,7 +395,6 @@ object Form1: TForm1
       ' &w'
       ' &v')
     ReadOnly = True
-    Active = True
     Left = 600
     Top = 168
     MacroData = <

@@ -45,6 +45,7 @@ object Form5: TForm5
     Align = alClient
     TabOrder = 1
     TabStop = False
+    ExplicitTop = 33
     object gPeopleJournalDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsJournal

@@ -26,7 +26,8 @@ uses
   peopleAnnouncement in 'peopleAnnouncement.pas' {Form22},
   empPeopleBookInfo in 'empPeopleBookInfo.pas' {Form24},
   empJournalBook in 'empJournalBook.pas' {Form23},
-  empInfoBook in 'empInfoBook.pas' {Form25};
+  empInfoBook in 'empInfoBook.pas' {Form25},
+  empForum in 'empForum.pas' {Form26};
 
 {$R *.res}
 
@@ -59,5 +60,6 @@ begin
   Application.CreateForm(TForm24, Form24);
   Application.CreateForm(TForm23, Form23);
   Application.CreateForm(TForm25, Form25);
+  Application.CreateForm(TForm26, Form26);
   Application.Run;
 end.

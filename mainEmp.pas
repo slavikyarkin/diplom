@@ -76,6 +76,8 @@ type
     dsPeopleID: TUniDataSource;
     dxBarManager1Bar4: TdxBar;
     dxBarLargeButton1: TdxBarLargeButton;
+    dxBarLargeButton2: TdxBarLargeButton;
+    dxBarButton2: TdxBarButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarEdit3Change(Sender: TObject);
     procedure bNewPeopleClick(Sender: TObject);
@@ -85,6 +87,7 @@ type
     procedure dxBarButton1Click(Sender: TObject);
     procedure fastClick(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
+    procedure dxBarButton2Click(Sender: TObject);
 
 
 
@@ -105,7 +108,7 @@ implementation
 
 //uses newPeople, PeopleJournal, BookList, PeopleInform, login;
 uses login, createNewUser, peopleJournal, empInfo, empBookList,
-  empPeopleBookInfo;
+  empPeopleBookInfo, empForum;
 
 
 procedure TForm1.bInfPeopleClick(Sender: TObject);
@@ -126,6 +129,11 @@ end;
 procedure TForm1.dxBarButton1Click(Sender: TObject);
 begin
 Form16.ShowModal;
+end;
+
+procedure TForm1.dxBarButton2Click(Sender: TObject);
+begin
+  Form26.ShowModal;
 end;
 
 procedure TForm1.dxBarEdit3Change(Sender: TObject);
