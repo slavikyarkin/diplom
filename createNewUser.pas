@@ -105,6 +105,8 @@ type
     fDataset1: TfrxDBDataset;
     fDoc: TfrxDBDataset;
     fAddr: TfrxDBDataset;
+    dxBarManager1Bar4: TdxBar;
+    dxBarLargeButton1: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure lcbDistrictPropertiesChange(Sender: TObject);
     procedure lcbRegionPropertiesChange(Sender: TObject);
@@ -123,6 +125,7 @@ type
     procedure eUnitCodeKeyPress(Sender: TObject; var Key: Char);
     procedure printFRXClick(Sender: TObject);
     procedure gdSecondInforlClick(Sender: TObject);
+    procedure dxBarLargeButton1Click(Sender: TObject);
 
 
   private
@@ -269,7 +272,7 @@ end;
 
 
 //------------------------------------------------------------------------------
-//Ѕлок регул€рных выражений дл€ полей Edit
+
 procedure TForm4.printFRXClick(Sender: TObject);
 begin
   if uqGetDoc.RecordCount > 0 then
@@ -280,7 +283,12 @@ begin
 //  if perData.PrepareReport then
 //  perData.ShowPreparedReport;
 end;
-
+//------------------------------------------------------------------------------
+procedure TForm4.dxBarLargeButton1Click(Sender: TObject);
+begin
+Form4.Close;
+end;
+//------------------------------------------------------------------------------
 procedure TForm4.eDocNumberKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -291,7 +299,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eEssueKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -302,7 +310,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eFlatKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -313,7 +321,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eHouseKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -324,7 +332,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eMailKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -335,7 +343,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eNameKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -346,7 +354,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eNumberKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -357,7 +365,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.ePartonKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -368,7 +376,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eSerialKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -379,7 +387,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eStreetKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -390,7 +398,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eSurnameKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -401,7 +409,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm4.eUnitCodeKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -412,6 +420,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
+//------------------------------------------------------------------------------
 procedure TForm4.FormCreate(Sender: TObject);
 begin
   uqPeople.Open;
@@ -424,9 +433,7 @@ begin
 end;
 procedure TForm4.gdSecondInforlClick(Sender: TObject);
 begin
-
 end;
-
 //------------------------------------------------------------------------------
 //передача параметров в скрипты
 procedure TForm4.lcbDistrictPropertiesChange(Sender: TObject);

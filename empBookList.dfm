@@ -32,11 +32,13 @@ object Form16: TForm16
   end
   object cxGrid1: TcxGrid
     Left = 0
-    Top = 60
+    Top = 27
     Width = 1157
-    Height = 584
+    Height = 617
     Align = alClient
     TabOrder = 1
+    ExplicitTop = 60
+    ExplicitHeight = 584
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.Summary.DefaultGroupSummaryItems = <>
@@ -104,11 +106,13 @@ object Form16: TForm16
   end
   object cxGrid2: TcxGrid
     Left = 0
-    Top = 60
+    Top = 27
     Width = 1157
-    Height = 584
+    Height = 617
     Align = alClient
     TabOrder = 2
+    ExplicitTop = 60
+    ExplicitHeight = 584
     object cxGridDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.Summary.DefaultGroupSummaryItems = <>
@@ -176,11 +180,13 @@ object Form16: TForm16
   end
   object cxGrid3: TcxGrid
     Left = 0
-    Top = 60
+    Top = 27
     Width = 1157
-    Height = 584
+    Height = 617
     Align = alClient
     TabOrder = 3
+    ExplicitTop = 60
+    ExplicitHeight = 584
     object cxGridDBTableView2: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsSearchBook
@@ -207,11 +213,6 @@ object Form16: TForm16
         DataBinding.FieldName = 'genre'
         Width = 120
       end
-      object cxGridDBColumn14: TcxGridDBColumn
-        Caption = #1048#1079#1076#1072#1090#1077#1083#1100#1089#1090#1074#1086
-        DataBinding.FieldName = 'edition_name'
-        Width = 120
-      end
       object cxGridDBColumn15: TcxGridDBColumn
         Caption = #1044#1072#1090#1072' '#1087#1091#1073#1083#1080#1082#1072#1094#1080#1080
         DataBinding.FieldName = 'date_of_edition'
@@ -226,11 +227,6 @@ object Form16: TForm16
         Caption = #1057#1090#1072#1090#1091#1089
         DataBinding.FieldName = 'availability'
         Width = 80
-      end
-      object cxGridDBColumn18: TcxGridDBColumn
-        Caption = #1048#1079#1073#1088#1072#1085#1085#1099#1077
-        DataBinding.FieldName = 'chosen'
-        Width = 60
       end
       object cxGridDBColumn19: TcxGridDBColumn
         Caption = #1041#1080#1073#1083#1080#1086#1090#1077#1082#1072
@@ -251,18 +247,17 @@ object Form16: TForm16
     Left = 0
     Top = 0
     Width = 1157
-    Height = 60
+    Height = 27
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
+    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 4
     TabStop = False
-    ExplicitLeft = -8
-    ExplicitTop = 8
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
@@ -317,7 +312,7 @@ object Form16: TForm16
           ItemName = 'dxBarLargeButton1'
         end>
       OneOnRow = False
-      Row = 2
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -337,14 +332,14 @@ object Form16: TForm16
           ItemName = 'dxBarLargeButton2'
         end>
       OneOnRow = False
-      Row = 2
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
     end
     object dxBarManager1Bar3: TdxBar
       CaptionButtons = <>
-      DockedLeft = 384
+      DockedLeft = 348
       DockedTop = 0
       FloatLeft = 1191
       FloatTop = 8
@@ -355,8 +350,8 @@ object Form16: TForm16
           Visible = True
           ItemName = 'dxBarButton2'
         end>
-      OneOnRow = True
-      Row = 1
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -375,7 +370,7 @@ object Form16: TForm16
           Visible = True
           ItemName = 'dxClose'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -406,17 +401,18 @@ object Form16: TForm16
       Visible = ivAlways
     end
     object dxBarLargeButton2: TdxBarLargeButton
-      Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1102' '#1086' '#1082#1085#1080#1075#1077
-      Category = 0
-      Hint = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1102' '#1086' '#1082#1085#1080#1075#1077
-      Visible = ivAlways
-      OnClick = dxBarLargeButton2Click
-    end
-    object dxBarButton2: TdxBarButton
       Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1089#1090#1086#1088#1080#1102' '#1082#1085#1080#1075#1080
       Category = 0
       Hint = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1089#1090#1086#1088#1080#1102' '#1082#1085#1080#1075#1080
       Visible = ivAlways
+      OnClick = dxBarLargeButton2Click
+    end
+    object dxBarButton2: TdxBarButton
+      Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1102' '#1086' '#1082#1085#1080#1075#1077
+      Category = 0
+      Hint = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1102' '#1086' '#1082#1085#1080#1075#1077
+      Visible = ivAlways
+      OnClick = dxBarButton2Click
     end
   end
   object dxSkinController1: TdxSkinController

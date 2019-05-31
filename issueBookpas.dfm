@@ -34,16 +34,16 @@ object Form8: TForm8
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
-    Top = 27
+    Top = 60
     Width = 650
-    Height = 193
+    Height = 160
     Align = alClient
     TabOrder = 1
-    ExplicitTop = 60
-    ExplicitHeight = 160
+    ExplicitTop = 27
+    ExplicitHeight = 193
     object Label1: TLabel
       Left = 61
-      Top = 29
+      Top = 45
       Width = 536
       Height = 33
       Caption = #1042#1099' '#1091#1074#1077#1088#1077#1085#1099', '#1095#1090#1086' '#1093#1086#1090#1080#1090#1077' '#1074#1099#1087#1086#1083#1085#1080#1090#1100' '#1076#1072#1085#1085#1086#1077
@@ -57,7 +57,7 @@ object Form8: TForm8
     end
     object Label2: TLabel
       Left = 61
-      Top = 68
+      Top = 92
       Width = 557
       Height = 33
       Caption = #1076#1077#1081#1089#1090#1074#1080#1077', '#1086#1090#1084#1077#1085#1080#1090#1100' '#1077#1075#1086' '#1073#1091#1076#1077#1090' '#1085#1077#1074#1086#1079#1084#1086#1078#1085#1086'!!!'
@@ -74,13 +74,12 @@ object Form8: TForm8
     Left = 0
     Top = 0
     Width = 650
-    Height = 27
+    Height = 60
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
-    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 2

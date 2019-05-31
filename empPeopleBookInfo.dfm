@@ -28,8 +28,6 @@ object Form24: TForm24
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 457
-    ExplicitWidth = 640
   end
   object cxGrid1: TcxGrid
     Left = 0
@@ -38,8 +36,6 @@ object Form24: TForm24
     Height = 440
     Align = alClient
     TabOrder = 1
-    ExplicitTop = 54
-    ExplicitHeight = 407
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsMyJur
@@ -87,7 +83,7 @@ object Form24: TForm24
     ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 6
+    TabOrder = 2
     TabStop = False
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
@@ -105,6 +101,9 @@ object Form24: TForm24
         item
         end
         item
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar2'
         end>
       Index = 0
     end
@@ -141,6 +140,26 @@ object Form24: TForm24
           ItemName = 'dxBarButton1'
         end>
       OneOnRow = True
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar2: TdxBar
+      Caption = 'Custom 1'
+      CaptionButtons = <>
+      DockedLeft = 84
+      DockedTop = 0
+      FloatLeft = 992
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarButton3'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -164,6 +183,13 @@ object Form24: TForm24
       Category = 0
       Hint = #1047#1072#1082#1088#1099#1090#1100
       Visible = ivAlways
+    end
+    object dxBarButton3: TdxBarButton
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      Category = 0
+      Hint = #1047#1072#1082#1088#1099#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarButton3Click
     end
   end
   object dxSkinController1: TdxSkinController

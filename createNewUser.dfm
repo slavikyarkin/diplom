@@ -34,14 +34,16 @@ object Form4: TForm4
   end
   object pNewPeople: TPanel
     Left = 0
-    Top = 60
+    Top = 27
     Width = 994
-    Height = 511
+    Height = 544
     Align = alClient
     AutoSize = True
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 60
+    ExplicitHeight = 511
     object gbGeneralInform: TGroupBox
       Left = 25
       Top = 16
@@ -548,13 +550,14 @@ object Form4: TForm4
     Left = 0
     Top = 0
     Width = 994
-    Height = 60
+    Height = 27
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
     TabAreaToolbar.Toolbar = dxBarManager1Bar2
+    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 2
@@ -570,6 +573,9 @@ object Form4: TForm4
         end
         item
           ToolbarName = 'dxBarManager1Bar3'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar4'
         end>
       Index = 0
     end
@@ -592,8 +598,8 @@ object Form4: TForm4
     DockColor = clBtnFace
     PopupMenuLinks = <>
     UseSystemFont = True
-    Left = 320
-    Top = 8
+    Left = 352
+    Top = 65520
     PixelsPerInch = 96
     object dxBarManager1Bar1: TdxBar
       Caption = 'Quick Access Toolbar'
@@ -610,7 +616,7 @@ object Form4: TForm4
           ItemName = 'bSaveAll1'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -646,6 +652,26 @@ object Form4: TForm4
           ItemName = 'printFRX'
         end>
       OneOnRow = False
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar4: TdxBar
+      Caption = 'Custom 1'
+      CaptionButtons = <>
+      DockedLeft = 278
+      DockedTop = 0
+      FloatLeft = 1018
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton1'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -690,19 +716,24 @@ object Form4: TForm4
       Visible = ivAlways
       OnClick = printFRXClick
     end
+    object dxBarLargeButton1: TdxBarLargeButton
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      Category = 0
+      Hint = #1047#1072#1082#1088#1099#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarLargeButton1Click
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
     SkinName = 'Office2013LightGray'
-    Left = 232
-    Top = 8
+    Left = 176
   end
   object uqAddr: TUniQuery
     Connection = Form1.connect
     SQL.Strings = (
       'SELECT *'
       ' from mm.addr')
-    Active = True
     Left = 536
     Top = 8
   end
@@ -729,7 +760,6 @@ object Form4: TForm4
       
         'where p.name = :p_name and p.surname =:p_surname and p.birth = :' +
         'p_birth; ')
-    Active = True
     Left = 712
     Top = 8
     ParamData = <
@@ -817,7 +847,6 @@ object Form4: TForm4
       '  -- and d.unit_code = :d.unit_code '
       '   and d.series = :series '
       '   and d.number = :number')
-    Active = True
     Left = 712
     Top = 72
     ParamData = <
@@ -847,7 +876,6 @@ object Form4: TForm4
       '  and a.region_id = :region_id'
       '  and a.town_id = :town_id'
       '  and a.flat = :flat')
-    Active = True
     Left = 536
     Top = 72
     ParamData = <

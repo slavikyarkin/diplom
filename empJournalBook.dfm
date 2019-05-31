@@ -1,9 +1,10 @@
 object Form23: TForm23
   Left = 0
   Top = 0
-  Caption = 'Form23'
-  ClientHeight = 480
-  ClientWidth = 640
+  BorderStyle = bsToolWindow
+  Caption = #1048#1089#1090#1086#1088#1080#1103' '#1074#1099#1076#1072#1095#1080' '#1082#1085#1080#1075#1080
+  ClientHeight = 490
+  ClientWidth = 948
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,13 +12,15 @@ object Form23: TForm23
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = True
+  Position = poScreenCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 457
-    Width = 640
+    Top = 467
+    Width = 948
     Height = 23
     Panels = <>
     Font.Charset = DEFAULT_CHARSET
@@ -29,19 +32,18 @@ object Form23: TForm23
   object bSave: TdxRibbon
     Left = 0
     Top = 0
-    Width = 640
-    Height = 60
+    Width = 948
+    Height = 27
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
+    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
-    TabOrder = 5
+    TabOrder = 1
     TabStop = False
-    ExplicitLeft = -517
-    ExplicitWidth = 1157
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
@@ -65,15 +67,13 @@ object Form23: TForm23
   end
   object cxGrid3: TcxGrid
     Left = 0
-    Top = 60
-    Width = 640
-    Height = 397
+    Top = 27
+    Width = 948
+    Height = 440
     Align = alClient
-    TabOrder = 6
-    ExplicitLeft = -517
-    ExplicitTop = -104
-    ExplicitWidth = 1157
-    ExplicitHeight = 584
+    TabOrder = 2
+    ExplicitTop = 60
+    ExplicitHeight = 407
     object cxGridDBTableView2: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsPeopleJournal
@@ -85,30 +85,25 @@ object Form23: TForm23
       OptionsData.Inserting = False
       OptionsView.CellAutoHeight = True
       OptionsView.ColumnAutoWidth = True
-      object cxGridDBColumn16: TcxGridDBColumn
-        Caption = 'ISBN'
+      object cxGridDBTableView2name: TcxGridDBColumn
+        DataBinding.FieldName = 'name'
+        HeaderGlyph.SourceWidth = 200
+        Width = 170
+      end
+      object cxGridDBTableView2author_fio: TcxGridDBColumn
+        DataBinding.FieldName = 'author_fio'
+        Width = 76
+      end
+      object cxGridDBTableView2people_fio: TcxGridDBColumn
+        DataBinding.FieldName = 'people_fio'
+        Width = 79
+      end
+      object cxGridDBTableView2isbn: TcxGridDBColumn
         DataBinding.FieldName = 'isbn'
-        Width = 80
       end
-      object cxGridDBColumn17: TcxGridDBColumn
-        Caption = #1057#1090#1072#1090#1091#1089
-        DataBinding.FieldName = 'availability'
-        Width = 80
-      end
-      object cxGridDBColumn18: TcxGridDBColumn
-        Caption = #1048#1079#1073#1088#1072#1085#1085#1099#1077
-        DataBinding.FieldName = 'chosen'
-        Width = 60
-      end
-      object cxGridDBColumn19: TcxGridDBColumn
-        Caption = #1041#1080#1073#1083#1080#1086#1090#1077#1082#1072
-        DataBinding.FieldName = 'office'
-        Width = 120
-      end
-      object cxGridDBColumn20: TcxGridDBColumn
-        Caption = #1040#1076#1088#1077#1089
-        DataBinding.FieldName = 'office_addr'
-        Width = 120
+      object cxGridDBTableView2date_of_issue: TcxGridDBColumn
+        DataBinding.FieldName = 'date_of_issue'
+        Width = 79
       end
     end
     object cxGridLevel2: TcxGridLevel
@@ -141,9 +136,13 @@ object Form23: TForm23
       FloatTop = 0
       FloatClientWidth = 51
       FloatClientHeight = 22
-      ItemLinks = <>
-      OneOnRow = True
-      Row = 1
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton1'
+        end>
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -151,14 +150,18 @@ object Form23: TForm23
     object dxBarManager1Bar2: TdxBar
       Caption = 'Tab Area Toolbar'
       CaptionButtons = <>
-      DockedLeft = 35
+      DockedLeft = 71
       DockedTop = 0
       FloatLeft = 0
       FloatTop = 0
       FloatClientWidth = 100
       FloatClientHeight = 22
-      ItemLinks = <>
-      OneOnRow = True
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton2'
+        end>
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -170,6 +173,20 @@ object Form23: TForm23
       Visible = ivAlways
       PropertiesClassName = 'TcxTextEditProperties'
     end
+    object dxBarLargeButton1: TdxBarLargeButton
+      Caption = #1054#1073#1085#1086#1074#1080#1090#1100
+      Category = 0
+      Hint = #1054#1073#1085#1086#1074#1080#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarLargeButton1Click
+    end
+    object dxBarLargeButton2: TdxBarLargeButton
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      Category = 0
+      Hint = #1047#1072#1082#1088#1099#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarLargeButton2Click
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
@@ -178,6 +195,7 @@ object Form23: TForm23
     Top = 8
   end
   object uqBookJournal: TUniQuery
+    Connection = Form3.con
     SQL.Strings = (
       'select    b.name  '
       
@@ -193,6 +211,7 @@ object Form23: TForm23
       '       '#9'  end as st '
       '        , l.id as lib_id'
       '        , j.id as journal_id'
+      '        , l.ISBN'
       'from mm.journal j'
       #9'left join mm.people p '
       '    '#9'on p.id = j.people_id'
@@ -205,8 +224,9 @@ object Form23: TForm23
       #9'left join mm.author a'
       '    '#9'on a.id = ba.author_id   '
       'where l.id = :lib_id')
-    Left = 160
-    Top = 184
+    Active = True
+    Left = 152
+    Top = 192
     ParamData = <
       item
         DataType = ftUnknown

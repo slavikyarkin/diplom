@@ -61,6 +61,8 @@ type
     dxSave: TdxBarButton;
     dxBarManager1Bar2: TdxBar;
     bRefresh: TdxBarLargeButton;
+    dxBarManager1Bar3: TdxBar;
+    dxBarLargeButton1: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure cxAuthorPropertiesChange(Sender: TObject);
     procedure cxBookPropertiesChange(Sender: TObject);
@@ -68,6 +70,7 @@ type
     procedure dxSaveClick(Sender: TObject);
     procedure bRefreshClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure dxBarLargeButton1Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -95,16 +98,10 @@ begin
   uqAll.Refresh;
   uqPeople.Refresh;
   uqAuthor.Refresh;
-//
-//  // cxPeople.Clear;
-//   //cxISBN.Clear;
-//   cxBook.Items.Clear;
-//   cxAuthor.Items.Clear;
 end;
 //------------------------------------------------------------------------------
 procedure TForm6.cxAuthorPropertiesChange(Sender: TObject);
 begin
-
   uqNameBook.Close;
   uqNameBook.ParamByName('author').AsInteger:= cxAuthor.EditValue;
   uqNameBook.Open;
@@ -126,15 +123,20 @@ uqLib.ParamByName('lib_id').AsInteger:= cxISBN.EditValue;
 uqLib.Open;
 end;
 //------------------------------------------------------------------------------
+procedure TForm6.dxBarLargeButton1Click(Sender: TObject);
+begin
+    Form6.Close;
+end;
+//------------------------------------------------------------------------------
 procedure TForm6.dxSaveClick(Sender: TObject);
 begin
   uqAll.Append;
   uqAll.FieldValues ['people_id'] := cxPeople.EditValue;
   uqAll.FieldValues ['date_of_issue'] := Date;
-if cxApp.Text = 'Без повреждений' then
-  uqAll.FieldValues['appearance']:= 1;
-if cxApp.Text = 'Есть повреждения' then
-  uqAll.FieldValues['appearance']:= 2;
+  if cxApp.Text = 'Без повреждений' then
+    uqAll.FieldValues['appearance']:= 1;
+  if cxApp.Text = 'Есть повреждения' then
+    uqAll.FieldValues['appearance']:= 2;
   uqAll.FieldValues['library_id']:= cxISBN.EditValue;
   uqAll.FieldValues['emp_issue_id']:= login.emp_id;
   uqAll.Post;
@@ -168,15 +170,10 @@ begin
   uqLib.Close;
   uqLib.Open;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm6.FormShow(Sender: TObject);
 begin
   dxRibbonStatusBar1.Panels[0].Text:= login.fio;
-//   cxPeople.Clear;
-//   cxISBN.Clear;
-//   cxBook.Clear;
-//   cxAuthor.Clear;
 end;
-
 end.
 

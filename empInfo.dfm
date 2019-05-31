@@ -145,8 +145,6 @@ object Form14: TForm14
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 398
-    ExplicitWidth = 479
   end
   object GroupBox2: TGroupBox
     Left = 253

@@ -3,7 +3,7 @@ object Form6: TForm6
   Top = 0
   BorderStyle = bsToolWindow
   Caption = #1042#1099#1076#1072#1095#1072' '#1082#1085#1080#1075#1080
-  ClientHeight = 352
+  ClientHeight = 327
   ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,7 +19,7 @@ object Form6: TForm6
   TextHeight = 13
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
-    Top = 329
+    Top = 304
     Width = 650
     Height = 23
     Panels = <
@@ -31,16 +31,16 @@ object Form6: TForm6
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    ExplicitTop = 329
   end
   object cxScrollBox1: TcxScrollBox
     Left = 0
     Top = 27
     Width = 650
-    Height = 302
+    Height = 277
     Align = alClient
     TabOrder = 1
-    ExplicitTop = 60
-    ExplicitHeight = 269
+    ExplicitHeight = 302
     object cxLabel1: TcxLabel
       Left = 24
       Top = 32
@@ -156,6 +156,9 @@ object Form6: TForm6
         end
         item
           ToolbarName = 'dxBarManager1Bar2'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar3'
         end>
       Index = 0
     end
@@ -192,7 +195,7 @@ object Form6: TForm6
           ItemName = 'dxSave'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -212,6 +215,26 @@ object Form6: TForm6
           ItemName = 'bRefresh'
         end>
       OneOnRow = False
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar3: TdxBar
+      Caption = 'Custom 3'
+      CaptionButtons = <>
+      DockedLeft = 146
+      DockedTop = 0
+      FloatLeft = 674
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton1'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -243,6 +266,13 @@ object Form6: TForm6
       Visible = ivAlways
       OnClick = bRefreshClick
     end
+    object dxBarLargeButton1: TdxBarLargeButton
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      Category = 0
+      Hint = #1047#1072#1082#1088#1099#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarLargeButton1Click
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
@@ -264,8 +294,8 @@ object Form6: TForm6
       '    left join mm.author a'
       '    '#9'on a.id = ba.author_id '
       'where l.availability = 2        ')
-    Left = 152
-    Top = 16
+    Left = 320
+    Top = 208
   end
   object uqNameBook: TUniQuery
     Connection = Form1.connect

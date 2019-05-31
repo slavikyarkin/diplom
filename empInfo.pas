@@ -76,14 +76,14 @@ implementation
 uses login;
 { TForm7 }
 
-
+//------------------------------------------------------------------------------
 procedure TForm14.bSaveCloseClick(Sender: TObject);
 begin
   uqPeopleInfo.Post;
   uqIdentification.Post;
   Form14.Close;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm14.bPasswordClick(Sender: TObject);
 begin
   if password then
@@ -99,12 +99,12 @@ begin
     bPassword.Caption:= 'Показать пароль';
   end;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm14.bCloseClick(Sender: TObject);
 begin
   Form14.Close;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm14.bSaveClick(Sender: TObject);
 begin
   uqPeopleInfo.Post;
@@ -112,15 +112,14 @@ begin
   uqPeopleInfo.Edit;
   uqIdentification.Edit;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm14.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
   uqSex.Open;
   password:= true;
 end;
-
-
+//------------------------------------------------------------------------------
 procedure TForm14.FormShow(Sender: TObject);
 begin
   dxRibbonStatusBar1.Panels[0].Text:= login.fio;
@@ -133,5 +132,4 @@ begin
   uqPeopleInfo.Edit;
   uqIdentification.Edit;
 end;
-
 end.

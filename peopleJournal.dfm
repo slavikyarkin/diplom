@@ -45,8 +45,6 @@ object Form5: TForm5
     Align = alClient
     TabOrder = 1
     TabStop = False
-    ExplicitTop = 60
-    ExplicitHeight = 613
     object gPeopleJournalDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsJournal
@@ -125,6 +123,9 @@ object Form5: TForm5
         end
         item
           ToolbarName = 'dxBarManager1Bar10'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar3'
         end>
       Index = 0
     end
@@ -143,7 +144,7 @@ object Form5: TForm5
       True)
     PopupMenuLinks = <>
     UseSystemFont = True
-    Left = 568
+    Left = 968
     Top = 8
     PixelsPerInch = 96
     object dxBarManager1Bar1: TdxBar
@@ -161,7 +162,7 @@ object Form5: TForm5
           ItemName = 'dxBB4'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -181,7 +182,7 @@ object Form5: TForm5
           ItemName = 'dxReturn'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -201,7 +202,7 @@ object Form5: TForm5
           ItemName = 'dxBarButton6'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -221,7 +222,7 @@ object Form5: TForm5
           ItemName = 'dxbbAddNewBook'
         end>
       OneOnRow = False
-      Row = 0
+      Row = 1
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -241,6 +242,26 @@ object Form5: TForm5
           ItemName = 'dxBarButton7'
         end>
       OneOnRow = False
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar3: TdxBar
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      CaptionButtons = <>
+      DockedLeft = 522
+      DockedTop = 0
+      FloatLeft = 1118
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton6'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -734,6 +755,13 @@ object Form5: TForm5
         EF151A862100D97411CBFFDF9445F6895FCFFF0391FF7C264D1C27C800000000
         49454E44AE426082}
     end
+    object dxBarLargeButton6: TdxBarLargeButton
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      Category = 0
+      Hint = #1047#1072#1082#1088#1099#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarLargeButton6Click
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
@@ -775,8 +803,7 @@ object Form5: TForm5
     Top = 8
   end
   object dsPeopleJournal: TDataSource
-    Left = 440
-    Top = 8
+    Left = 376
   end
   object dsJournal: TUniDataSource
     DataSet = uqPeopleJournal

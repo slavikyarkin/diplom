@@ -54,6 +54,8 @@ type
     bSave: TdxRibbon;
     dxRibbon1Tab1: TdxRibbonTab;
     ebDate: TDateTimePicker;
+    dxBarManager1Bar2: TdxBar;
+    dxBarLargeButton1: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxSaveClick(Sender: TObject);
     procedure eaNameKeyPress(Sender: TObject; var Key: Char);
@@ -63,6 +65,7 @@ type
     procedure ebISBNKeyPress(Sender: TObject; var Key: Char);
     procedure eaAuthorKeyPress(Sender: TObject; var Key: Char);
     procedure ebBookKeyPress(Sender: TObject; var Key: Char);
+    procedure dxBarLargeButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,7 +80,12 @@ implementation
 {$R *.dfm}
     uses mainEmp, login;
 { TForm12 }
-
+//------------------------------------------------------------------------------
+procedure TForm12.dxBarLargeButton1Click(Sender: TObject);
+begin
+  Form12.Close;
+end;
+//------------------------------------------------------------------------------
 procedure TForm12.dxSaveClick(Sender: TObject);
 begin
 //Блок проверки на заполненность полей
@@ -166,7 +174,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm12.eaNameKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -177,6 +185,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
+//------------------------------------------------------------------------------
 procedure TForm12.eaPatronKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -187,7 +196,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm12.eaSurnameKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -198,7 +207,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm12.ebBookKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -209,7 +218,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm12.ebISBNKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;
@@ -220,7 +229,7 @@ begin
     if  (key in [#32]) then
      key:= #0;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm12.ebNameKeyPress(Sender: TObject; var Key: Char);
 var
  simvol: AnsiString;

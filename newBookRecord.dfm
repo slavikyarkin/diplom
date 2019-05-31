@@ -253,12 +253,13 @@ object Form12: TForm12
     Left = 0
     Top = 0
     Width = 1110
-    Height = 60
+    Height = 27
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
+    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 2
@@ -273,6 +274,9 @@ object Form12: TForm12
         end
         item
           ToolbarName = 'dxBarManager1Bar1'
+        end
+        item
+          ToolbarName = 'dxBarManager1Bar2'
         end>
       Index = 0
     end
@@ -309,6 +313,26 @@ object Form12: TForm12
           ItemName = 'dxSave'
         end>
       OneOnRow = True
+      Row = 1
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarManager1Bar2: TdxBar
+      Caption = 'Custom 1'
+      CaptionButtons = <>
+      DockedLeft = 75
+      DockedTop = 0
+      FloatLeft = 1134
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton1'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -326,6 +350,13 @@ object Form12: TForm12
       Hint = #1057#1086#1093#1088#1072#1085#1080#1090#1100
       Visible = ivAlways
       OnClick = dxSaveClick
+    end
+    object dxBarLargeButton1: TdxBarLargeButton
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      Category = 0
+      Hint = #1047#1072#1082#1088#1099#1090#1100
+      Visible = ivAlways
+      OnClick = dxBarLargeButton1Click
     end
   end
   object dxSkinController1: TdxSkinController

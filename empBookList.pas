@@ -51,11 +51,9 @@ type
     cxGridDBColumn11: TcxGridDBColumn;
     cxGridDBColumn12: TcxGridDBColumn;
     cxGridDBColumn13: TcxGridDBColumn;
-    cxGridDBColumn14: TcxGridDBColumn;
     cxGridDBColumn15: TcxGridDBColumn;
     cxGridDBColumn16: TcxGridDBColumn;
     cxGridDBColumn17: TcxGridDBColumn;
-    cxGridDBColumn18: TcxGridDBColumn;
     cxGridDBColumn19: TcxGridDBColumn;
     cxGridDBColumn20: TcxGridDBColumn;
     cxGridLevel2: TcxGridLevel;
@@ -77,6 +75,7 @@ type
     procedure dxCloseClick(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
     procedure dxBarLargeButton2Click(Sender: TObject);
+    procedure dxBarButton2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -90,33 +89,39 @@ implementation
 
 {$R *.dfm}
 
-uses login, empBookInfo, empJournalBook;
+uses login, empBookInfo, empJournalBook, empInfoBook;
 
 { TForm16 }
-
+//------------------------------------------------------------------------------
+procedure TForm16.dxBarButton2Click(Sender: TObject);
+begin
+  empInfoBook.book_id := uqSearchBook.FieldValues['book_id'];
+  Form25.ShowModal;
+end;
+//------------------------------------------------------------------------------
 procedure TForm16.dxBarLargeButton1Click(Sender: TObject);
 begin
   Form19.ShowModal;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm16.dxBarLargeButton2Click(Sender: TObject);
 begin
  Form23.ShowModal;
  empJournalBook.lib_id:= uqSearchBook.FieldValues['lib_id'];
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm16.dxCloseClick(Sender: TObject);
 begin
  Form16.Close;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm16.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
   uqSearchBook.Close;
   uqSearchBook.Open;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm16.FormShow(Sender: TObject);
 begin
   dxRibbonStatusBar1.Panels[0].Text:=  login.fio;
@@ -125,5 +130,4 @@ begin
   uqSearchBook.ParamByName('p_people_id').AsInteger:= login.people_id;
   uqSearchBook.Open;
 end;
-
 end.

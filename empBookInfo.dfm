@@ -34,11 +34,13 @@ object Form19: TForm19
   end
   object cxGrid1: TcxGrid
     Left = 0
-    Top = 60
+    Top = 27
     Width = 933
-    Height = 529
+    Height = 562
     Align = alClient
     TabOrder = 1
+    ExplicitTop = 60
+    ExplicitHeight = 529
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsReview
@@ -74,12 +76,13 @@ object Form19: TForm19
     Left = 0
     Top = 0
     Width = 933
-    Height = 60
+    Height = 27
     BarManager = dxBarManager1
     CapitalizeTabCaptions = bDefault
     Style = rs2016Tablet
     ColorSchemeAccent = rcsaGreen
     ColorSchemeName = 'Colorful'
+    ShowTabGroups = False
     SupportNonClientDrawing = True
     Contexts = <>
     TabOrder = 2

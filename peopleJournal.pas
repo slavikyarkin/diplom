@@ -70,6 +70,8 @@ type
     dxBarManager1Bar8: TdxBar;
     dxBarManager1Bar9: TdxBar;
     dxBarManager1Bar10: TdxBar;
+    dxBarManager1Bar3: TdxBar;
+    dxBarLargeButton6: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBB4Click(Sender: TObject);
     procedure dxReturnClick(Sender: TObject);
@@ -77,6 +79,7 @@ type
     procedure dxbbAddNewBookClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dxBarButton7Click(Sender: TObject);
+    procedure dxBarLargeButton6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -95,7 +98,7 @@ implementation
 { TForm4 }
 
 // check
-
+//------------------------------------------------------------------------------
 procedure TForm5.dxReturnClick(Sender: TObject);
 begin
    issueBookpas.lib_id:= uqPeopleJournal.FieldValues['lib_id'];
@@ -116,12 +119,17 @@ begin
   ReportBook.ShowPreparedReport;
   end;
 end;
-
+//------------------------------------------------------------------------------
+procedure TForm5.dxBarLargeButton6Click(Sender: TObject);
+begin
+   Form5.Close;
+end;
+//------------------------------------------------------------------------------
 procedure TForm5.dxBB4Click(Sender: TObject);
 begin
   Form6.ShowModal;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm5.dxbbAddNewBookClick(Sender: TObject);
 begin
    Form12.ShowModal;
@@ -139,6 +147,5 @@ procedure TForm5.FormShow(Sender: TObject);
 begin
  dxRibbonStatusBar1.Panels[0].Text:= login.fio;
 end;
-
 end.
 

@@ -60,7 +60,7 @@ implementation
 
 uses login, newReview;
 { TForm19 }
-
+//------------------------------------------------------------------------------
 procedure TForm19.dxBarButton1Click(Sender: TObject);
 begin
 // empBookInfo.comment_id:= uqReview.FieldValues['id'];
@@ -70,22 +70,22 @@ begin
     uqReview.Refresh;
   end;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm19.dxBarLargeButton2Click(Sender: TObject);
 begin
   Form19.Close;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm19.dxBarLargeButton3Click(Sender: TObject);
 begin
   uqReview.Refresh;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm19.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm19.FormShow(Sender: TObject);
 begin
   dxRibbonStatusBar1.Panels[0].Text:=  login.fio;
@@ -96,5 +96,4 @@ begin
   uqReview.Close;
   uqReview.Open;
 end;
-
 end.

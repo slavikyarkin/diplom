@@ -34,9 +34,12 @@ type
     dxBarButton1: TdxBarButton;
     frxReport1: TfrxReport;
     dxBarButton2: TdxBarButton;
+    dxBarManager1Bar2: TdxBar;
+    dxBarButton3: TdxBarButton;
     procedure FormCreate(Sender: TObject);
     procedure dxBarButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure dxBarButton3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,23 +54,27 @@ implementation
 {$R *.dfm}
         uses peopleJournal, mainEmp;
 { TForm24 }
-
+//------------------------------------------------------------------------------
 procedure TForm24.dxBarButton1Click(Sender: TObject);
 begin
  if frxReport1.PrepareReport then
   frxReport1.ShowPreparedReport;
 end;
-
+//------------------------------------------------------------------------------
+procedure TForm24.dxBarButton3Click(Sender: TObject);
+begin
+ Form24.Close;
+end;
+//------------------------------------------------------------------------------
 procedure TForm24.FormCreate(Sender: TObject);
 begin
   DisableAero := True;
 end;
-
+//------------------------------------------------------------------------------
 procedure TForm24.FormShow(Sender: TObject);
 begin
 uqMyJur.Close;
 uqMyJur.ParamByName('pid').AsInteger:= pid;
 uqMyJur.Open;
 end;
-
 end.
