@@ -42,7 +42,6 @@ type
     bDelChosen: TdxBarLargeButton;
     dxBarLargeButton1: TdxBarLargeButton;
     bBooKInfo: TdxBarLargeButton;
-    bSearchBook: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dxBarLargeButton1Click(Sender: TObject);
@@ -51,6 +50,7 @@ type
     procedure bSearchBookClick(Sender: TObject);
   private
     { Private declarations }
+    procedure refresh;
   public
     { Public declarations }
   end;
@@ -65,25 +65,31 @@ implementation
 uses login, bookInfo, searchBook;
 { TForm13 }
 
-procedure TForm13.bBooKInfoClick(Sender: TObject);
+procedure TForm13.refresh;
 begin
-  if uqChosen.RecordCount > 0 then
+  uqChosen.Refresh;
+  if uqChosen.RecordCount = 0 then
   begin
-    bookInfo.book_id:= uqChosen.FieldValues['book_id'];
-    Form9.ShowModal;
+    bDelChosen.Enabled:= false;
+    bBooKInfo.Enabled:= false;
   end
   else
-    ShowMessage('Нет записей!');
+  begin
+    bDelChosen.Enabled:= true;
+    bBooKInfo.Enabled:= true;
+  end;
+end;
+
+procedure TForm13.bBooKInfoClick(Sender: TObject);
+begin
+  bookInfo.book_id:= uqChosen.FieldValues['book_id'];
+  Form9.ShowModal;
 end;
 
 procedure TForm13.bDelChosenClick(Sender: TObject);
 begin
-  if uqChosen.RecordCount > 0 then
-    uqChosen.Delete
-  else
-    ShowMessage('Нет записей!');
-
-  uqChosen.Refresh;
+  uqChosen.Delete;
+  refresh;
 end;
 
 procedure TForm13.bSearchBookClick(Sender: TObject);
@@ -107,6 +113,7 @@ begin
   uqChosen.Close;
   uqChosen.ParamByName('p_people_id').AsInteger:= login.people_id;
   uqChosen.Open;
+  refresh;
 end;
 
 end.

@@ -76,6 +76,7 @@ type
     procedure bBookExchangeClick(Sender: TObject);
   private
     { Private declarations }
+    procedure refresh;
   public
     { Public declarations }
   end;
@@ -90,6 +91,15 @@ implementation
 uses login, peopleInfo, bookInfo, searchBook, chosenBook, peopleBook,
      peopleBookRating, bookExchange;
 { TForm2 }
+
+procedure TForm2.refresh;
+begin
+  uqMyJur.Refresh;
+  if uqMyJur.RecordCount = 0 then
+    bBookInfo.Enabled:= false
+  else
+    bBookInfo.Enabled:= true;
+end;
 
 procedure TForm2.bBookExchangeClick(Sender: TObject);
 begin
@@ -114,7 +124,7 @@ end;
 
 procedure TForm2.bRefreshClick(Sender: TObject);
 begin
-  uqMyJur.Refresh;
+  refresh;
 end;
 
 procedure TForm2.dxBarLargeButton1Click(Sender: TObject);
@@ -154,6 +164,7 @@ begin
   uqMyJur.Close;
   uqMyJur.ParamByName('p_people_id').AsInteger:= login.people_id;
   uqMyJur.Open;
+  refresh;
 end;
 
 end.

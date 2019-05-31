@@ -50,6 +50,7 @@ type
     procedure bRefreshClick(Sender: TObject);
   private
     { Private declarations }
+    procedure refresh;
   public
     { Public declarations }
   end;
@@ -63,6 +64,15 @@ implementation
 
 uses login, peopleBookDetail, peopleBookRating;
 { TForm15 }
+
+procedure TForm15.refresh;
+begin
+  uqMyBook.Refresh;
+  if uqMyBook.RecordCount = 0 then
+    bDetail.Enabled:= false
+  else
+    bDetail.Enabled:= true;
+end;
 
 procedure TForm15.bCloseClick(Sender: TObject);
 begin
@@ -82,7 +92,7 @@ end;
 
 procedure TForm15.bRefreshClick(Sender: TObject);
 begin
-  uqMyBook.Refresh;
+  refresh;
 end;
 
 procedure TForm15.FormCreate(Sender: TObject);
@@ -96,6 +106,7 @@ begin
   uqMyBook.Close;
   uqMyBook.ParamByName('p_people_id').AsInteger:=  login.people_id;
   uqMyBook.Open;
+  refresh;
 end;
 
 end.

@@ -32,9 +32,11 @@ type
     HDBTableView1login: TcxGridDBColumn;
     HDBTableView1date_of_issue: TcxGridDBColumn;
     HDBTableView1date_of_return: TcxGridDBColumn;
+    bRefresh: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
+    procedure bRefreshClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,6 +57,11 @@ uses login;
 procedure TForm17.bCloseClick(Sender: TObject);
 begin
   Form17.Close;
+end;
+
+procedure TForm17.bRefreshClick(Sender: TObject);
+begin
+  uqDetail.Refresh;
 end;
 
 procedure TForm17.FormCreate(Sender: TObject);

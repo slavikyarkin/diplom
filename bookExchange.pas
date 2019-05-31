@@ -52,6 +52,7 @@ type
     procedure bBookInfoClick(Sender: TObject);
   private
     { Private declarations }
+    procedure refresh;
   public
     { Public declarations }
   end;
@@ -66,20 +67,30 @@ implementation
 uses login, newAnnouncement, peopleAnnouncement, bookInfo;
 { TForm20 }
 
+procedure TForm20.refresh;
+begin
+  uqAnnouncement.Refresh;
+  if uqAnnouncement.RecordCount = 0 then
+  begin
+    bBookInfo.Enabled:= false;
+  end
+  else
+  begin
+    bBookInfo.Enabled:= true;
+  end;
+end;
+
 procedure TForm20.bAddClick(Sender: TObject);
 begin
   newAnnouncement.openForm:= false;
   Form21.ShowModal;
-  uqAnnouncement.Refresh;
+  refresh;
 end;
 
 procedure TForm20.bBookInfoClick(Sender: TObject);
 begin
-  if uqAnnouncement.RecordCount > 0 then
-  begin
-    bookInfo.book_id:= uqAnnouncement.FieldValues['book_id'];
-    Form9.ShowModal;
-  end;
+  bookInfo.book_id:= uqAnnouncement.FieldValues['book_id'];
+  Form9.ShowModal;
 end;
 
 procedure TForm20.bCloseClick(Sender: TObject);
@@ -90,12 +101,12 @@ end;
 procedure TForm20.bPeopleAnnClick(Sender: TObject);
 begin
   Form22.ShowModal;
-  uqAnnouncement.Refresh;
+  refresh;
 end;
 
 procedure TForm20.bRefreshClick(Sender: TObject);
 begin
-  uqAnnouncement.Refresh;
+  refresh;
 end;
 
 procedure TForm20.FormCreate(Sender: TObject);
@@ -109,6 +120,7 @@ begin
   Form20.WindowState := wsMaximized;
   uqAnnouncement.Close;
   uqAnnouncement.Open;
+  refresh;
 end;
 
 end.

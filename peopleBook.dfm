@@ -67,8 +67,6 @@ object Form15: TForm15
     Height = 443
     Align = alClient
     TabOrder = 2
-    ExplicitTop = 131
-    ExplicitHeight = 467
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = dsMyBook
